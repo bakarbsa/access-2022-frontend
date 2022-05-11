@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import userServices from './services/userServices';
 
 function App() {
+  const users = userServices.getUsers();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {users.length === 0
+        ? (<h1>dafa</h1>)
+        : (
+          users.map((user) => (
+            <div key={user.id}>{user.name}</div>
+          ))
+        )}
     </div>
   );
 }
