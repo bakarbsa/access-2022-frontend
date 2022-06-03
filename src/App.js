@@ -1,18 +1,16 @@
-import React from 'react';
-import userServices from './services/userServices';
+import { Routes, Route } from 'react-router-dom';
+import AdminDashboard from './views/admin/AdminDashboard';
+import Layout from './views/Layout';
+import Login from './views/Login';
 
 function App() {
-  const users = userServices.getUsers();
   return (
-    <div>
-      {users.length === 0
-        ? (<h1>dafa</h1>)
-        : (
-          users.map((user) => (
-            <div key={user.id}>{user.name}</div>
-          ))
-        )}
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="login" element={<Login />} />
+        <Route path="admin" element={<AdminDashboard />} />
+      </Route>
+    </Routes>
   );
 }
 

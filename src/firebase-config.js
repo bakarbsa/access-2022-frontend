@@ -2,13 +2,12 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyBxwtbD4_jgGk8dQ9irYqcJ5IdYkNdeij0',
-  authDomain: 'testing-41397.firebaseapp.com',
-  databaseURL: 'https://testing-41397-default-rtdb.asia-southeast1.firebasedatabase.app',
-  projectId: 'testing-41397',
-  storageBucket: 'testing-41397.appspot.com',
-  messagingSenderId: '285672254334',
-  appId: '1:285672254334:web:112234394f82265b68a12f',
+  apiKey: 'AIzaSyCsv6IUt0qitzBrhVYCcLAIpUkZpIh9S5k',
+  authDomain: 'access-2022-5a7ae.firebaseapp.com',
+  projectId: 'access-2022-5a7ae',
+  storageBucket: 'access-2022-5a7ae.appspot.com',
+  messagingSenderId: '27227907030',
+  appId: '1:27227907030:web:1fc5e7f65546777c3bfa77',
 };
 
 const app = initializeApp(firebaseConfig);
