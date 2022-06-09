@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { PencilIcon, TrashIcon } from '@heroicons/react/outline';
 import UserServices from '../../services/userServices';
-import DeleteButton from '../../components/admin/DeleteButton';
-import EditButton from '../../components/admin/EditButton';
 import EditOverlay from '../../components/admin/EditOverlay';
+import AddOverlay from '../../components/admin/AddOverlay';
+import OverlayContext from '../../context/admin/OverlayProvider';
+import SelectedUserProvider from '../../context/admin/SelectedUserProvider';
+import DeleteOverlay from '../../components/admin/DeleteOverlay';
+import BlueButton from '../../components/admin/BlueButton';
+import RedButton from '../../components/admin/RedButton';
 
 function Users() {
   const users = UserServices.getUsers();
-  const [editedUser, setEditedUser] = useState();
-  const [overlay, setOverlay] = useState(false);
+  const overlayContext = useContext(OverlayContext);
+  const selectedUser = useContext(SelectedUserProvider);
   return (
     <div className="h-full relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
       <div className="flex flex-col h-full px-16 py-4 ">
@@ -17,6 +21,7 @@ function Users() {
           <p>Anda dapat melihat daftar peserta, menambahkan, dan menghapusnya.</p>
           <button
             type="submit"
+            onClick={() => { overlayContext.addOverlay = true; }}
             className="bg-access-green text-access-white font-semibold rounded-md px-4 py-1"
           >
             <p className="text-sm font-medium">Tambah Peserta</p>
@@ -39,24 +44,31 @@ function Users() {
                   <th className="font-normal">{user.university}</th>
                   <th className="font-normal">{user.username}</th>
                   <th>
-                    <EditButton
+                    <BlueButton
                       content={(
                         <div className="flex flex-row gap-2">
                           <PencilIcon className="w-4" />
                           Edit
                         </div>
                       )}
-                      onClick={() => { setEditedUser(user.id); setOverlay(true); }}
+                      onClick={() => {
+                        selectedUser.id = user.id;
+                        overlayContext.editOverlay = true;
+                      }}
                     />
                     <span className="mx-1" />
-                    <DeleteButton
+                    <RedButton
                       content={(
                         <div className="flex flex-row gap-2">
                           <TrashIcon className="w-4" />
                           Hapus
                         </div>
                       )}
-                      id={user.id}
+                      onClick={() => {
+                        selectedUser.id = user.id;
+                        selectedUser.name = user.name;
+                        overlayContext.deleteOverlay = true;
+                      }}
                     />
                   </th>
                 </tr>
@@ -66,7 +78,13 @@ function Users() {
         </div>
       </div>
       <div className="relative z-10">
-        <EditOverlay id={editedUser} show={overlay} />
+        {selectedUser.id
+          ? <EditOverlay />
+          : <h1 className="hidden">loading...</h1>}
+        <AddOverlay />
+        {selectedUser.id && selectedUser.name
+          ? <DeleteOverlay />
+          : <h1 className="hidden">loading...</h1>}
       </div>
     </div>
   );

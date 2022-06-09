@@ -4,6 +4,7 @@ import {
   onSnapshot,
   query,
   where,
+  orderBy,
 } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import db from '../firebase-config';
@@ -14,9 +15,14 @@ const usersCollectionRef = collection(db, 'users');
 class UserServices {
   constructor() {
     // GET ALL USER (REALTIME)
-    this.getUsers = () => {
+    this.getUsers = (sort = false) => {
       const [users, setUsers] = useState([]);
-      const userRoleQuery = query(usersCollectionRef, where('role', '==', 'user'));
+      let userRoleQuery;
+      if (sort) {
+        userRoleQuery = query(usersCollectionRef, where('role', '==', 'user'), orderBy('score', 'desc'));
+      } else {
+        userRoleQuery = query(usersCollectionRef, where('role', '==', 'user'));
+      }
 
       useEffect(() => onSnapshot(userRoleQuery, (snapshot) => {
         setUsers(snapshot.docs.map((user) => ({ ...user.data(), id: user.id })));
@@ -25,10 +31,10 @@ class UserServices {
       return users;
     };
     // GET ONE USER
-    this.getUser = async (id) => {
+    this.getUser = async (id, token) => {
       const user = await axios.get(`${API_URL}/admins/users/${id}`, {
         headers: {
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.VXlTc0Q1Wlh4djRyZkRsSHN6YjY.4QJhqs6uztj1U7ZZ0JMjI_ujGrpFjoIsohYAGeOaoPY',
+          Authorization: `Bearer ${token}`,
         },
       })
         .then(() => console.log('Fetch successfully'))
@@ -37,13 +43,33 @@ class UserServices {
       return user;
     };
     // DELETE USER
-    this.deleteUser = async (id) => {
+    this.deleteUser = async (id, token) => {
       await axios.delete(`${API_URL}/admins/users/${id}`, {
         headers: {
-          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.VXlTc0Q1Wlh4djRyZkRsSHN6YjY.4QJhqs6uztj1U7ZZ0JMjI_ujGrpFjoIsohYAGeOaoPY',
+          Authorization: `Bearer ${token}`,
         },
       })
         .then(() => console.log('Deleted successfully'))
+        .catch((err) => console.log(err));
+    };
+    // UPDATE USER
+    this.updateUser = async (id, token, data) => {
+      await axios.put(`${API_URL}/admins/users/${id}`, data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then(() => console.log('Edit successful'))
+        .catch((err) => console.log(err));
+    };
+    // ADD USER
+    this.addUser = async (token, data) => {
+      await axios.post(`${API_URL}/admins/users`, data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then(() => console.log('Add successful'))
         .catch((err) => console.log(err));
     };
   }

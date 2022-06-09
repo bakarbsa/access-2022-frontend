@@ -1,11 +1,7 @@
 import React from 'react';
-import UserServices from '../../services/userServices';
 
-function DeleteButton(props) {
-  const { content, id } = props;
-  const onClick = () => {
-    UserServices.deleteUser(id);
-  };
+function RedButton(props) {
+  const { content, onClick } = props;
   return (
     <button
       type="submit"
@@ -17,4 +13,4 @@ function DeleteButton(props) {
   );
 }
 
-export default DeleteButton;
+export default RedButton;

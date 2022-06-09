@@ -1,16 +1,54 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { LockClosedIcon, UserCircleIcon } from '@heroicons/react/outline';
+import axios from 'axios';
+import useAuth from '../hooks/useAuth';
 import Button from '../components/Button';
 import bg from '../assets/login-bg-web.jpg';
 import decor from '../assets/login-decor.png';
 import logo from '../assets/logo.png';
 import b201 from '../assets/b201-logo.png';
+import API_URL from '../api';
 
 function Login() {
   const [formData, setFormData] = useState({
     username: '',
     password: '',
   });
+  const { setAuth } = useAuth();
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  function from(role) {
+    if (role === 'admin') return '/admin';
+    if (role === 'user') return '/user';
+    return location.state?.from?.pathname || '/';
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        `${API_URL}/auth`,
+        JSON.stringify(formData),
+        {
+          headers: { 'Content-Type': 'application/json' },
+          withCredentials: true,
+        },
+      );
+      console.log(JSON.stringify(response?.data));
+      const accessToken = response?.data?.data.token;
+      const roles = [response?.data?.data.role];
+      setAuth({
+        user: formData.username, roles, accessToken,
+      });
+      setFormData('');
+      navigate(from(roles[0]), { replace: true });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <div>
@@ -24,7 +62,7 @@ function Login() {
             <img src={logo} alt="access logo" />
             <div className="w-full flex flex-col gap-6 items-center">
               <h2 className="text-xl text-access-dark font-bold">Silahkan login</h2>
-              <form method="post" className="w-full flex flex-col gap-10 mb-5">
+              <form method="post" onSubmit={handleSubmit} className="w-full flex flex-col gap-10 mb-5">
                 <div className="flex gap-4">
                   <UserCircleIcon className="w-10 text-access-dark" />
                   <input
@@ -48,7 +86,7 @@ function Login() {
                   />
                 </div>
               </form>
-              <Button content="Masuk" />
+              <Button onClick={handleSubmit} content="Masuk" />
             </div>
             <div>
               <h1>Powered by</h1>

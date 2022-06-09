@@ -1,6 +1,6 @@
 import React from 'react';
 
-function EditButton(props) {
+function BlueButton(props) {
   const { content, onClick } = props;
   return (
     <button
@@ -13,4 +13,4 @@ function EditButton(props) {
   );
 }
 
-export default EditButton;
+export default BlueButton;
