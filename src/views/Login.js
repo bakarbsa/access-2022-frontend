@@ -21,7 +21,7 @@ function Login() {
   const location = useLocation();
   function from(role) {
     if (role === 'admin') return '/admin';
-    if (role === 'user') return '/user';
+    if (role === 'user') return '/dashboard';
     return location.state?.from?.pathname || '/';
   }
 

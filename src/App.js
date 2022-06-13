@@ -4,6 +4,8 @@ import Layout from './views/Layout';
 import Login from './views/Login';
 import RequireAuth from './components/RequireAuth';
 import Unauthorized from './components/Unauthorized';
+import UserDashboard from './views/user/UserDashboard';
+import OlimRoom from './views/user/OlimRoom';
 
 function App() {
   return (
@@ -17,7 +19,8 @@ function App() {
         </Route>
 
         <Route element={<RequireAuth allowedRoles={['user']} />}>
-          <Route path="user" element={<Unauthorized />} />
+          <Route path="dashboard" element={<UserDashboard />} />
+          <Route path="olim" element={<OlimRoom />} />
         </Route>
       </Route>
     </Routes>
