@@ -37,12 +37,14 @@ function Login() {
           withCredentials: true,
         },
       );
-      console.log(JSON.stringify(response?.data));
       const accessToken = response?.data?.data.token;
       const roles = [response?.data?.data.role];
       setAuth({
         user: formData.username, roles, accessToken,
       });
+      sessionStorage.setItem('user', formData.username);
+      sessionStorage.setItem('roles', roles[0]);
+      sessionStorage.setItem('accessToken', accessToken);
       setFormData('');
       navigate(from(roles[0]), { replace: true });
     } catch (err) {

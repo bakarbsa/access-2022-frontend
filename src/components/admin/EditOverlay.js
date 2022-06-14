@@ -3,17 +3,17 @@ import React, {
   useCallback, useContext, useEffect, useState,
 } from 'react';
 import { PencilIcon, XIcon } from '@heroicons/react/outline';
-import OverlayContext from '../../context/admin/OverlayProvider';
 import SelectedUserContext from '../../context/admin/SelectedUserProvider';
 import RedButton from './RedButton';
 import BlueButton from './BlueButton';
 import API_URL from '../../api';
 import useAuth from '../../hooks/useAuth';
 import userServices from '../../services/userServices';
+import useOverlay from '../../hooks/useOverlay';
 
 function EditOverlay() {
   const { auth } = useAuth(null);
-  const overlayContext = useContext(OverlayContext);
+  const { overlay, setOverlay } = useOverlay();
   const selectedUser = useContext(SelectedUserContext);
   const [user, setUser] = useState();
   const [pass, setPass] = useState();
@@ -41,7 +41,7 @@ function EditOverlay() {
   }, [getUser]);
   return (
     <div
-      className={overlayContext.editOverlay ? 'h-full w-full fixed z-10 inset-0 flex justify-center items-center bg-black bg-opacity-30' : 'hidden'}
+      className={overlay === 'edit' ? 'h-full w-full fixed z-10 inset-0 flex justify-center items-center bg-black bg-opacity-30' : 'hidden'}
     >
       {user
         ? (
@@ -119,7 +119,7 @@ function EditOverlay() {
                       password: user.password ? user.password : pass,
                     },
                   );
-                  overlayContext.editOverlay = false;
+                  setOverlay('false');
                   selectedUser.id = null;
                 }}
               />
@@ -131,7 +131,7 @@ function EditOverlay() {
                   </div>
                 )}
                 onClick={() => {
-                  overlayContext.editOverlay = false;
+                  setOverlay('false');
                   selectedUser.id = null;
                 }}
               />

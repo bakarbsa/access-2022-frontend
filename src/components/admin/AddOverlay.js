@@ -1,14 +1,14 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { PlusIcon, XIcon } from '@heroicons/react/outline';
-import OverlayContext from '../../context/admin/OverlayProvider';
 import RedButton from './RedButton';
 import BlueButton from './BlueButton';
 import userServices from '../../services/userServices';
 import useAuth from '../../hooks/useAuth';
+import useOverlay from '../../hooks/useOverlay';
 
 function AddOverlay() {
   const { auth } = useAuth();
-  const overlayContext = useContext(OverlayContext);
+  const { overlay, setOverlay } = useOverlay();
   const [user, setUser] = useState({
     name: '',
     university: '',
@@ -17,7 +17,7 @@ function AddOverlay() {
   });
   return (
     <div
-      className={overlayContext.addOverlay ? 'h-full w-full fixed z-10 inset-0 flex justify-center items-center bg-black bg-opacity-30' : 'hidden'}
+      className={overlay === 'add' ? 'h-full w-full fixed z-10 inset-0 flex justify-center items-center bg-black bg-opacity-30' : 'hidden'}
     >
       <div className="bg-white rounded-md p-5 flex flex-col z-50">
         <form action="submit" method="put">
@@ -85,7 +85,7 @@ function AddOverlay() {
             onClick={() => {
               if (user.name && user.password && user.university && user.username) {
                 userServices.addUser(auth.accessToken, user);
-                overlayContext.addOverlay = false;
+                setOverlay('false');
                 setUser({
                   name: '',
                   university: '',
@@ -105,7 +105,7 @@ function AddOverlay() {
               </div>
             )}
             onClick={() => {
-              overlayContext.addOverlay = false;
+              setOverlay('false');
               setUser({
                 name: '',
                 university: '',

@@ -1,10 +1,12 @@
 import React from 'react';
+import useSideNav from '../../hooks/useSideNav';
 import UserServices from '../../services/userServices';
 
 function Ranking() {
+  const { index } = useSideNav();
   const users = UserServices.getUsers(true);
   return (
-    <div className="flex flex-col h-full px-16 py-4 ">
+    <div className={index === 0 ? 'flex flex-col h-full px-16 py-4' : 'hidden'}>
       <h1 className="text-2xl font-bold mb-2">Ranking Peserta</h1>
       <p className="mb-5">Anda dapat melihat melihat peringkat peserta berdasarkan score yang didapat.</p>
       <div className="h-full overflow-y-scroll">

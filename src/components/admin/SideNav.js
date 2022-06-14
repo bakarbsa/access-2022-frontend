@@ -1,20 +1,13 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import {
   ClipboardListIcon, LogoutIcon, PencilAltIcon, UserGroupIcon,
 } from '@heroicons/react/outline';
-import SideNavContext from '../../context/admin/SideNavProvider';
+import useSideNav from '../../hooks/useSideNav';
+import useAuth from '../../hooks/useAuth';
 
 function SideNav() {
-  const context = useContext(SideNavContext);
-  const setRanking = () => {
-    context.index = 0;
-  };
-  const setUser = () => {
-    context.index = 1;
-  };
-  const setQuestion = () => {
-    context.index = 2;
-  };
+  const { setIndex, index } = useSideNav();
+  const { setAuth } = useAuth();
   return (
     <nav className="bg-gray-900 justify-between flex flex-col w-56 px-5">
       <div className="mt-7">
@@ -24,9 +17,9 @@ function SideNav() {
         <div className="mt-8">
           <ul>
             <li className="mb-8">
-              <button type="button" onClick={setRanking}>
+              <button type="button" onClick={() => { setIndex(0); }}>
                 <span
-                  className={context.index === 0
+                  className={index === 0
                     ? 'text-access-primary flex flex-row items-center gap-3'
                     : 'text-gray-300 flex flex-row items-center gap-3 hover:text-access-primary'}
                 >
@@ -36,9 +29,9 @@ function SideNav() {
               </button>
             </li>
             <li className="mb-8">
-              <button type="button" onClick={setUser}>
+              <button type="button" onClick={() => { setIndex(1); }}>
                 <span
-                  className={context.index === 1
+                  className={index === 1
                     ? 'text-access-primary flex flex-row items-center gap-3'
                     : 'text-gray-300 flex flex-row items-center gap-3 hover:text-access-primary'}
                 >
@@ -48,9 +41,9 @@ function SideNav() {
               </button>
             </li>
             <li className="mb-8">
-              <button type="button" onClick={setQuestion}>
+              <button type="button" onClick={() => { setIndex(2); }}>
                 <span
-                  className={context.index === 2
+                  className={index === 2
                     ? 'text-access-primary flex flex-row items-center gap-3'
                     : 'text-gray-300 flex flex-row items-center gap-3 hover:text-access-primary'}
                 >
@@ -63,12 +56,18 @@ function SideNav() {
         </div>
       </div>
       <div className="mb-4">
-        <a href="/">
+        <button
+          type="button"
+          onClick={() => {
+            sessionStorage.clear();
+            setAuth({});
+          }}
+        >
           <span className="flex flex-row items-center gap-3 text-gray-300 hover:text-red-700">
             <LogoutIcon className="w-5" />
             <h2 className="text-sm">Logout</h2>
           </span>
-        </a>
+        </button>
       </div>
     </nav>
   );

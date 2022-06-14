@@ -1,19 +1,19 @@
 import React, { useContext } from 'react';
 import { TrashIcon, XIcon } from '@heroicons/react/outline';
-import OverlayContext from '../../context/admin/OverlayProvider';
 import SelectedUserContext from '../../context/admin/SelectedUserProvider';
 import RedButton from './RedButton';
 import BlueButton from './BlueButton';
 import userServices from '../../services/userServices';
 import useAuth from '../../hooks/useAuth';
+import useOverlay from '../../hooks/useOverlay';
 
 function DeleteOverlay() {
   const { auth } = useAuth();
-  const overlayContext = useContext(OverlayContext);
+  const { overlay, setOverlay } = useOverlay();
   const selectedUser = useContext(SelectedUserContext);
   return (
     <div
-      className={overlayContext.deleteOverlay ? 'h-full w-full fixed z-10 inset-0 flex justify-center items-center bg-black bg-opacity-30' : 'hidden'}
+      className={overlay === 'delete' ? 'h-full w-full fixed z-10 inset-0 flex justify-center items-center bg-black bg-opacity-30' : 'hidden'}
     >
       <div className="bg-white rounded-md p-5 flex flex-col z-50">
         <h1 className="mb-5">
@@ -31,7 +31,7 @@ function DeleteOverlay() {
             )}
             onClick={() => {
               userServices.deleteUser(selectedUser.id, auth.accessToken);
-              overlayContext.deleteOverlay = false;
+              setOverlay('false');
               selectedUser.id = null;
               selectedUser.name = null;
             }}
@@ -44,7 +44,7 @@ function DeleteOverlay() {
               </div>
             )}
             onClick={() => {
-              overlayContext.deleteOverlay = false;
+              setOverlay('false');
               selectedUser.id = null;
               selectedUser.name = null;
             }}

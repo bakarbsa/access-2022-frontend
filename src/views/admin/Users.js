@@ -3,25 +3,27 @@ import { PencilIcon, TrashIcon } from '@heroicons/react/outline';
 import UserServices from '../../services/userServices';
 import EditOverlay from '../../components/admin/EditOverlay';
 import AddOverlay from '../../components/admin/AddOverlay';
-import OverlayContext from '../../context/admin/OverlayProvider';
 import SelectedUserProvider from '../../context/admin/SelectedUserProvider';
 import DeleteOverlay from '../../components/admin/DeleteOverlay';
 import BlueButton from '../../components/admin/BlueButton';
 import RedButton from '../../components/admin/RedButton';
+import useSideNav from '../../hooks/useSideNav';
+import useOverlay from '../../hooks/useOverlay';
 
 function Users() {
+  const { index } = useSideNav();
+  const { setOverlay } = useOverlay();
   const users = UserServices.getUsers();
-  const overlayContext = useContext(OverlayContext);
   const selectedUser = useContext(SelectedUserProvider);
   return (
-    <div className="h-full relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div className={index === 1 ? 'h-full relative z-10' : 'hidden'} aria-labelledby="modal-title" role="dialog" aria-modal="true">
       <div className="flex flex-col h-full px-16 py-4 ">
         <h1 className="text-2xl font-bold">Daftar Peserta</h1>
         <div className="flex flex-row justify-between items-center mt-2 mb-5">
           <p>Anda dapat melihat daftar peserta, menambahkan, dan menghapusnya.</p>
           <button
             type="submit"
-            onClick={() => { overlayContext.addOverlay = true; }}
+            onClick={() => { setOverlay('add'); }}
             className="bg-access-green text-access-white font-semibold rounded-md px-4 py-1"
           >
             <p className="text-sm font-medium">Tambah Peserta</p>
@@ -53,7 +55,7 @@ function Users() {
                       )}
                       onClick={() => {
                         selectedUser.id = user.id;
-                        overlayContext.editOverlay = true;
+                        setOverlay('edit');
                       }}
                     />
                     <span className="mx-1" />
@@ -67,7 +69,7 @@ function Users() {
                       onClick={() => {
                         selectedUser.id = user.id;
                         selectedUser.name = user.name;
-                        overlayContext.deleteOverlay = true;
+                        setOverlay('delete');
                       }}
                     />
                   </th>

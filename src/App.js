@@ -6,6 +6,8 @@ import RequireAuth from './components/RequireAuth';
 import Unauthorized from './components/Unauthorized';
 import UserDashboard from './views/user/UserDashboard';
 import OlimRoom from './views/user/OlimRoom';
+import { SideNavProvider } from './context/admin/SideNavProvider';
+import { OverlayProvider } from './context/admin/OverlayProvider';
 
 function App() {
   return (
@@ -15,7 +17,16 @@ function App() {
         <Route path="unauthorized" element={<Unauthorized />} />
 
         <Route element={<RequireAuth allowedRoles={['admin']} />}>
-          <Route path="admin" element={<AdminDashboard />} />
+          <Route
+            path="admin"
+            element={(
+              <SideNavProvider>
+                <OverlayProvider>
+                  <AdminDashboard />
+                </OverlayProvider>
+              </SideNavProvider>
+            )}
+          />
         </Route>
 
         <Route element={<RequireAuth allowedRoles={['user']} />}>
