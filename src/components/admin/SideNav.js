@@ -1,6 +1,10 @@
 import React from 'react';
 import {
-  ClipboardListIcon, LogoutIcon, PencilAltIcon, UserGroupIcon,
+  ClipboardListIcon,
+  LogoutIcon,
+  PencilAltIcon,
+  UserGroupIcon,
+  PlayIcon,
 } from '@heroicons/react/outline';
 import useSideNav from '../../hooks/useSideNav';
 import useAuth from '../../hooks/useAuth';
@@ -23,8 +27,8 @@ function SideNav() {
                     ? 'text-access-primary flex flex-row items-center gap-3'
                     : 'text-gray-300 flex flex-row items-center gap-3 hover:text-access-primary'}
                 >
-                  <ClipboardListIcon className="w-5" />
-                  <h2 className="text-sm">Ranking</h2>
+                  <PlayIcon className="w-5" />
+                  <h2 className="text-sm">Start Olimpiade</h2>
                 </span>
               </button>
             </li>
@@ -35,8 +39,8 @@ function SideNav() {
                     ? 'text-access-primary flex flex-row items-center gap-3'
                     : 'text-gray-300 flex flex-row items-center gap-3 hover:text-access-primary'}
                 >
-                  <UserGroupIcon className="w-5" />
-                  <h2 className="text-sm">Peserta</h2>
+                  <ClipboardListIcon className="w-5" />
+                  <h2 className="text-sm">Ranking</h2>
                 </span>
               </button>
             </li>
@@ -44,6 +48,18 @@ function SideNav() {
               <button type="button" onClick={() => { setIndex(2); }}>
                 <span
                   className={index === 2
+                    ? 'text-access-primary flex flex-row items-center gap-3'
+                    : 'text-gray-300 flex flex-row items-center gap-3 hover:text-access-primary'}
+                >
+                  <UserGroupIcon className="w-5" />
+                  <h2 className="text-sm">Peserta</h2>
+                </span>
+              </button>
+            </li>
+            <li className="mb-8">
+              <button type="button" onClick={() => { setIndex(3); }}>
+                <span
+                  className={index === 3
                     ? 'text-access-primary flex flex-row items-center gap-3'
                     : 'text-gray-300 flex flex-row items-center gap-3 hover:text-access-primary'}
                 >

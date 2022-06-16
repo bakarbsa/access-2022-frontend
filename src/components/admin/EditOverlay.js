@@ -12,7 +12,7 @@ import userServices from '../../services/userServices';
 import useOverlay from '../../hooks/useOverlay';
 
 function EditOverlay() {
-  const { auth } = useAuth(null);
+  const { auth } = useAuth();
   const { overlay, setOverlay } = useOverlay();
   const selectedUser = useContext(SelectedUserContext);
   const [user, setUser] = useState();

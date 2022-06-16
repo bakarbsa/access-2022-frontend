@@ -16,7 +16,7 @@ function Users() {
   const users = UserServices.getUsers();
   const selectedUser = useContext(SelectedUserProvider);
   return (
-    <div className={index === 1 ? 'h-full relative z-10' : 'hidden'} aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div className={index === 2 ? 'h-full relative z-10' : 'hidden'} aria-labelledby="modal-title" role="dialog" aria-modal="true">
       <div className="flex flex-col h-full px-16 py-4 ">
         <h1 className="text-2xl font-bold">Daftar Peserta</h1>
         <div className="flex flex-row justify-between items-center mt-2 mb-5">

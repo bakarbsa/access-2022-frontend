@@ -4,7 +4,7 @@ import useSideNav from '../../hooks/useSideNav';
 function Question() {
   const { index } = useSideNav();
   return (
-    <div className={index === 2 ? 'block' : 'hidden'}>Question</div>
+    <div className={index === 3 ? 'block' : 'hidden'}>Question</div>
   );
 }
 
