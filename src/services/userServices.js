@@ -5,6 +5,7 @@ import {
   query,
   where,
   orderBy,
+  getDocs,
 } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import db from '../firebase-config';
@@ -29,6 +30,13 @@ class UserServices {
       }), []);
 
       return users;
+    };
+    // GET USER ID BY USERNAME
+    this.getUserIDByUsername = async (username) => {
+      const q = query(usersCollectionRef, where('username', '==', username));
+      const querySnapshot = await getDocs(q);
+      console.log('asdas');
+      return querySnapshot.docs[0].id;
     };
     // GET ONE USER
     this.getUser = async (id, token) => {
