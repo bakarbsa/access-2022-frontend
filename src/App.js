@@ -5,7 +5,7 @@ import Login from './views/Login';
 import RequireAuth from './components/RequireAuth';
 import Unauthorized from './components/Unauthorized';
 import UserDashboard from './views/user/UserDashboard';
-import OlimRoom from './views/user/OlimRoom';
+import OlimRoom from './components/users/OlimRoom';
 import { SideNavProvider } from './context/admin/SideNavProvider';
 import { OverlayProvider } from './context/admin/OverlayProvider';
 

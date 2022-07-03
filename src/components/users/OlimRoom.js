@@ -1,28 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import NavBar from '../../components/users/NavBar';
-import QuestionTile from '../../components/users/QuestionTile';
+import QuestionTile from './QuestionTile';
 import QuestionTileState from '../../models/questionTileState';
 import { questionStreamInit } from '../../services/questionServices';
-import userServices from '../../services/userServices';
+import useAuth from '../../hooks/useAuth';
+import UserServices from '../../services/userServices';
 
 function OlimRoom() {
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const [currentAnswer, setCurrentAnswer] = useState(0);
   const [questions, setQuestions] = useState([]);
+  const { auth } = useAuth();
   const [userID, setUserID] = useState('');
+  const getId = () => UserServices.getUserIDByUsername(setUserID, 'bakar', auth.accessToken);
+  useEffect(() => getId, [userID]);
 
-  useEffect(() => {
-    userServices.getUserIDByUsername('komeng').then((id) => setUserID(id));
-  }, []);
-
-  useEffect(() => {
-    setTimeout(() => {
-      console.log('asdfasdf');
-      console.log(userID.toString());
-      console.log('asdfasdf');
-      // updateAnswer(currentAnswer, userID);
-    }, 0);
-  }, [currentAnswer]);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     console.log('asdfasdf');
+  //     console.log(userID.toString());
+  //     console.log('asdfasdf');
+  //     updateAnswer(currentAnswer, userID);
+  //   }, 0);
+  // }, [currentAnswer]);
 
   questionStreamInit(setQuestions);
 
@@ -59,12 +58,12 @@ function OlimRoom() {
   };
   return (
     <div>
-      <NavBar />
       <div className="flex h-screen w-screen pt-24">
         <div className="flex-auto p-12">
           <div className="flex flex-col justify-between h-full">
             <div className="flex-none">
               <h1 className="text-xl font-bold">Siapa Pintar</h1>
+              <h1>{userID || 'loading...'}</h1>
             </div>
             <div className="flex-1 grow p-12 flex flex-col justify-between">
               <div className="flex justify-between items-center">

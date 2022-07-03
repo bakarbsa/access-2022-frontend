@@ -5,7 +5,6 @@ import {
   query,
   where,
   orderBy,
-  getDocs,
 } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import db from '../firebase-config';
@@ -32,11 +31,19 @@ class UserServices {
       return users;
     };
     // GET USER ID BY USERNAME
-    this.getUserIDByUsername = async (username) => {
-      const q = query(usersCollectionRef, where('username', '==', username));
-      const querySnapshot = await getDocs(q);
-      console.log('asdas');
-      return querySnapshot.docs[0].id;
+    this.getUserIDByUsername = async (setId, username, token) => {
+      await axios.get(`${API_URL}/users/username/${username}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((res) => {
+          if (!res.data) {
+            console.log('data tidak ditemukan');
+          }
+          setId(res.data.data);
+        })
+        .catch((err) => console.log(err));
     };
     // GET ONE USER
     this.getUser = async (id, token) => {
