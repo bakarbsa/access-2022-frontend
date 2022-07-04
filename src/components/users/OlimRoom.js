@@ -1,34 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import QuestionTile from './QuestionTile';
 import QuestionTileState from '../../models/questionTileState';
-import { questionStreamInit } from '../../services/questionServices';
+import { answersStream, getQuestion, updateAnswers } from '../../services/questionServices';
 import useAuth from '../../hooks/useAuth';
 import UserServices from '../../services/userServices';
 
 function OlimRoom() {
   const [currentQuestion, setCurrentQuestion] = useState(1);
-  const [currentAnswer, setCurrentAnswer] = useState(0);
-  const [questions, setQuestions] = useState([]);
+  const [questions, setQuestions] = useState({});
+  const [answers, setAnswers] = useState([]);
   const { auth } = useAuth();
   const [userID, setUserID] = useState('');
-  const getId = () => UserServices.getUserIDByUsername(setUserID, 'bakar', auth.accessToken);
+
+  const getId = () => UserServices.getUserIDByUsername(setUserID, 'komeng', auth.accessToken);
+
   useEffect(() => getId, [userID]);
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     console.log('asdfasdf');
-  //     console.log(userID.toString());
-  //     console.log('asdfasdf');
-  //     updateAnswer(currentAnswer, userID);
-  //   }, 0);
-  // }, [currentAnswer]);
-
-  questionStreamInit(setQuestions);
+  getQuestion(setQuestions);
+  answersStream(setAnswers, 'komeng');
 
   const handleSubmit = (event) => {
     // eslint-disable-next-line no-alert
     alert('A name was submitted: ');
     event.preventDefault();
+    console.log(answers);
   };
 
   const tileClickHandler = (number) => {
@@ -36,7 +31,9 @@ function OlimRoom() {
   };
 
   const answerClickHandler = (i) => {
-    setCurrentAnswer(i);
+    const tempAnswers = { ...answers };
+    tempAnswers[currentQuestion] = i;
+    updateAnswers(setAnswers, tempAnswers, userID);
   };
 
   const handlePrev = () => {
@@ -63,7 +60,6 @@ function OlimRoom() {
           <div className="flex flex-col justify-between h-full">
             <div className="flex-none">
               <h1 className="text-xl font-bold">Siapa Pintar</h1>
-              <h1>{userID || 'loading...'}</h1>
             </div>
             <div className="flex-1 grow p-12 flex flex-col justify-between">
               <div className="flex justify-between items-center">
@@ -78,7 +74,7 @@ function OlimRoom() {
                 <p className="font-bold pb-2">Jawaban</p>
                 <div className="flex flex-col">
                   {questions[currentQuestion - 1]?.answerList.map((answer, i) => (
-                    <button type="button" onClick={() => { answerClickHandler(i + 1); }} className={`${currentAnswer === i + 1 ? 'bg-[#B5BDCA]' : 'bg-[#F4F7FE]'} flex justify-start p-4 mb-2 rounded-lg`}>{answer}</button>
+                    <button type="button" onClick={() => { answerClickHandler(i + 1); }} className={`${answers[currentQuestion] === i + 1 ? 'bg-[#B5BDCA]' : 'bg-[#F4F7FE]'} flex justify-start p-4 mb-2 rounded-lg`}>{answer}</button>
                   ))}
                 </div>
               </form>
