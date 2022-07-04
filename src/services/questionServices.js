@@ -1,7 +1,9 @@
+import axios from 'axios';
 import {
-  onSnapshot, collection, doc, updateDoc,
+  onSnapshot, collection,
 } from 'firebase/firestore';
 import { useEffect } from 'react';
+import API_URL from '../api';
 import db from '../firebase-config';
 
 const questionStreamInit = (setQuestions) => {
@@ -16,12 +18,14 @@ const questionStreamInit = (setQuestions) => {
   });
 };
 
-const updateAnswer = async (answer, id) => {
-  const docRef = doc(db, 'users', id.toString());
-  console.log(id);
-  updateDoc(docRef, {
-    currentAnswer: answer,
-  });
+const updateAnswer = async (token, answer, id) => {
+  await axios.put(`${API_URL}/users/answer/${id}`, answer, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+    .then((res) => console.log(res.data))
+    .catch((err) => console.log(err));
 };
 
 export { questionStreamInit, updateAnswer };
