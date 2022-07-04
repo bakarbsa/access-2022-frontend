@@ -1,8 +1,10 @@
 // import axios from 'axios';
+import axios from 'axios';
 import {
   onSnapshot, collection, query, doc, setDoc,
 } from 'firebase/firestore';
 import { useEffect } from 'react';
+import API_URL from '../api';
 // import API_URL from '../api';
 import db from '../firebase-config';
 
@@ -42,8 +44,17 @@ const answersStream = (setAnswers, username) => {
   }, []);
 };
 
-const updateAnswers = async (setAnswers, answers, id) => {
+const updateAnswers = async (token, setAnswers, answers, id) => {
   const docRef = doc(db, 'users', id);
+  const timeValidation = await axios.get(`${API_URL}/users/answer/validation`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  if (!timeValidation.data.success) {
+    console.log('Time is up');
+    return;
+  }
   setDoc(docRef, { currentAnswer: answers }, { merge: true });
   setAnswers(answers);
 };

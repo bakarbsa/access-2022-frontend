@@ -14,7 +14,11 @@ function OlimRoom() {
 
   const getId = () => UserServices.getUserIDByUsername(setUserID, 'komeng', auth.accessToken);
 
-  useEffect(() => getId, [userID]);
+  useEffect(() => {
+    if (!userID) {
+      getId();
+    }
+  }, [userID]);
 
   getQuestion(setQuestions);
   answersStream(setAnswers, 'komeng');
@@ -33,7 +37,7 @@ function OlimRoom() {
   const answerClickHandler = (i) => {
     const tempAnswers = { ...answers };
     tempAnswers[currentQuestion] = i;
-    updateAnswers(setAnswers, tempAnswers, userID);
+    updateAnswers(auth.accessToken, setAnswers, tempAnswers, userID);
   };
 
   const handlePrev = () => {

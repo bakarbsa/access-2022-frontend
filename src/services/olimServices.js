@@ -17,15 +17,19 @@ class OlimServices {
       return start;
     };
     // GET TIME
-    this.getTime = () => {
-      const [time, setTime] = useState({});
-      useEffect(() => onSnapshot(startDocRef, (snapshot) => {
-        setTime({
-          startTime: snapshot.data().startTime,
-          endTime: snapshot.data().endTime,
-        });
-      }), []);
-      return time;
+    this.getTime = async (role, token, setState) => {
+      await axios.get(`${API_URL}/${role}s/olim/time`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+        .then((res) => {
+          if (!res.data) {
+            console.log('data tidak ditemukan');
+          }
+          setState(res.data.data);
+        })
+        .catch((err) => console.log(err));
     };
     // UPDATE START STATE
     this.updateStartState = async (token) => {
