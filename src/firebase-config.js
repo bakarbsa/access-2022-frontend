@@ -2,12 +2,12 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCsv6IUt0qitzBrhVYCcLAIpUkZpIh9S5k',
-  authDomain: 'access-2022-5a7ae.firebaseapp.com',
-  projectId: 'access-2022-5a7ae',
-  storageBucket: 'access-2022-5a7ae.appspot.com',
-  messagingSenderId: '27227907030',
-  appId: '1:27227907030:web:1fc5e7f65546777c3bfa77',
+  apiKey: 'AIzaSyBEr4kAKWUzsQFqmnP6bjar2CCbOEh07ZI',
+  authDomain: 'access-2022-test1.firebaseapp.com',
+  projectId: 'access-2022-test1',
+  storageBucket: 'access-2022-test1.appspot.com',
+  messagingSenderId: '846258885328',
+  appId: '1:846258885328:web:b8784a5fb62833955644d5',
 };
 
 const app = initializeApp(firebaseConfig);
