@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable max-len */
 import React, { useEffect, useState } from 'react';
 import b201 from '../../assets/b201-logo.png';
@@ -16,15 +17,15 @@ function UserDashboard() {
     OlimServices.getTime('user', setOlimTime);
     console.log(olimTime);
   };
-  useEffect(() => {
-    if (!olimTime.startTime) {
-      getTime();
-    }
-  }, [olimTime.startTime, olimTime.endTime]);
+  // useEffect(() => {
+  //   if (!olimTime.startTime) {
+  //     getTime();
+  //   }
+  // }, [olimTime.startTime, olimTime.endTime]);
 
-  setInterval(() => {
-    setCurrentTime(Date.now());
-  }, 1000);
+  // setInterval(() => {
+  //   setCurrentTime(Date.now());
+  // }, 1000);
 
   const getHours = (current, end) => {
     const hours = Math.floor((end - current) / 1000 / 60 / 60);
@@ -52,46 +53,10 @@ function UserDashboard() {
     return seconds;
   };
   return (
-    olimTime.startTime
-      ? (currentTime >= olimTime.startTime && currentTime <= olimTime.endTime)
-        ? (
-          <div>
-            <h1>
-              { olimTime.endTime ? getHours(currentTime, olimTime.endTime) : '00'}
-              {' : '}
-              { olimTime.endTime ? getMinutes(currentTime, olimTime.endTime) : '00'}
-              {' : '}
-              { olimTime.endTime ? getSeconds(currentTime, olimTime.endTime) : '00'}
-            </h1>
-            <NavBar />
-            <OlimRoom />
-          </div>
-        )
-        : (
-          <div>
-            <NavBar />
-            <div className="flex flex-col gap-10 justify-center items-center h-screen w-screen text-lg">
-              <div className="text-center w-80">
-                <div className="mt-24" />
-                <p className="mb-10">
-                  Selamat datang
-                  {' '}
-                  {auth.user}
-                </p>
-                <p className="font-bold mb-10">Mohon tunggu panitia memulai sesi</p>
-                <p className="mb-5">Kamu akan mengerjakan tahapan Siapa Pintar</p>
-                <p>Mohon perhatikan waktu saat mengerjakan soal</p>
-              </div>
-              <div className="flex flex-col justify-center items-center mt-10">
-                <p className="text-sm">Powered by</p>
-                <div className="w-16">
-                  <img src={b201} alt="logo b201" />
-                </div>
-              </div>
-            </div>
-          </div>
-        )
-      : <Loading />
+    <div>
+      <NavBar />
+      <OlimRoom />
+    </div>
   );
 }
 

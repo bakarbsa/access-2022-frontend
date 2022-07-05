@@ -1,40 +1,34 @@
 // import axios from 'axios';
 import axios from 'axios';
 import {
-  onSnapshot, collection, query, doc, setDoc, getDoc,
+  collection, query, doc, setDoc, getDocs, onSnapshot,
 } from 'firebase/firestore';
 import { useEffect } from 'react';
 import API_URL from '../api';
 // import API_URL from '../api';
 import db from '../firebase-config';
 
-const getQuestion = (setQuestions) => {
-  useEffect(() => {
-    const unsubscribe = () => {
-      const colRef = collection(db, 'questions');
-      const itemsQuery = query(colRef);
-      return onSnapshot(itemsQuery, (querySnapshot) => {
-        const tempQuestions = [];
-        querySnapshot.docs.forEach((data) => {
-          tempQuestions.push(data.data());
-        });
-        setQuestions(tempQuestions);
-      }, (error) => console.log(error));
-    };
-    return unsubscribe;
-  }, []);
+const getQuestion = async (setQuestions) => {
+  const q = query(collection(db, 'questions'));
+  const querySnapshot = await getDocs(q);
+  const tempQuestions = [];
+  querySnapshot.forEach((d) => {
+    tempQuestions.push(d.data());
+  });
+  setQuestions(tempQuestions);
 };
 
-const getAnswers = async (setAnswers, username, id) => {
-  const docRef = doc(db, 'users', id);
-  const docSnap = await getDoc(docRef);
-  if (docSnap.exists()) {
-    setAnswers(docSnap.data().currentAnswer);
-  } else {
-    // doc.data() will be undefined in this case
-    console.log('No such document!');
-  }
-};
+// const getAnswers = async (setAnswers, id) => {
+//   const docRef = doc(db, 'users', id);
+//   const docSnap = await getDoc(docRef);
+//   if (docSnap.exists()) {
+//     setAnswers(docSnap.data().currentAnswer);
+//     console.log(docSnap.data().currentAnswer);
+//   } else {
+//     // doc.data() will be undefined in this case
+//     console.log('No such document!');
+//   }
+// };
 
 const answersStream = (setAnswers, username) => {
   useEffect(() => {
@@ -53,7 +47,6 @@ const answersStream = (setAnswers, username) => {
     return unsubscribe;
   }, []);
 };
-
 const updateAnswers = async (setAnswers, answers, id) => {
   setAnswers(answers);
   console.log('setfrom updateanswers');
@@ -68,7 +61,6 @@ const updateAnswers = async (setAnswers, answers, id) => {
 
 export {
   getQuestion,
-  answersStream,
   updateAnswers,
-  getAnswers,
+  answersStream,
 };
