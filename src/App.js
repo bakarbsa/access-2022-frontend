@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import axios from 'axios';
 import AdminDashboard from './views/admin/AdminDashboard';
 import Layout from './views/Layout';
 import Login from './views/Login';
@@ -8,8 +9,20 @@ import UserDashboard from './views/user/UserDashboard';
 import OlimRoom from './components/users/OlimRoom';
 import { SideNavProvider } from './context/admin/SideNavProvider';
 import { OverlayProvider } from './context/admin/OverlayProvider';
+import useAuth from './hooks/useAuth';
 
 function App() {
+  const { auth } = useAuth();
+
+  axios.interceptors.request.use(
+    (req) => {
+      const token = auth.accessToken || sessionStorage.getItem('accessToken');
+      req.headers.Authorization = `Bearer ${token}`;
+
+      return req;
+    },
+    (err) => Promise.reject(err),
+  );
   return (
     <Routes>
       <Route path="/" element={<Layout />}>

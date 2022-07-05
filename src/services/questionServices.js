@@ -44,13 +44,9 @@ const answersStream = (setAnswers, username) => {
   }, []);
 };
 
-const updateAnswers = async (token, setAnswers, answers, id) => {
+const updateAnswers = async (setAnswers, answers, id) => {
   const docRef = doc(db, 'users', id);
-  const timeValidation = await axios.get(`${API_URL}/users/answer/validation`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  const timeValidation = await axios.get(`${API_URL}/users/answer/validation`);
   if (!timeValidation.data.success) {
     console.log('Time is up');
     return;

@@ -4,11 +4,9 @@ import useOverlay from '../../hooks/useOverlay';
 import RedButton from './RedButton';
 import BlueButton from './BlueButton';
 import OlimServices from '../../services/olimServices';
-import useAuth from '../../hooks/useAuth';
 
 function EditTimeOverlay() {
   const { overlay, setOverlay } = useOverlay();
-  const { auth } = useAuth();
   const [time, setTime] = useState({
     startTime: '0',
     endTime: '0',
@@ -64,7 +62,7 @@ function EditTimeOverlay() {
               </div>
                 )}
             onClick={() => {
-              OlimServices.updateTime(auth.accessToken, Number(time.startTime), Number(time.endTime));
+              OlimServices.updateTime(Number(time.startTime), Number(time.endTime));
               setOverlay('false');
               setTime({
                 startTime: 0,

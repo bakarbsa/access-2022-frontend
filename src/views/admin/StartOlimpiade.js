@@ -3,16 +3,13 @@ import useSideNav from '../../hooks/useSideNav';
 import OlimServices from '../../services/olimServices';
 import useOverlay from '../../hooks/useOverlay';
 import EditTimeOverlay from '../../components/admin/EditTimeOverlay';
-import useAuth from '../../hooks/useAuth';
 
 function StartOlimpiade() {
   const { index } = useSideNav();
   const { setOverlay } = useOverlay();
-  const { auth } = useAuth();
   const [time, setTime] = useState({});
   const getTime = () => {
-    OlimServices.getTime('admin', auth.accessToken, setTime);
-    console.log(time);
+    OlimServices.getTime('admin', setTime);
   };
   useEffect(() => {
     if (!time.startTime) {

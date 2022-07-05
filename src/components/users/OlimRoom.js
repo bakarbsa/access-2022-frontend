@@ -2,17 +2,15 @@ import React, { useEffect, useState } from 'react';
 import QuestionTile from './QuestionTile';
 import QuestionTileState from '../../models/questionTileState';
 import { answersStream, getQuestion, updateAnswers } from '../../services/questionServices';
-import useAuth from '../../hooks/useAuth';
 import UserServices from '../../services/userServices';
 
 function OlimRoom() {
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const [questions, setQuestions] = useState({});
   const [answers, setAnswers] = useState([]);
-  const { auth } = useAuth();
   const [userID, setUserID] = useState('');
 
-  const getId = () => UserServices.getUserIDByUsername(setUserID, 'komeng', auth.accessToken);
+  const getId = () => UserServices.getUserIDByUsername(setUserID, 'komeng');
 
   useEffect(() => {
     if (!userID) {
@@ -37,7 +35,7 @@ function OlimRoom() {
   const answerClickHandler = (i) => {
     const tempAnswers = { ...answers };
     tempAnswers[currentQuestion] = i;
-    updateAnswers(auth.accessToken, setAnswers, tempAnswers, userID);
+    updateAnswers(setAnswers, tempAnswers, userID);
   };
 
   const handlePrev = () => {

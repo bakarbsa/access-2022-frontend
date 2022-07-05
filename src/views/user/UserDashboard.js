@@ -13,7 +13,7 @@ function UserDashboard() {
   const [olimTime, setOlimTime] = useState({});
 
   const getTime = () => {
-    OlimServices.getTime('user', auth.accessToken, setOlimTime);
+    OlimServices.getTime('user', setOlimTime);
     console.log(olimTime);
   };
   useEffect(() => {

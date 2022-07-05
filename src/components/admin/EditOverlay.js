@@ -7,23 +7,18 @@ import SelectedUserContext from '../../context/admin/SelectedUserProvider';
 import RedButton from './RedButton';
 import BlueButton from './BlueButton';
 import API_URL from '../../api';
-import useAuth from '../../hooks/useAuth';
 import userServices from '../../services/userServices';
 import useOverlay from '../../hooks/useOverlay';
+import Loading from '../Loading';
 
 function EditOverlay() {
-  const { auth } = useAuth();
   const { overlay, setOverlay } = useOverlay();
   const selectedUser = useContext(SelectedUserContext);
   const [user, setUser] = useState();
   const [pass, setPass] = useState();
 
   const getUser = useCallback(async () => {
-    await axios.get(`${API_URL}/admins/users/${selectedUser.id}`, {
-      headers: {
-        Authorization: `Bearer ${auth.accessToken}`,
-      },
-    })
+    await axios.get(`${API_URL}/admins/users/${selectedUser.id}`)
       .then((res) => {
         setPass(res.data.data.password);
         setUser({
@@ -111,7 +106,6 @@ function EditOverlay() {
                 onClick={() => {
                   userServices.updateUser(
                     selectedUser.id,
-                    auth.accessToken,
                     {
                       name: user.name,
                       username: user.username,
@@ -138,7 +132,7 @@ function EditOverlay() {
             </div>
           </div>
         )
-        : <h1>Loading...</h1>}
+        : <Loading />}
     </div>
   );
 }
