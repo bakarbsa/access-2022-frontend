@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import AdminDashboard from './views/admin/AdminDashboard';
 import Layout from './views/Layout';
@@ -26,6 +26,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
+        <Route path="" element={<Navigate to="/login" />} />
         <Route path="login" element={<Login />} />
         <Route path="unauthorized" element={<Unauthorized />} />
 
