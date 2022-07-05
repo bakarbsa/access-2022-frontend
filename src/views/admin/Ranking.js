@@ -18,7 +18,7 @@ function Ranking() {
     <div className={index === 1 ? 'flex flex-col h-full px-16 py-4' : 'hidden'}>
       {users.length
         ? (
-          <div>
+          <div className="h-full">
             <h1 className="text-2xl font-bold mb-2">Ranking Peserta</h1>
             <p className="mb-5">Anda dapat melihat melihat peringkat peserta berdasarkan score yang didapat.</p>
             <div className="h-full overflow-y-scroll">

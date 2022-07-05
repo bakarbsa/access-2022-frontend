@@ -57,7 +57,7 @@ function SideNav() {
                 </span>
               </button>
             </li>
-            <li className="mb-8">
+            <li className="mb-8 hidden">
               <button type="button" onClick={() => { setIndex(3); }}>
                 <span
                   className={index === 3

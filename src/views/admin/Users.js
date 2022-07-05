@@ -29,7 +29,7 @@ function Users() {
     <div className={index === 2 ? 'h-full relative z-10' : 'hidden'} aria-labelledby="modal-title" role="dialog" aria-modal="true">
       {users.length > 0
         ? (
-          <div>
+          <div className="h-full">
             <div className="flex flex-col h-full px-16 py-4 ">
               <h1 className="text-2xl font-bold">Daftar Peserta</h1>
               <div className="flex flex-row justify-between items-center mt-2 mb-5">
