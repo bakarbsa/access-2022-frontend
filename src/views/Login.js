@@ -39,12 +39,14 @@ function Login() {
       );
       const accessToken = response?.data?.data.token;
       const roles = [response?.data?.data.role];
+      const id = response?.data?.data.id;
       setAuth({
         user: formData.username, roles, accessToken,
       });
       sessionStorage.setItem('user', formData.username);
       sessionStorage.setItem('roles', roles[0]);
       sessionStorage.setItem('accessToken', accessToken);
+      sessionStorage.setItem('id', id);
       setFormData('');
       navigate(from(roles[0]), { replace: true });
     } catch (err) {

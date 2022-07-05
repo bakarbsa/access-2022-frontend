@@ -51,6 +51,14 @@ class UserServices {
         .then(() => console.log('Add successful'))
         .catch((err) => console.log(err));
     };
+    this.logout = async (role, id, setAuth) => {
+      await axios.get(`${API_URL}/${role}s/logout/${id}`)
+        .then(() => {
+          sessionStorage.clear();
+          setAuth({});
+        })
+        .catch((err) => console.log(err));
+    };
   }
 }
 

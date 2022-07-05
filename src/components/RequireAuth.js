@@ -13,6 +13,7 @@ function RequireAuth({ allowedRoles }) {
         accessToken: sessionStorage.getItem('accessToken'),
         user: sessionStorage.getItem('user'),
         roles: [sessionStorage.getItem('roles')],
+        id: sessionStorage.getItem('id'),
       });
     }
   }, [auth.accessToken]);

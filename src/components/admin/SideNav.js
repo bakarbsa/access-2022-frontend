@@ -8,10 +8,11 @@ import {
 } from '@heroicons/react/outline';
 import useSideNav from '../../hooks/useSideNav';
 import useAuth from '../../hooks/useAuth';
+import UserServices from '../../services/userServices';
 
 function SideNav() {
   const { setIndex, index } = useSideNav();
-  const { setAuth } = useAuth();
+  const { auth, setAuth } = useAuth();
   return (
     <nav className="bg-gray-900 justify-between flex flex-col w-56 px-5">
       <div className="mt-7">
@@ -75,8 +76,9 @@ function SideNav() {
         <button
           type="button"
           onClick={() => {
-            sessionStorage.clear();
-            setAuth({});
+            const id = auth.id || sessionStorage.id;
+            const role = auth.roles || sessionStorage.roles;
+            UserServices.logout(role, id, setAuth);
           }}
         >
           <span className="flex flex-row items-center gap-3 text-gray-300 hover:text-red-700">
