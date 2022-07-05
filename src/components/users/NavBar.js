@@ -5,14 +5,16 @@ import RedButton from '../admin/RedButton';
 import useAuth from '../../hooks/useAuth';
 import UserServices from '../../services/userServices';
 
-function NavBar() {
+function NavBar(props) {
+  const { userName } = props;
+
   const { auth, setAuth } = useAuth();
   return (
     <nav className="absolute px-12 h-24 w-screen bg-white flex justify-between items-center">
       <img src={Logo} alt="access logo" className="w-48 " />
       <div className="flex">
         <div className="flex justify-between items-center">
-          <h1>UserName</h1>
+          <h1>{userName}</h1>
           <img src={Avatar} alt="avatar" className="h-12 ml-4" />
         </div>
         <div className="ml-12">
