@@ -24,7 +24,7 @@ const getQuestion = (setQuestions) => {
   }, []);
 };
 
-const answersStream = (setAnswers, username) => {
+const answersStream = (setAnswers, username, currentQuestion) => {
   useEffect(() => {
     const unsubscribe = () => {
       const colRef = collection(db, 'users');
@@ -39,7 +39,7 @@ const answersStream = (setAnswers, username) => {
     };
     console.log('teststanwers');
     return unsubscribe;
-  }, []);
+  }, [currentQuestion]);
 };
 
 const updateAnswers = async (setAnswers, answers, id) => {

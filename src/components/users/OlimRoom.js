@@ -17,7 +17,7 @@ function OlimRoom() {
   useEffect(() => getId, [userID]);
 
   getQuestion(setQuestions);
-  answersStream(setAnswers, 'komeng');
+  answersStream(setAnswers, 'komeng', currentQuestion);
 
   const handleSubmit = (event) => {
     // eslint-disable-next-line no-alert
