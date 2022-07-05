@@ -1,25 +1,22 @@
-import React from 'react';
-// import Loading from '../../components/Loading';
-// import useAuth from '../../hooks/useAuth';
+import React, { useEffect, useState } from 'react';
+import Loading from '../../components/Loading';
 import useSideNav from '../../hooks/useSideNav';
-// import UserServices from '../../services/userServices';
+import UserServices from '../../services/userServices';
 
 function Ranking() {
   const { index } = useSideNav();
-  // const { auth } = useAuth();
-  // const [users, setUsers] = useState([]);
-  // const getUsers = () => {
-  //   UserServices.getUsers(auth.accessToken, setUsers, true);
-  // };
+  const [users, setUsers] = useState([]);
+  const getUsers = () => UserServices.getUsers(setUsers);
 
-  // useEffect(() => {
-  //   if (users.length <= -5) {
-  //     getUsers();
-  //   }
-  // }, [users]);
+  useEffect(() => {
+    if (users.length <= 0) {
+      getUsers();
+    }
+  }, [users]);
+
   return (
     <div className={index === 1 ? 'flex flex-col h-full px-16 py-4' : 'hidden'}>
-      {/* {users.length
+      {users.length
         ? (
           <div>
             <h1 className="text-2xl font-bold mb-2">Ranking Peserta</h1>
@@ -48,7 +45,7 @@ function Ranking() {
             </div>
           </div>
         )
-        : <Loading />} */}
+        : <Loading />}
     </div>
   );
 }
