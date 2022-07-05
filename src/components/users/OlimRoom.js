@@ -97,7 +97,7 @@ function OlimRoom() {
         <div className="flex-none w-[32rem] overflow-scroll">
           <div className="flex flex-wrap">
             {questions
-              .map((question, i) => (<button key={question.question} type="button" onClick={() => tileClickHandler(i + 1)}><QuestionTile number={i} state={currentQuestion === i + 1 ? QuestionTileState.Selected : QuestionTileState.Nothing} /></button>))}
+              .map((question, i) => (<button key={question.question} type="button" onClick={() => tileClickHandler(i + 1)}><QuestionTile number={i} state={currentQuestion === i + 1 ? QuestionTileState.Selected : answers[i + 1] !== undefined ? QuestionTileState.Answered : QuestionTileState.Nothing} /></button>))}
           </div>
         </div>
       </div>
