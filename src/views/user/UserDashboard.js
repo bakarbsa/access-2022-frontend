@@ -1,15 +1,26 @@
 /* eslint-disable max-len */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import b201 from '../../assets/b201-logo.png';
 import useAuth from '../../hooks/useAuth';
 import OlimServices from '../../services/olimServices';
 import NavBar from '../../components/users/NavBar';
 import OlimRoom from '../../components/users/OlimRoom';
+import Loading from '../../components/Loading';
 
 function UserDashboard() {
   const { auth } = useAuth();
   const [currentTime, setCurrentTime] = useState(Date.now());
-  const olimTime = OlimServices.getTime();
+  const [olimTime, setOlimTime] = useState({});
+
+  const getTime = () => {
+    OlimServices.getTime('user', setOlimTime);
+    console.log(olimTime);
+  };
+  useEffect(() => {
+    if (!olimTime.startTime) {
+      getTime();
+    }
+  }, [olimTime.startTime, olimTime.endTime]);
 
   setInterval(() => {
     setCurrentTime(Date.now());
@@ -45,14 +56,14 @@ function UserDashboard() {
       ? (currentTime >= olimTime.startTime && currentTime <= olimTime.endTime)
         ? (
           <div>
-            <NavBar />
             <h1>
-              {getHours(currentTime, olimTime.endTime)}
+              { olimTime.endTime ? getHours(currentTime, olimTime.endTime) : '00'}
               {' : '}
-              {getMinutes(currentTime, olimTime.endTime)}
+              { olimTime.endTime ? getMinutes(currentTime, olimTime.endTime) : '00'}
               {' : '}
-              {getSeconds(currentTime, olimTime.endTime)}
+              { olimTime.endTime ? getSeconds(currentTime, olimTime.endTime) : '00'}
             </h1>
+            <NavBar />
             <OlimRoom />
           </div>
         )
@@ -80,7 +91,7 @@ function UserDashboard() {
             </div>
           </div>
         )
-      : <h1>Loading...</h1>
+      : <Loading />
   );
 }
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import useSideNav from '../../hooks/useSideNav';
 import OlimServices from '../../services/olimServices';
 import useOverlay from '../../hooks/useOverlay';
@@ -7,8 +7,15 @@ import EditTimeOverlay from '../../components/admin/EditTimeOverlay';
 function StartOlimpiade() {
   const { index } = useSideNav();
   const { setOverlay } = useOverlay();
-  const isStart = OlimServices.getStartState();
-  const time = OlimServices.getTime();
+  const [time, setTime] = useState({});
+  const getTime = () => {
+    OlimServices.getTime('admin', setTime);
+  };
+  useEffect(() => {
+    if (!time.startTime) {
+      getTime();
+    }
+  }, [time.startTime, time.endTime]);
   return (
     <div className={index === 0 ? 'flex flex-col h-full px-16 py-4 justify-center items-center' : 'hidden'}>
       <h1 className="text-2xl font-bold">Mulai Olimpiade</h1>
@@ -23,46 +30,54 @@ function StartOlimpiade() {
         <tbody>
           <tr className="h-8">
             <th className="font-normal">
-              {(new Date(time.startTime)).toDateString()}
+              {time.startTime
+                ? (new Date(time.startTime)).toDateString()
+                : 'NaN'}
               <br />
               {
-                (new Date(time.startTime)).getHours().toString().length === 1
-                  ? `0${(new Date(time.startTime)).getHours().toString()}`
-                  : (new Date(time.startTime)).getHours().toString()
+                time.startTime
+                  ? (new Date(time.startTime)).getHours().toString().length === 1
+                    ? `0${(new Date(time.startTime)).getHours().toString()}`
+                    : (new Date(time.startTime)).getHours().toString()
+                  : 'NaN'
               }
               {' : '}
               {
-                (new Date(time.startTime)).getMinutes().toString().length === 1
-                  ? `0${(new Date(time.startTime)).getMinutes().toString()}`
-                  : (new Date(time.startTime)).getMinutes().toString()
+                time.startTime
+                  ? (new Date(time.startTime)).getMinutes().toString().length === 1
+                    ? `0${(new Date(time.startTime)).getMinutes().toString()}`
+                    : (new Date(time.startTime)).getMinutes().toString()
+                  : 'NaN'
               }
               {' : '}
               {
-                (new Date(time.startTime)).getSeconds().toString().length === 1
-                  ? `0${(new Date(time.startTime)).getSeconds().toString()}`
-                  : (new Date(time.startTime)).getSeconds().toString()
+                time.startTime
+                  ? (new Date(time.startTime)).getSeconds().toString().length === 1
+                    ? `0${(new Date(time.startTime)).getSeconds().toString()}`
+                    : (new Date(time.startTime)).getSeconds().toString()
+                  : 'NaN'
               }
             </th>
             <th className="font-normal">
-              {(new Date(time.endTime)).toDateString()}
+              {time.startTime ? (new Date(time.endTime)).toDateString() : 'NaN'}
               <br />
-              {
-                (new Date(time.endTime)).getHours().toString().length === 1
+              {time.startTime
+                ? (new Date(time.endTime)).getHours().toString().length === 1
                   ? `0${(new Date(time.endTime)).getHours().toString()}`
                   : (new Date(time.endTime)).getHours().toString()
-              }
+                : 'NaN'}
               {' : '}
-              {
-                (new Date(time.endTime)).getMinutes().toString().length === 1
+              {time.startTime
+                ? (new Date(time.endTime)).getMinutes().toString().length === 1
                   ? `0${(new Date(time.endTime)).getMinutes().toString()}`
                   : (new Date(time.endTime)).getMinutes().toString()
-              }
+                : 'NaN'}
               {' : '}
-              {
-                (new Date(time.endTime)).getSeconds().toString().length === 1
+              {time.startTime
+                ? (new Date(time.endTime)).getSeconds().toString().length === 1
                   ? `0${(new Date(time.endTime)).getSeconds().toString()}`
                   : (new Date(time.endTime)).getSeconds().toString()
-              }
+                : 'NaN'}
             </th>
           </tr>
         </tbody>
@@ -74,7 +89,7 @@ function StartOlimpiade() {
         }}
       >
         <div
-          className={isStart ? 'w-24 py-1 bg-red-600 rounded-md text-white' : 'w-24 py-1 bg-access-green rounded-md text-white'}
+          className="w-24 py-1 bg-access-green rounded-md text-white"
         >
           Edit waktu
         </div>

@@ -3,11 +3,9 @@ import { PlusIcon, XIcon } from '@heroicons/react/outline';
 import RedButton from './RedButton';
 import BlueButton from './BlueButton';
 import userServices from '../../services/userServices';
-import useAuth from '../../hooks/useAuth';
 import useOverlay from '../../hooks/useOverlay';
 
 function AddOverlay() {
-  const { auth } = useAuth();
   const { overlay, setOverlay } = useOverlay();
   const [user, setUser] = useState({
     name: '',
@@ -84,7 +82,7 @@ function AddOverlay() {
             )}
             onClick={() => {
               if (user.name && user.password && user.university && user.username) {
-                userServices.addUser(auth.accessToken, user);
+                userServices.addUser(user);
                 setOverlay('false');
                 setUser({
                   name: '',

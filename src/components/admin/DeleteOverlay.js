@@ -4,11 +4,9 @@ import SelectedUserContext from '../../context/admin/SelectedUserProvider';
 import RedButton from './RedButton';
 import BlueButton from './BlueButton';
 import userServices from '../../services/userServices';
-import useAuth from '../../hooks/useAuth';
 import useOverlay from '../../hooks/useOverlay';
 
 function DeleteOverlay() {
-  const { auth } = useAuth();
   const { overlay, setOverlay } = useOverlay();
   const selectedUser = useContext(SelectedUserContext);
   return (
@@ -30,7 +28,7 @@ function DeleteOverlay() {
               </div>
             )}
             onClick={() => {
-              userServices.deleteUser(selectedUser.id, auth.accessToken);
+              userServices.deleteUser(selectedUser.id);
               setOverlay('false');
               selectedUser.id = null;
               selectedUser.name = null;

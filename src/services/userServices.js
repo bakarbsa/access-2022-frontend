@@ -1,42 +1,22 @@
 import axios from 'axios';
-import {
-  collection,
-  onSnapshot,
-  query,
-  where,
-  orderBy,
-} from 'firebase/firestore';
-import { useEffect, useState } from 'react';
-import db from '../firebase-config';
 import API_URL from '../api';
-
-const usersCollectionRef = collection(db, 'users');
 
 class UserServices {
   constructor() {
-    // GET ALL USER (REALTIME)
-    this.getUsers = (sort = false) => {
-      const [users, setUsers] = useState([]);
-      let userRoleQuery;
-      if (sort) {
-        userRoleQuery = query(usersCollectionRef, where('role', '==', 'user'), orderBy('score', 'desc'));
-      } else {
-        userRoleQuery = query(usersCollectionRef, where('role', '==', 'user'));
-      }
-
-      useEffect(() => onSnapshot(userRoleQuery, (snapshot) => {
-        setUsers(snapshot.docs.map((user) => ({ ...user.data(), id: user.id })));
-      }), []);
-
-      return users;
+    // GET ALL USER
+    this.getUsers = async (setState, sort = false) => {
+      await axios.get(`${API_URL}/admins/users`, sort)
+        .then((res) => {
+          if (!res.data) {
+            console.log('data tidak ditemukan');
+          }
+          setState(res.data.data.users);
+        })
+        .catch((err) => console.log(err));
     };
     // GET USER ID BY USERNAME
-    this.getUserIDByUsername = async (setId, username, token) => {
-      await axios.get(`${API_URL}/users/username/${username}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+    this.getUserIDByUsername = async (setId, username) => {
+      await axios.get(`${API_URL}/users/username/${username}`)
         .then((res) => {
           if (!res.data) {
             console.log('data tidak ditemukan');
@@ -46,44 +26,28 @@ class UserServices {
         .catch((err) => console.log(err));
     };
     // GET ONE USER
-    this.getUser = async (id, token) => {
-      const user = await axios.get(`${API_URL}/admins/users/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+    this.getUser = async (id) => {
+      const user = await axios.get(`${API_URL}/admins/users/${id}`)
         .then(() => console.log('Fetch successfully'))
         .catch((err) => console.log(err));
 
       return user;
     };
     // DELETE USER
-    this.deleteUser = async (id, token) => {
-      await axios.delete(`${API_URL}/admins/users/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+    this.deleteUser = async (id) => {
+      await axios.delete(`${API_URL}/admins/users/${id}`)
         .then(() => console.log('Deleted successfully'))
         .catch((err) => console.log(err));
     };
     // UPDATE USER
-    this.updateUser = async (id, token, data) => {
-      await axios.put(`${API_URL}/admins/users/${id}`, data, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+    this.updateUser = async (id, data) => {
+      await axios.put(`${API_URL}/admins/users/${id}`, data)
         .then(() => console.log('Edit successful'))
         .catch((err) => console.log(err));
     };
     // ADD USER
-    this.addUser = async (token, data) => {
-      await axios.post(`${API_URL}/admins/users`, data, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+    this.addUser = async (data) => {
+      await axios.post(`${API_URL}/admins/users`, data)
         .then(() => console.log('Add successful'))
         .catch((err) => console.log(err));
     };

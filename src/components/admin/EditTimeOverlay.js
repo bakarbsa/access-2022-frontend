@@ -4,13 +4,13 @@ import useOverlay from '../../hooks/useOverlay';
 import RedButton from './RedButton';
 import BlueButton from './BlueButton';
 import OlimServices from '../../services/olimServices';
-import useAuth from '../../hooks/useAuth';
 
 function EditTimeOverlay() {
   const { overlay, setOverlay } = useOverlay();
-  const { auth } = useAuth();
-  const [startTime, setStartTime] = useState(0);
-  const [endTime, setEndTime] = useState(0);
+  const [time, setTime] = useState({
+    startTime: '0',
+    endTime: '0',
+  });
   return (
     <div className={overlay === 'time' ? 'h-full w-full fixed z-10 inset-0 flex justify-center items-center bg-black bg-opacity-30' : 'hidden'}>
       <div className="bg-white rounded-md p-5 flex flex-col z-50">
@@ -33,8 +33,8 @@ function EditTimeOverlay() {
                     className="ml-2 pb-1 border-black focus:outline-none text-right"
                     type="number"
                     name="startTime"
-                    value={startTime}
-                    onChange={(e) => setStartTime(e.target.value)}
+                    value={time.startTime}
+                    onChange={(e) => setTime({ startTime: e.target.value })}
                   />
                 </th>
               </tr>
@@ -45,8 +45,8 @@ function EditTimeOverlay() {
                     className="ml-2 pb-1 border-black focus:outline-none text-right"
                     type="number"
                     name="endTime"
-                    value={endTime}
-                    onChange={(e) => setEndTime(e.target.value)}
+                    value={time.endTime}
+                    onChange={(e) => setTime({ endTime: e.target.value })}
                   />
                 </th>
               </tr>
@@ -62,10 +62,12 @@ function EditTimeOverlay() {
               </div>
                 )}
             onClick={() => {
-              OlimServices.updateTime(auth.accessToken, Number(startTime), Number(endTime));
+              OlimServices.updateTime(Number(time.startTime), Number(time.endTime));
               setOverlay('false');
-              setStartTime(0);
-              setEndTime(0);
+              setTime({
+                startTime: 0,
+                endTime: 0,
+              });
             }}
           />
           <RedButton
@@ -77,8 +79,10 @@ function EditTimeOverlay() {
                 )}
             onClick={() => {
               setOverlay('false');
-              setStartTime(0);
-              setEndTime(0);
+              setTime({
+                startTime: 0,
+                endTime: 0,
+              });
             }}
           />
         </div>

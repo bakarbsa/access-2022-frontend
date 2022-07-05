@@ -17,32 +17,24 @@ class OlimServices {
       return start;
     };
     // GET TIME
-    this.getTime = () => {
-      const [time, setTime] = useState({});
-      useEffect(() => onSnapshot(startDocRef, (snapshot) => {
-        setTime({
-          startTime: snapshot.data().startTime,
-          endTime: snapshot.data().endTime,
-        });
-      }), []);
-      return time;
+    this.getTime = async (role, setState) => {
+      await axios.get(`${API_URL}/${role}s/olim/time`)
+        .then((res) => {
+          if (!res.data) {
+            console.log('data tidak ditemukan');
+          }
+          setState(res.data.data);
+        })
+        .catch((err) => console.log(err));
     };
     // UPDATE START STATE
-    this.updateStartState = async (token) => {
-      await axios.put(`${API_URL}/admins/olim`, {}, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+    this.updateStartState = async () => {
+      await axios.put(`${API_URL}/admins/olim`, {})
         .then(() => console.log('Update isStart successful'))
         .catch((err) => console.log(err));
     };
-    this.updateTime = async (token, startTime, endTime) => {
-      await axios.put(`${API_URL}/admins/olim/time`, { startTime, endTime }, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+    this.updateTime = async (startTime, endTime) => {
+      await axios.put(`${API_URL}/admins/olim/time`, { startTime, endTime })
         .then(() => console.log('Update startTime successful'))
         .catch((err) => console.log(err));
     };
