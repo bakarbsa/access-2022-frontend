@@ -81,18 +81,18 @@ function Login() {
                       name="username"
                       value={formData.username}
                       onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-                      className="w-full pb-1 border-b-2 border-access-dark focus:outline-none"
+                      className="w-full pb-1 bg-access-white border-b-2 border-access-dark focus:outline-none"
                     />
                   </div>
                   <div className="flex gap-4">
                     <LockClosedIcon className="w-10 text-access-dark" />
                     <input
-                      type="text"
+                      type="password"
                       placeholder="Password"
                       value={formData.password}
                       name={formData.password}
                       onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                      className="w-full pb-1 border-b-2 border-access-dark focus:outline-none"
+                      className="w-full pb-1 bg-access-white border-b-2 border-access-dark focus:outline-none"
                     />
                   </div>
                 </form>
