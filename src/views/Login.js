@@ -51,6 +51,7 @@ function Login() {
       navigate(from(roles[0]), { replace: true });
     } catch (err) {
       console.log(err);
+      console.log('gagal login');
     }
   };
 

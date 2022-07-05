@@ -1,14 +1,15 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import QuestionTile from './QuestionTile';
 import QuestionTileState from '../../models/questionTileState';
 import {
-  answersStream, getQuestion, updateAnswers, getAnswers,
+  updateAnswers, answersStream, getQuestion,
 } from '../../services/questionServices';
 import UserServices from '../../services/userServices';
 
 function OlimRoom() {
   const [currentQuestion, setCurrentQuestion] = useState(1);
-  const [questions, setQuestions] = useState({});
+  const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
   const [userID, setUserID] = useState('');
 
@@ -20,9 +21,9 @@ function OlimRoom() {
     if (!userID) {
       getId();
     }
+    getQuestion(setQuestions);
   }, [userID]);
 
-  getQuestion(setQuestions);
   answersStream(setAnswers, userName);
 
   const handleSubmit = (event) => {
@@ -32,8 +33,9 @@ function OlimRoom() {
   };
 
   const tileClickHandler = (number) => {
+    console.log('tile');
     setCurrentQuestion(number);
-    getAnswers(setAnswers, userName, userID);
+    console.log(questions[0]);
   };
 
   const answerClickHandler = (i) => {
@@ -49,7 +51,6 @@ function OlimRoom() {
     } else {
       setCurrentQuestion(currentQuestion - 1);
     }
-    getAnswers(setAnswers, userName, userID);
   };
 
   const handleNext = () => {
@@ -59,8 +60,8 @@ function OlimRoom() {
     } else {
       setCurrentQuestion(currentQuestion + 1);
     }
-    getAnswers(setAnswers, userName, userID);
   };
+
   return (
     <div>
       <div className="flex h-screen w-screen pt-24">
@@ -82,7 +83,7 @@ function OlimRoom() {
                 <p className="font-bold pb-2">Jawaban</p>
                 <div className="flex flex-col">
                   {questions[currentQuestion - 1]?.answerList.map((answer, i) => (
-                    <button type="button" onClick={() => { answerClickHandler(i + 1); }} className={`${answers[currentQuestion] === i + 1 ? 'bg-[#B5BDCA]' : 'bg-[#F4F7FE]'} flex justify-start p-4 mb-2 rounded-lg`}>{answer}</button>
+                    <button key={answer} type="button" onClick={() => { answerClickHandler(i + 1); }} className={`${answers[currentQuestion] === i + 1 ? 'bg-[#B5BDCA]' : 'bg-[#F4F7FE]'} flex justify-start p-4 mb-2 rounded-lg`}>{answer}</button>
                   ))}
                 </div>
               </form>
@@ -95,8 +96,8 @@ function OlimRoom() {
         </div>
         <div className="flex-none w-[32rem] overflow-scroll">
           <div className="flex flex-wrap">
-            {[...Array(questions.length)]
-              .map((x, i) => <button type="button" onClick={() => tileClickHandler(i + 1)}><QuestionTile number={i} state={currentQuestion === i + 1 ? QuestionTileState.Selected : QuestionTileState.Nothing} /></button>)}
+            {questions
+              .map((question, i) => (<button key={question.question} type="button" onClick={() => tileClickHandler(i + 1)}><QuestionTile number={i} state={currentQuestion === i + 1 ? QuestionTileState.Selected : QuestionTileState.Nothing} /></button>))}
           </div>
         </div>
       </div>
