@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import QuestionTile from './QuestionTile';
 import QuestionTileState from '../../models/questionTileState';
-import { answersStream, getQuestion, updateAnswers } from '../../services/questionServices';
+import {
+  answersStream, getQuestion, updateAnswers, getAnswers,
+} from '../../services/questionServices';
 import UserServices from '../../services/userServices';
 
 function OlimRoom() {
@@ -10,7 +12,9 @@ function OlimRoom() {
   const [answers, setAnswers] = useState([]);
   const [userID, setUserID] = useState('');
 
-  const getId = () => UserServices.getUserIDByUsername(setUserID, 'komeng');
+  const userName = sessionStorage.getItem('user');
+
+  const getId = () => UserServices.getUserIDByUsername(setUserID, userName);
 
   useEffect(() => {
     if (!userID) {
@@ -19,17 +23,17 @@ function OlimRoom() {
   }, [userID]);
 
   getQuestion(setQuestions);
-  answersStream(setAnswers, 'komeng', currentQuestion);
+  answersStream(setAnswers, userName);
 
   const handleSubmit = (event) => {
     // eslint-disable-next-line no-alert
     alert('A name was submitted: ');
     event.preventDefault();
-    console.log(answers);
   };
 
   const tileClickHandler = (number) => {
     setCurrentQuestion(number);
+    getAnswers(setAnswers, userName, userID);
   };
 
   const answerClickHandler = (i) => {
@@ -45,6 +49,7 @@ function OlimRoom() {
     } else {
       setCurrentQuestion(currentQuestion - 1);
     }
+    getAnswers(setAnswers, userName, userID);
   };
 
   const handleNext = () => {
@@ -54,6 +59,7 @@ function OlimRoom() {
     } else {
       setCurrentQuestion(currentQuestion + 1);
     }
+    getAnswers(setAnswers, userName, userID);
   };
   return (
     <div>
