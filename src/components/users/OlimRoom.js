@@ -19,6 +19,10 @@ function OlimRoom() {
   const getId = () => UserServices.getUserIDByUsername(setUserID, userName);
 
   useEffect(() => {
+    console.log(answers);
+  }, [answers]);
+
+  useEffect(() => {
     if (!userID) {
       getId();
     }
@@ -68,7 +72,7 @@ function OlimRoom() {
   const clearChoice = () => {
     const tempAnswers = { ...answers };
     delete tempAnswers[questionsOrder[currentQuestion - 1]];
-    deleteAnswer(setAnswers, tempAnswers, userID);
+    deleteAnswer(setAnswers, tempAnswers, questionsOrder[currentQuestion - 1], userID);
   };
 
   return (
