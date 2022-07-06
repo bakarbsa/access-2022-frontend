@@ -27,7 +27,7 @@ function Users() {
 
   return (
     <div className={index === 2 ? 'h-full relative z-10' : 'hidden'} aria-labelledby="modal-title" role="dialog" aria-modal="true">
-      {users.length > 0
+      {users.length >= 0
         ? (
           <div className="h-full">
             <div className="flex flex-col h-full px-16 py-4 ">

@@ -16,7 +16,7 @@ function Ranking() {
 
   return (
     <div className={index === 1 ? 'flex flex-col h-full px-16 py-4' : 'hidden'}>
-      {users.length
+      {users.length >= 0
         ? (
           <div className="h-full">
             <h1 className="text-2xl font-bold mb-2">Ranking Peserta</h1>
