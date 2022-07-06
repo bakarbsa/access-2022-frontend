@@ -1,21 +1,28 @@
 // import axios from 'axios';
 import axios from 'axios';
 import {
-  collection, query, doc, setDoc, getDocs, onSnapshot,
+  collection, query, doc, setDoc, getDoc, onSnapshot,
 } from 'firebase/firestore';
 import { useEffect } from 'react';
 import API_URL from '../api';
 // import API_URL from '../api';
 import db from '../firebase-config';
 
-const getQuestion = async (setQuestions) => {
-  const q = query(collection(db, 'questions'));
-  const querySnapshot = await getDocs(q);
-  const tempQuestions = [];
-  querySnapshot.forEach((d) => {
-    tempQuestions.push(d.data());
-  });
-  setQuestions(tempQuestions);
+const getQuestion = async (setQuestions, setQuestionsOrder, id) => {
+  const docRef = doc(db, 'users', id);
+  const docSnap = await getDoc(docRef);
+  const sortedQuestions = [];
+  if (docSnap.exists()) {
+    setQuestionsOrder(docSnap.data().questionsId);
+    docSnap.data().questionsId.forEach(async (idQ) => {
+      const qRef = doc(db, 'questions', idQ);
+      const qSnap = await getDoc(qRef);
+      sortedQuestions.push(qSnap.data());
+    });
+    setQuestions(sortedQuestions);
+  } else {
+    console.log('No such document!');
+  }
 };
 
 // const getAnswers = async (setAnswers, id) => {

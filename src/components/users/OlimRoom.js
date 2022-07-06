@@ -8,6 +8,7 @@ import {
 import UserServices from '../../services/userServices';
 
 function OlimRoom() {
+  const [questionsOrder, setQuestionsOrder] = useState([]);
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
@@ -21,7 +22,7 @@ function OlimRoom() {
     if (!userID) {
       getId();
     }
-    getQuestion(setQuestions);
+    getQuestion(setQuestions, setQuestionsOrder, userID);
   }, [userID]);
 
   answersStream(setAnswers, userName);
@@ -34,13 +35,15 @@ function OlimRoom() {
 
   const tileClickHandler = (number) => {
     console.log('tile');
-    setCurrentQuestion(number);
-    console.log(questions[0]);
+    setCurrentQuestion(number + 1);
+    console.log(answers);
+    console.log(questionsOrder[number]);
+    console.log(answers[questionsOrder[number]]);
   };
 
   const answerClickHandler = (i) => {
     const tempAnswers = { ...answers };
-    tempAnswers[currentQuestion] = i;
+    tempAnswers[questionsOrder[currentQuestion - 1]] = i;
     updateAnswers(setAnswers, tempAnswers, userID);
   };
 
@@ -83,7 +86,7 @@ function OlimRoom() {
                 <p className="font-bold pb-2">Jawaban</p>
                 <div className="flex flex-col">
                   {questions[currentQuestion - 1]?.answerList.map((answer, i) => (
-                    <button key={answer} type="button" onClick={() => { answerClickHandler(i + 1); }} className={`${answers[currentQuestion] === i + 1 ? 'bg-[#B5BDCA]' : 'bg-[#F4F7FE]'} flex justify-start p-4 mb-2 rounded-lg`}>{answer}</button>
+                    <button key={answer} type="button" onClick={() => { answerClickHandler(i + 1); }} className={`${answers[questionsOrder[currentQuestion - 1]] === i + 1 ? 'bg-[#B5BDCA]' : 'bg-[#F4F7FE]'} flex justify-start p-4 mb-2 rounded-lg`}>{answer}</button>
                   ))}
                 </div>
               </form>
@@ -97,7 +100,7 @@ function OlimRoom() {
         <div className="flex-none w-[32rem] overflow-scroll">
           <div className="flex flex-wrap">
             {questions
-              .map((question, i) => (<button key={question.question} type="button" onClick={() => tileClickHandler(i + 1)}><QuestionTile number={i} state={currentQuestion === i + 1 ? QuestionTileState.Selected : answers[i + 1] !== undefined ? QuestionTileState.Answered : QuestionTileState.Nothing} /></button>))}
+              .map((question, i) => (<button type="button" onClick={() => tileClickHandler(i)}><QuestionTile number={i} state={currentQuestion === i + 1 ? QuestionTileState.Selected : (answers[questionsOrder[i]] !== undefined) ? QuestionTileState.Answered : QuestionTileState.Nothing} /></button>))}
           </div>
         </div>
       </div>
