@@ -66,7 +66,7 @@ function UserDashboard() {
               {' : '}
               { olimTime.endTime ? getSeconds(currentTime, olimTime.endTime) : '00'}
             </h1>
-            <NavBar />
+            <NavBar userName={auth.user} />
             <OlimRoom />
           </div>
         )
