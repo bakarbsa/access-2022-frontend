@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import QuestionTile from './QuestionTile';
 import QuestionTileState from '../../models/questionTileState';
 import {
-  updateAnswers, answersStream, getQuestion,
+  updateAnswers, answersStream, getQuestion, deleteAnswer,
 } from '../../services/questionServices';
 import UserServices from '../../services/userServices';
 
@@ -65,6 +65,12 @@ function OlimRoom() {
     }
   };
 
+  const clearChoice = () => {
+    const tempAnswers = { ...answers };
+    delete tempAnswers[questionsOrder[currentQuestion - 1]];
+    deleteAnswer(setAnswers, tempAnswers, userID);
+  };
+
   return (
     <div>
       <div className="flex h-screen w-screen pt-24">
@@ -73,13 +79,13 @@ function OlimRoom() {
             <div className="flex-none">
               <h1 className="text-xl font-bold">Siapa Pintar</h1>
             </div>
-            <div className="flex-1 grow p-12 flex flex-col justify-between">
+            <div className="flex-1 grow px-12 py-8 flex flex-col justify-between">
               <div className="flex justify-between items-center">
                 <div>
                   <p className="font-bold">{`Pertanyaan ${currentQuestion}`}</p>
                 </div>
               </div>
-              <div className="py-12">
+              <div>
                 {questions[currentQuestion - 1]?.question}
               </div>
               <form onSubmit={handleSubmit}>
@@ -88,6 +94,9 @@ function OlimRoom() {
                   {questions[currentQuestion - 1]?.answerList.map((answer, i) => (
                     <button key={answer} type="button" onClick={() => { answerClickHandler(i + 1); }} className={`${answers[questionsOrder[currentQuestion - 1]] === i + 1 ? 'bg-[#B5BDCA]' : 'bg-[#F4F7FE]'} flex justify-start p-4 mb-2 rounded-lg`}>{answer}</button>
                   ))}
+                </div>
+                <div className="flex justify-end">
+                  <button type="button" onClick={clearChoice} className="text-red-400 pt-2">Hapus Pilihan</button>
                 </div>
               </form>
               <div className="flex pt-12 justify-between">

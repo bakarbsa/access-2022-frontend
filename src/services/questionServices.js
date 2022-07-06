@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 // import axios from 'axios';
 import axios from 'axios';
 import {
-  collection, query, doc, setDoc, getDoc, onSnapshot,
+  collection, query, doc, setDoc, getDoc, onSnapshot, updateDoc, deleteField,
 } from 'firebase/firestore';
 import { useEffect } from 'react';
 import API_URL from '../api';
@@ -66,8 +67,21 @@ const updateAnswers = async (setAnswers, answers, id) => {
   setDoc(docRef, { currentAnswer: answers }, { merge: true });
 };
 
+const deleteAnswer = async (setAnswers, answers, id) => {
+  setAnswers(answers);
+  const docRef = doc(db, 'users', id);
+  const timeValidation = await axios.get(`${API_URL}/users/answer/validation`);
+  if (!timeValidation.data.success) {
+    console.log('Time is up');
+    return;
+  }
+  updateDoc(docRef, { currentAnswer: deleteField() });
+  setDoc(docRef, { currentAnswer: answers }, { merge: true });
+};
+
 export {
   getQuestion,
   updateAnswers,
   answersStream,
+  deleteAnswer,
 };
