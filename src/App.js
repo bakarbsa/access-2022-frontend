@@ -16,7 +16,7 @@ function App() {
 
   axios.interceptors.request.use(
     (req) => {
-      const token = auth.accessToken || sessionStorage.getItem('accessToken');
+      const token = auth.accessToken || localStorage.getItem('accessToken');
       req.headers.Authorization = `Bearer ${token}`;
 
       return req;

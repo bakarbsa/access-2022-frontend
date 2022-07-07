@@ -10,10 +10,10 @@ function RequireAuth({ allowedRoles }) {
   useEffect(() => {
     if (!auth.accessToken) {
       setAuth({
-        accessToken: sessionStorage.getItem('accessToken'),
-        user: sessionStorage.getItem('user'),
-        roles: [sessionStorage.getItem('roles')],
-        id: sessionStorage.getItem('id'),
+        accessToken: localStorage.getItem('accessToken'),
+        user: localStorage.getItem('user'),
+        roles: [localStorage.getItem('roles')],
+        id: localStorage.getItem('id'),
       });
     }
   }, [auth.accessToken]);
@@ -25,7 +25,7 @@ function RequireAuth({ allowedRoles }) {
         : auth?.user
           ? <Navigate to="/unauthorized" state={{ from: location }} replace />
           : <Navigate to="/login" state={{ from: location }} replace />
-      : !sessionStorage.getItem('accessToken')
+      : !localStorage.getItem('accessToken')
         ? <Navigate to="/login" state={{ from: location }} replace />
         : <Loading />
   );

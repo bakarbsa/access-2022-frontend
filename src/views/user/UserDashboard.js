@@ -29,43 +29,25 @@ function UserDashboard() {
     }, 1000);
   }, []);
 
-  const getHours = (current, end) => {
-    const hours = Math.floor((end - current) / 1000 / 60 / 60);
-    if (hours.toString().length === 1) {
-      return `0${hours}`;
+  const timeFormat = (hours, minutes) => {
+    let formatHours = hours;
+    let formatMinutes = minutes;
+
+    if (hours.length === 1) {
+      formatHours = `0${formatHours}`;
     }
-    return hours;
+    if (minutes.length === 1) {
+      formatMinutes = `0${formatMinutes}`;
+    }
+
+    return `${formatHours}:${formatMinutes}`;
   };
 
-  const getMinutes = (current, end) => {
-    const difTime = (end - current) - getHours(current, end) * 1000 * 60 * 60;
-    const minutes = Math.floor(difTime / 1000 / 60);
-    if (minutes.toString().length === 1) {
-      return `0${minutes}`;
-    }
-    return minutes;
-  };
-
-  const getSeconds = (current, end) => {
-    const difTime = (end - current) - getHours(current, end) * 1000 * 60 * 60 - getMinutes(current, end) * 1000 * 60;
-    const seconds = Math.floor(difTime / 1000);
-    if (seconds.toString().length === 1) {
-      return `0${seconds}`;
-    }
-    return seconds;
-  };
   return (
     olimTime.startTime
       ? (currentTime >= olimTime.startTime && currentTime <= olimTime.endTime)
         ? (
           <div>
-            <h1>
-              { olimTime.endTime ? getHours(currentTime, olimTime.endTime) : '00'}
-              {' : '}
-              { olimTime.endTime ? getMinutes(currentTime, olimTime.endTime) : '00'}
-              {' : '}
-              { olimTime.endTime ? getSeconds(currentTime, olimTime.endTime) : '00'}
-            </h1>
             <NavBar userName={auth.user} />
             <OlimRoom />
           </div>
@@ -73,19 +55,59 @@ function UserDashboard() {
         : (
           <div>
             <NavBar />
-            <div className="flex flex-col gap-10 justify-center items-center h-screen w-screen text-lg">
-              <div className="text-center w-80">
+            <div className="flex flex-col justify-between gap-10 mx-28 pt-5 text-lg">
+              <div className="text-start">
                 <div className="mt-24" />
-                <p className="mb-10">
-                  Selamat datang
+                <p className="text-2xl font-bold mb-5">
+                  Selamat datang,
                   {' '}
-                  {auth.user}
+                  {auth.name}
                 </p>
-                <p className="font-bold mb-10">Mohon tunggu panitia memulai sesi</p>
-                <p className="mb-5">Kamu akan mengerjakan tahapan Siapa Pintar</p>
-                <p>Mohon perhatikan waktu saat mengerjakan soal</p>
+                <p className="mb-1">
+                  Tahapan Preliminary Round akan dilaksanakan pada
+                </p>
+                <div className="mb-5">
+                  <p>
+                    Mulai :
+                    {` ${new Date(olimTime.startTime).toDateString()}`}
+                    {` , Pukul ${timeFormat(
+                      new Date(olimTime.startTime).getHours().toString(),
+                      new Date(olimTime.startTime).getMinutes().toString(),
+                    )}`}
+                  </p>
+                  <p>
+                    Selesai :
+                    {` ${new Date(olimTime.endTime).toDateString()}`}
+                    {` , Pukul ${timeFormat(
+                      new Date(olimTime.endTime).getHours().toString(),
+                      new Date(olimTime.endTime).getMinutes().toString(),
+                    )}`}
+                  </p>
+                </div>
+                <p>Mohon perhatikan beberapa hal berikut ini:</p>
+                <ol className="list-decimal list-inside">
+                  <li>
+                    Gunakan
+                    {' '}
+                    <span className="font-bold">laptop atau PC</span>
+                    {' '}
+                    (website tidak berjalan dengan baik di perangkat mobile)
+                  </li>
+                  <li>Refresh halaman ini jika saat waktu mulai anda tidak memasuki halaman pengerjaan soal</li>
+                  <li>
+                    Maksimal akun yang dapat login adalah
+                    {' '}
+                    <span className="font-bold">3 orang</span>
+                    {' '}
+                    , mohon
+                    {' '}
+                    <span className="font-bold">logout</span>
+                    {' '}
+                    akun jika ingin berganti perangkat
+                  </li>
+                </ol>
               </div>
-              <div className="flex flex-col justify-center items-center mt-10">
+              <div className="flex flex-col mt-10">
                 <p className="text-sm">Powered by</p>
                 <div className="w-16">
                   <img src={b201} alt="logo b201" />

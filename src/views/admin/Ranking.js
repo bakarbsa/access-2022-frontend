@@ -10,12 +10,13 @@ function Ranking() {
 
   useEffect(() => {
     if (users.length <= 0) {
+      UserServices.updateScore();
       getUsers();
     }
   }, [users]);
 
   return (
-    <div className={index === 1 ? 'flex flex-col h-full px-16 py-4' : 'hidden'}>
+    <div className={index === 1 ? 'flex flex-col px-16 py-4' : 'hidden'}>
       {users.length >= 0
         ? (
           <div className="h-full">

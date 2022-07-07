@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import { useNavigate, useLocation, Navigate } from 'react-router-dom';
 import { LockClosedIcon, UserCircleIcon } from '@heroicons/react/outline';
@@ -40,13 +41,15 @@ function Login() {
       const accessToken = response?.data?.data.token;
       const roles = [response?.data?.data.role];
       const id = response?.data?.data.id;
+      const name = response?.data?.data.name;
       setAuth({
-        user: formData.username, roles, accessToken,
+        user: formData.username, roles, accessToken, name,
       });
-      sessionStorage.setItem('user', formData.username);
-      sessionStorage.setItem('roles', roles[0]);
-      sessionStorage.setItem('accessToken', accessToken);
-      sessionStorage.setItem('id', id);
+      localStorage.setItem('user', formData.username);
+      localStorage.setItem('roles', roles[0]);
+      localStorage.setItem('accessToken', accessToken);
+      localStorage.setItem('id', id);
+      localStorage.setItem('name', name);
       setFormData('');
       navigate(from(roles[0]), { replace: true });
     } catch (err) {
@@ -56,7 +59,7 @@ function Login() {
   };
 
   const renderByRole = () => {
-    const role = auth.roles || sessionStorage.getItem('roles') || '';
+    const role = auth.roles || localStorage.getItem('roles') || '';
     if (role === 'user') {
       return (<Navigate to="/dashboard" />);
     }
@@ -64,47 +67,39 @@ function Login() {
       return (<Navigate to="/admin" />);
     }
     return (
-      <div>
-        <div className="w-screen h-screen overflow-hidden absolute">
-          <img src={bg} className="h-full w-full" alt="access background" />
-        </div>
-        <div className="w-full h-screen">
-          <div className="fixed flex justify-between h-full w-full z-10">
-            <img src={decor} className="h-full md:block hidden" alt="login-decor" />
-            <div className="xl:w-1/3 lg:w-2/4 md:w-3/6 w-full md:rounded-tl-4xl px-14 pt-10 flex flex-col justify-between items-center bg-access-white">
-              <img src={logo} alt="access logo" />
-              <div className="w-full flex flex-col gap-6 items-center">
-                <h2 className="text-xl text-access-dark font-bold">Silahkan login</h2>
-                <form method="post" onSubmit={handleSubmit} className="w-full flex flex-col gap-10 mb-5">
-                  <div className="flex gap-4">
-                    <UserCircleIcon className="w-10 text-access-dark" />
-                    <input
-                      type="text"
-                      placeholder="Username"
-                      name="username"
-                      value={formData.username}
-                      onChange={(e) => setFormData({ ...formData, username: e.target.value })}
-                      className="w-full pb-1 bg-access-white border-b-2 border-access-dark focus:outline-none"
-                    />
-                  </div>
-                  <div className="flex gap-4">
-                    <LockClosedIcon className="w-10 text-access-dark" />
-                    <input
-                      type="password"
-                      placeholder="Password"
-                      value={formData.password}
-                      name={formData.password}
-                      onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                      className="w-full pb-1 bg-access-white border-b-2 border-access-dark focus:outline-none"
-                    />
-                  </div>
-                </form>
-                <Button onClick={handleSubmit} content="Masuk" />
+      <div className="h-screen bg-gray-200 flex justify-center items-center">
+        <div className=" bg-access-white shadow-xl rounded-md py-8 px-10 w-96 flex flex-col justify-center items-center">
+          <img src={logo} alt="logo access" width="120px" />
+          <div className="w-full flex flex-col gap-6 mt-2 items-center">
+            <h2 className="text-xl text-access-dark font-bold">Silahkan masuk</h2>
+            <form method="post" onSubmit={handleSubmit} className="w-full flex flex-col gap-10 mb-5">
+              <div className="flex gap-4">
+                <UserCircleIcon className="w-10 text-access-dark" />
+                <input
+                  type="text"
+                  placeholder="Username"
+                  name="username"
+                  value={formData.username}
+                  onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+                  className="w-full pb-1 bg-access-white border-b-2 border-access-dark focus:outline-none"
+                />
               </div>
-              <div>
-                <h1>Powered by</h1>
-                <img src={b201} alt="b201 logo" className="w-20" />
+              <div className="flex gap-4">
+                <LockClosedIcon className="w-10 text-access-dark" />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  value={formData.password}
+                  name={formData.password}
+                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  className="w-full pb-1 bg-access-white border-b-2 border-access-dark focus:outline-none"
+                />
               </div>
+            </form>
+            <Button onClick={handleSubmit} content="Masuk" />
+            <div className="flex flex-col items-center justify-center">
+              <h1 className="text-sm">Powered by</h1>
+              <img src={b201} alt="b201 logo" className="w-12" />
             </div>
           </div>
         </div>

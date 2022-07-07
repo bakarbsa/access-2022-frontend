@@ -26,7 +26,7 @@ function Users() {
   }, [users]);
 
   return (
-    <div className={index === 2 ? 'h-full relative z-10' : 'hidden'} aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div className={index === 2 ? 'relative z-10' : 'hidden'} aria-labelledby="modal-title" role="dialog" aria-modal="true">
       {users.length >= 0
         ? (
           <div className="h-full">

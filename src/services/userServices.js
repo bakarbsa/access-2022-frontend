@@ -54,10 +54,17 @@ class UserServices {
     this.logout = async (role, id, setAuth) => {
       await axios.get(`${API_URL}/${role}s/logout/${id}`)
         .then(() => {
-          sessionStorage.clear();
+          localStorage.clear();
           setAuth({});
         })
         .catch((err) => console.log(err));
+    };
+    this.updateScore = async () => {
+      try {
+        await axios.get(`${API_URL}/admins/olim/score`);
+      } catch (err) {
+        console.log(err);
+      }
     };
   }
 }

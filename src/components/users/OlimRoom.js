@@ -6,6 +6,8 @@ import {
   updateAnswers, answersStream, getQuestion, deleteAnswer,
 } from '../../services/questionServices';
 import UserServices from '../../services/userServices';
+import Time from './Time';
+import Loading from '../Loading';
 
 function OlimRoom() {
   const [questionsOrder, setQuestionsOrder] = useState([]);
@@ -14,7 +16,7 @@ function OlimRoom() {
   const [answers, setAnswers] = useState([]);
   const [userID, setUserID] = useState('');
 
-  const userName = sessionStorage.getItem('user');
+  const userName = localStorage.getItem('user');
 
   const getId = () => UserServices.getUserIDByUsername(setUserID, userName);
 
@@ -75,49 +77,54 @@ function OlimRoom() {
     deleteAnswer(setAnswers, tempAnswers, questionsOrder[currentQuestion - 1], userID);
   };
 
+  const indexToAlfa = (index) => {
+    if (index === 0) return 'A. ';
+    if (index === 1) return 'B. ';
+    if (index === 2) return 'C. ';
+    if (index === 3) return 'D. ';
+    if (index === 4) return 'E. ';
+    return '';
+  };
+
   return (
-    <div>
-      <div className="flex h-screen w-screen pt-24">
-        <div className="flex-auto p-12">
-          <div className="flex flex-col justify-between h-full">
-            <div className="flex-none">
-              <h1 className="text-xl font-bold">Siapa Pintar</h1>
+    questions.length <= 0 || answers.length <= 0
+      ? <Loading />
+      : (
+        <div className="pt-28 px-12 mb-16 flex flex-row gap-20 overflow-hidden">
+          <div className="flex flex-col justify-between w-full">
+            <div className="flex justify-between items-center">
+              <div className="pb-2">
+                <p className="font-bold">{`Pertanyaan ${currentQuestion}`}</p>
+              </div>
             </div>
-            <div className="flex-1 grow px-12 py-8 flex flex-col justify-between">
-              <div className="flex justify-between items-center">
-                <div>
-                  <p className="font-bold">{`Pertanyaan ${currentQuestion}`}</p>
-                </div>
+            <div className="pb-5">
+              {questions[currentQuestion - 1]?.question}
+            </div>
+            <form onSubmit={handleSubmit}>
+              <p className="font-bold pb-2">Jawaban</p>
+              <div className="flex flex-col">
+                {questions[currentQuestion - 1]?.answerList.map((answer, i) => (
+                  <button key={answer} type="button" onClick={() => { answerClickHandler(i + 1); }} className={`${answers[questionsOrder[currentQuestion - 1]] === i + 1 ? 'bg-access-primary' : 'bg-[#F4F7FE] hover:bg-gray-300'} flex justify-start p-4 mb-2 rounded-lg`}>{`${indexToAlfa(i)} ${answer}`}</button>
+                ))}
               </div>
-              <div>
-                {questions[currentQuestion - 1]?.question}
+              <div className="flex justify-end">
+                <button type="button" onClick={clearChoice} className="text-red-400 pt-2">Hapus Pilihan</button>
               </div>
-              <form onSubmit={handleSubmit}>
-                <p className="font-bold pb-2">Jawaban</p>
-                <div className="flex flex-col">
-                  {questions[currentQuestion - 1]?.answerList.map((answer, i) => (
-                    <button key={answer} type="button" onClick={() => { answerClickHandler(i + 1); }} className={`${answers[questionsOrder[currentQuestion - 1]] === i + 1 ? 'bg-[#B5BDCA]' : 'bg-[#F4F7FE]'} flex justify-start p-4 mb-2 rounded-lg`}>{answer}</button>
-                  ))}
-                </div>
-                <div className="flex justify-end">
-                  <button type="button" onClick={clearChoice} className="text-red-400 pt-2">Hapus Pilihan</button>
-                </div>
-              </form>
-              <div className="flex pt-12 justify-between">
-                {currentQuestion === 1 ? <button type="button" className="bg-transparent" onClick={handlePrev} disabled><p className="hidden">Sebelumnya</p></button> : <button type="button" className="bg-[#68BC87] w-36 rounded-lg py-2" onClick={handlePrev}><p className="text-white">Sebelumnya</p></button>}
-                {currentQuestion === questions.length ? <button type="button" className="w-36 rounded-lg py-2 bg-red-500" onClick={handleNext}><p className="text-white">Selesai</p></button> : <button className="bg-[#68BC87] w-36 rounded-lg py-2" type="button" onClick={handleNext}><p className="text-white">Selanjutnya</p></button>}
-              </div>
+            </form>
+            <div className="flex justify-between">
+              {currentQuestion === 1 ? <button type="button" className="bg-transparent" onClick={handlePrev} disabled><p className="hidden">Sebelumnya</p></button> : <button type="button" className="bg-[#68BC87] w-36 rounded-lg py-2" onClick={handlePrev}><p className="text-white">Sebelumnya</p></button>}
+              {currentQuestion === questions.length ? <button type="button" className="w-36 rounded-lg py-2 bg-red-500" onClick={handleNext}><p className="text-white">Selesai</p></button> : <button className="bg-[#68BC87] w-36 rounded-lg py-2" type="button" onClick={handleNext}><p className="text-white">Selanjutnya</p></button>}
+            </div>
+          </div>
+          <div className="flex-none">
+            <Time />
+            <div className="h-[30rem] grid grid-cols-4 gap-2 overflow-y-scroll">
+              {questions
+                .map((question, i) => (<button type="button" onClick={() => tileClickHandler(i)}><QuestionTile number={i} state={currentQuestion === i + 1 ? QuestionTileState.Selected : (answers[questionsOrder[i]] !== undefined) ? QuestionTileState.Answered : QuestionTileState.Nothing} /></button>))}
             </div>
           </div>
         </div>
-        <div className="flex-none w-[32rem] overflow-scroll">
-          <div className="flex flex-wrap">
-            {questions
-              .map((question, i) => (<button type="button" onClick={() => tileClickHandler(i)}><QuestionTile number={i} state={currentQuestion === i + 1 ? QuestionTileState.Selected : (answers[questionsOrder[i]] !== undefined) ? QuestionTileState.Answered : QuestionTileState.Nothing} /></button>))}
-          </div>
-        </div>
-      </div>
-    </div>
+      )
   );
 }
 

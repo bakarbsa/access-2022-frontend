@@ -76,8 +76,8 @@ function SideNav() {
         <button
           type="button"
           onClick={() => {
-            const id = auth.id || sessionStorage.id;
-            const role = auth.roles || sessionStorage.roles;
+            const id = auth.id || localStorage.id;
+            const role = auth.roles || localStorage.roles;
             UserServices.logout(role, id, setAuth);
           }}
         >
