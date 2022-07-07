@@ -12,7 +12,7 @@ function NavBar() {
       <img src={Logo} alt="access logo" className="w-36 " />
       <div className="flex">
         <div className="flex justify-between items-center">
-          <h1>{auth.name}</h1>
+          <h1>{auth.name || localStorage.getItem('name')}</h1>
           <img src={Avatar} alt="avatar" className="h-12 ml-4" />
         </div>
         <div className="ml-5">

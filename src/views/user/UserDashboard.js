@@ -61,7 +61,7 @@ function UserDashboard() {
                 <p className="text-2xl font-bold mb-5">
                   Selamat datang,
                   {' '}
-                  {auth.name}
+                  {auth.name || localStorage.getItem('name')}
                 </p>
                 <p className="mb-1">
                   Tahapan Preliminary Round akan dilaksanakan pada
