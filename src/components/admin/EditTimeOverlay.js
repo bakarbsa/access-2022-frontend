@@ -34,7 +34,7 @@ function EditTimeOverlay() {
                     type="number"
                     name="startTime"
                     value={time.startTime}
-                    onChange={(e) => setTime({ startTime: e.target.value })}
+                    onChange={(e) => setTime({ ...time, startTime: String(e.target.value) })}
                   />
                 </th>
               </tr>
@@ -46,7 +46,7 @@ function EditTimeOverlay() {
                     type="number"
                     name="endTime"
                     value={time.endTime}
-                    onChange={(e) => setTime({ endTime: e.target.value })}
+                    onChange={(e) => setTime({ ...time, endTime: String(e.target.value) })}
                   />
                 </th>
               </tr>
@@ -62,11 +62,12 @@ function EditTimeOverlay() {
               </div>
                 )}
             onClick={() => {
+              console.log(time.startTime, time.endTime);
               OlimServices.updateTime(Number(time.startTime), Number(time.endTime));
               setOverlay('false');
               setTime({
-                startTime: 0,
-                endTime: 0,
+                startTime: '0',
+                endTime: '0',
               });
             }}
           />
@@ -80,8 +81,8 @@ function EditTimeOverlay() {
             onClick={() => {
               setOverlay('false');
               setTime({
-                startTime: 0,
-                endTime: 0,
+                startTime: '0',
+                endTime: '0',
               });
             }}
           />

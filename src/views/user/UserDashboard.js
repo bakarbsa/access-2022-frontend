@@ -7,15 +7,25 @@ import OlimServices from '../../services/olimServices';
 import NavBar from '../../components/users/NavBar';
 import OlimRoom from '../../components/users/OlimRoom';
 import Loading from '../../components/Loading';
+import UserServices from '../../services/userServices';
 
 function UserDashboard() {
   const { auth } = useAuth();
+  const [user, setUser] = useState({});
   const [currentTime, setCurrentTime] = useState(Date.now());
   const [olimTime, setOlimTime] = useState({});
 
+  const getUser = (id) => {
+    UserServices.getUser(id, setUser);
+  };
+  useEffect(() => {
+    if (!user.id) {
+      getUser(auth.id || localStorage.getItem('id'));
+    }
+  }, [user.id]);
+
   const getTime = () => {
     OlimServices.getTime('user', setOlimTime);
-    console.log(olimTime);
   };
   useEffect(() => {
     if (!olimTime.startTime) {
@@ -44,8 +54,8 @@ function UserDashboard() {
   };
 
   return (
-    olimTime.startTime
-      ? (currentTime >= olimTime.startTime && currentTime <= olimTime.endTime)
+    olimTime.startTime && (user.isDone !== undefined || user.isDone !== null)
+      ? (currentTime >= olimTime.startTime && currentTime <= olimTime.endTime && user.isDone === false)
         ? (
           <div>
             <NavBar userName={auth.user} />

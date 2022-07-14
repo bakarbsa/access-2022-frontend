@@ -26,12 +26,16 @@ class UserServices {
         .catch((err) => console.log(err));
     };
     // GET ONE USER
-    this.getUser = async (id) => {
-      const user = await axios.get(`${API_URL}/admins/users/${id}`)
-        .then(() => console.log('Fetch successfully'))
-        .catch((err) => console.log(err));
-
-      return user;
+    this.getUser = async (id, setState, role = 'users') => {
+      try {
+        const res = await axios.get(`${API_URL}/${role}/${id}`);
+        if (!res.data) {
+          console.log('data tidak ditemukan');
+        }
+        setState(res.data.data);
+      } catch (err) {
+        console.log(err);
+      }
     };
     // DELETE USER
     this.deleteUser = async (id) => {
@@ -62,6 +66,13 @@ class UserServices {
     this.updateScore = async () => {
       try {
         await axios.get(`${API_URL}/admins/olim/score`);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    this.finishOlim = async (id) => {
+      try {
+        await axios.put(`${API_URL}/users/olim/finish/${id}`);
       } catch (err) {
         console.log(err);
       }

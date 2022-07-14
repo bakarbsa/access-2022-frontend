@@ -39,6 +39,11 @@ function OlimRoom() {
     event.preventDefault();
   };
 
+  const handleDone = () => {
+    UserServices.finishOlim(userID);
+    window.location.reload();
+  };
+
   const tileClickHandler = (number) => {
     console.log('tile');
     setCurrentQuestion(number + 1);
@@ -113,7 +118,7 @@ function OlimRoom() {
             </form>
             <div className="flex justify-between">
               {currentQuestion === 1 ? <button type="button" className="bg-transparent" onClick={handlePrev} disabled><p className="hidden">Sebelumnya</p></button> : <button type="button" className="bg-[#68BC87] w-36 rounded-lg py-2" onClick={handlePrev}><p className="text-white">Sebelumnya</p></button>}
-              {currentQuestion === questions.length ? <button type="button" className="w-36 rounded-lg py-2 bg-red-500" onClick={handleNext}><p className="text-white">Selesai</p></button> : <button className="bg-[#68BC87] w-36 rounded-lg py-2" type="button" onClick={handleNext}><p className="text-white">Selanjutnya</p></button>}
+              {currentQuestion === questions.length ? <button type="button" className="w-36 rounded-lg py-2 bg-red-500" onClick={handleDone}><p className="text-white">Selesai</p></button> : <button className="bg-[#68BC87] w-36 rounded-lg py-2" type="button" onClick={handleNext}><p className="text-white">Selanjutnya</p></button>}
             </div>
           </div>
           <div className="flex-none">

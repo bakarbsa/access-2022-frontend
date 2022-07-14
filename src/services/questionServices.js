@@ -59,9 +59,9 @@ const updateAnswers = async (setAnswers, answers, id) => {
   setAnswers(answers);
   console.log('setfrom updateanswers');
   const docRef = doc(db, 'users', id);
-  const timeValidation = await axios.get(`${API_URL}/users/answer/validation`);
+  const timeValidation = await axios.get(`${API_URL}/users/answer/validation/${id}`);
   if (!timeValidation.data.success) {
-    console.log('Time is up');
+    console.log(timeValidation.data.message);
     return;
   }
   setDoc(docRef, { currentAnswer: answers }, { merge: true });

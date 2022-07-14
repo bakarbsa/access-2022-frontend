@@ -1,2 +1,2 @@
-const API_URL = 'https://access-2022-backend.herokuapp.com';
+const API_URL = 'http://localhost:3001';
 export default API_URL;
