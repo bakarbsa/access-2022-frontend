@@ -115,6 +115,13 @@ function UserDashboard() {
                     {' '}
                     akun jika ingin berganti perangkat
                   </li>
+                  <li>
+                    Jangan gunakan
+                    {' '}
+                    <span className="font-bold">Tab Incognito atau Tab Privat</span>
+                    {' '}
+                    karena jika Tab tidak sengaja tertutup anda tidak akan bisa logout.
+                  </li>
                 </ol>
               </div>
               <div className="flex flex-col mt-10">
