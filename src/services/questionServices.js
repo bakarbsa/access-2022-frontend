@@ -55,13 +55,14 @@ const answersStream = (setAnswers, username) => {
     return unsubscribe;
   }, []);
 };
-const updateAnswers = async (setAnswers, answers, id) => {
+const updateAnswers = async (setAnswers, answers, id, setError) => {
   setAnswers(answers);
   console.log('setfrom updateanswers');
   const docRef = doc(db, 'users', id);
   const timeValidation = await axios.get(`${API_URL}/users/answer/validation/${id}`);
   if (!timeValidation.data.success) {
     console.log(timeValidation.data.message);
+    setError(timeValidation.data.message);
     return;
   }
   setDoc(docRef, { currentAnswer: answers }, { merge: true });

@@ -15,6 +15,7 @@ function OlimRoom() {
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
   const [userID, setUserID] = useState('');
+  const [errorUpdate, setErrorUpdate] = useState(null);
 
   const userName = localStorage.getItem('user');
 
@@ -55,7 +56,7 @@ function OlimRoom() {
   const answerClickHandler = (i) => {
     const tempAnswers = { ...answers };
     tempAnswers[questionsOrder[currentQuestion - 1]] = i;
-    updateAnswers(setAnswers, tempAnswers, userID);
+    updateAnswers(setAnswers, tempAnswers, userID, setErrorUpdate);
   };
 
   const handlePrev = () => {
@@ -126,6 +127,22 @@ function OlimRoom() {
             <div className="h-[30rem] grid grid-cols-4 gap-2 overflow-y-scroll">
               {questions
                 .map((question, i) => (<button type="button" onClick={() => tileClickHandler(i)}><QuestionTile number={i} state={currentQuestion === i + 1 ? QuestionTileState.Selected : (answers[questionsOrder[i]] !== undefined) ? QuestionTileState.Answered : QuestionTileState.Nothing} /></button>))}
+            </div>
+          </div>
+          <div className="relative z-10">
+            <div className={errorUpdate ? 'h-full w-full fixed z-10 inset-0 flex justify-center items-center bg-black bg-opacity-30' : 'hidden'}>
+              <div className="bg-white rounded-md p-5 flex flex-col z-50">
+                {errorUpdate || ''}
+                <div className="flex justify-end mt-2">
+                  <button
+                    type="button"
+                    className="bg-red-500 text-access-white text-sm font-normal rounded-md w-fit px-2 py-1"
+                    onClick={() => window.location.reload()}
+                  >
+                    Kembali
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

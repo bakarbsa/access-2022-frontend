@@ -46,7 +46,10 @@ function UserDetailOverlay(props) {
               <button
                 type="button"
                 className="bg-access-red text-white text-sm px-8 py-2 rounded-md"
-                onClick={() => setOverlay('')}
+                onClick={() => {
+                  setOverlay('');
+                  window.location.reload();
+                }}
               >
                 Close
               </button>
