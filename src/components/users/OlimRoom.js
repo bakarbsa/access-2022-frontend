@@ -35,7 +35,7 @@ function OlimRoom() {
 
   useEffect(() => {
     if (!isBurstClick) {
-      updateAnswers(setAnswers, answers, userID, setErrorUpdate);
+      updateAnswers(answers, userID, setErrorUpdate);
     }
   }, [isBurstClick]);
 
