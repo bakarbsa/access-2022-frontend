@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable max-len */
 import React, { useEffect, useState } from 'react';
-import b201 from '../../assets/b201-logo.png';
+import oase from '../../assets/oase-logo.png';
 import useAuth from '../../hooks/useAuth';
 import OlimServices from '../../services/olimServices';
 import NavBar from '../../components/users/NavBar';
@@ -126,9 +126,9 @@ function UserDashboard() {
               </div>
               <div className="flex flex-col mt-10">
                 <p className="text-sm">Powered by</p>
-                <div className="w-16">
-                  <img src={b201} alt="logo b201" />
-                </div>
+                <a href="https://www.instagram.com/oasetechnology" target="_blank" rel="noreferrer">
+                  <img src={oase} alt="oase logo" className="w-[70px] mt-2" />
+                </a>
               </div>
             </div>
           </div>

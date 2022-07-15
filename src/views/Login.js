@@ -5,10 +5,8 @@ import { LockClosedIcon, UserCircleIcon } from '@heroicons/react/outline';
 import axios from 'axios';
 import useAuth from '../hooks/useAuth';
 import Button from '../components/Button';
-import bg from '../assets/login-bg-web.jpg';
-import decor from '../assets/login-decor.png';
 import logo from '../assets/logo.png';
-import b201 from '../assets/b201-logo.png';
+import oase from '../assets/oase-logo.png';
 import API_URL from '../api';
 
 function Login() {
@@ -99,7 +97,9 @@ function Login() {
             <Button onClick={handleSubmit} content="Masuk" />
             <div className="flex flex-col items-center justify-center">
               <h1 className="text-sm">Powered by</h1>
-              <img src={b201} alt="b201 logo" className="w-12" />
+              <a href="https://www.instagram.com/oasetechnology" target="_blank" rel="noreferrer">
+                <img src={oase} alt="oase logo" className="w-[70px] mt-2" />
+              </a>
             </div>
           </div>
         </div>
