@@ -14,6 +14,7 @@ function OlimRoom() {
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState([]);
+  const [isBurstClick, setBurstClick] = useState(false);
   const [userID, setUserID] = useState('');
   const [errorUpdate, setErrorUpdate] = useState(null);
 
@@ -31,6 +32,12 @@ function OlimRoom() {
     }
     getQuestion(setQuestions, setQuestionsOrder, userID);
   }, [userID]);
+
+  useEffect(() => {
+    if (!isBurstClick) {
+      updateAnswers(setAnswers, answers, userID, setErrorUpdate);
+    }
+  }, [isBurstClick]);
 
   answersStream(setAnswers, userName);
 
@@ -56,7 +63,13 @@ function OlimRoom() {
   const answerClickHandler = (i) => {
     const tempAnswers = { ...answers };
     tempAnswers[questionsOrder[currentQuestion - 1]] = i;
-    updateAnswers(setAnswers, tempAnswers, userID, setErrorUpdate);
+    setAnswers(tempAnswers);
+    if (!isBurstClick) {
+      setBurstClick(true);
+      setTimeout(() => {
+        setBurstClick(false);
+      }, 10000);
+    }
   };
 
   const handlePrev = () => {
