@@ -23,19 +23,26 @@ function OlimRoom() {
   const getId = () => UserServices.getUserIDByUsername(setUserID, userName);
 
   useEffect(() => {
-    console.log(answers);
+    // console.log(answers);
   }, [answers]);
 
   useEffect(() => {
     if (!userID) {
       getId();
     }
-    getQuestion(setQuestions, setQuestionsOrder, userID);
+    if (userID) {
+      getQuestion(setQuestions, setQuestionsOrder, userID);
+    }
   }, [userID]);
 
   useEffect(() => {
     if (!isBurstClick) {
-      updateAnswers(answers, userID, setErrorUpdate);
+      if (!userID) {
+        getId();
+      }
+      if (userID) {
+        updateAnswers(answers, userID, setErrorUpdate);
+      }
     }
   }, [isBurstClick]);
 
@@ -53,11 +60,11 @@ function OlimRoom() {
   };
 
   const tileClickHandler = (number) => {
-    console.log('tile');
+    // console.log('tile');
     setCurrentQuestion(number + 1);
-    console.log(answers);
-    console.log(questionsOrder[number]);
-    console.log(answers[questionsOrder[number]]);
+    // console.log(answers);
+    // console.log(questionsOrder[number]);
+    // console.log(answers[questionsOrder[number]]);
   };
 
   const answerClickHandler = (i) => {
@@ -68,12 +75,12 @@ function OlimRoom() {
       setBurstClick(true);
       setTimeout(() => {
         setBurstClick(false);
-      }, 10000);
+      }, 3000);
     }
   };
 
   const handlePrev = () => {
-    console.log('prev');
+    // console.log('prev');
     if (currentQuestion === 1) {
       setCurrentQuestion(1);
     } else {
@@ -82,7 +89,7 @@ function OlimRoom() {
   };
 
   const handleNext = () => {
-    console.log('next');
+    // console.log('next');
     if (currentQuestion === questions.length) {
       setCurrentQuestion(questions.length);
     } else {
@@ -139,7 +146,8 @@ function OlimRoom() {
             <Time />
             <div className="h-[30rem] grid grid-cols-4 gap-2 overflow-y-scroll">
               {questions
-                .map((question, i) => (<button type="button" onClick={() => tileClickHandler(i)}><QuestionTile number={i} state={currentQuestion === i + 1 ? QuestionTileState.Selected : (answers[questionsOrder[i]] !== undefined) ? QuestionTileState.Answered : QuestionTileState.Nothing} /></button>))}
+                // eslint-disable-next-line react/no-array-index-key
+                .map((question, i) => (<button key={i} type="button" onClick={() => tileClickHandler(i)}><QuestionTile number={i} state={currentQuestion === i + 1 ? QuestionTileState.Selected : (answers[questionsOrder[i]] !== undefined) ? QuestionTileState.Answered : QuestionTileState.Nothing} /></button>))}
             </div>
           </div>
           <div className="relative z-10">

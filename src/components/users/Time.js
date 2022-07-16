@@ -7,7 +7,7 @@ function Time() {
 
   const getTime = () => {
     OlimServices.getTime('user', setOlimTime);
-    console.log(olimTime);
+    // console.log(olimTime);
   };
   useEffect(() => {
     if (!olimTime.startTime) {
