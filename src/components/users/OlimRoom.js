@@ -72,7 +72,6 @@ function OlimRoom() {
   };
 
   const handlePrev = () => {
-    // console.log('prev');
     if (currentQuestion === 1) {
       setCurrentQuestion(1);
     } else {
@@ -81,7 +80,6 @@ function OlimRoom() {
   };
 
   const handleNext = () => {
-    // console.log('next');
     if (currentQuestion === questions.length) {
       setCurrentQuestion(questions.length);
     } else {

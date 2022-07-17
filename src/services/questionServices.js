@@ -1,12 +1,10 @@
 /* eslint-disable no-unused-vars */
-// import axios from 'axios';
 import axios from 'axios';
 import {
   collection, query, doc, setDoc, getDoc, onSnapshot, updateDoc, deleteField, arrayRemove,
 } from 'firebase/firestore';
 import { useEffect } from 'react';
 import API_URL from '../api';
-// import API_URL from '../api';
 import db from '../firebase-config';
 
 const getQuestion = async (setQuestions, setQuestionsOrder, id) => {
@@ -28,18 +26,18 @@ const getQuestion = async (setQuestions, setQuestionsOrder, id) => {
 
 const answersStream = (setAnswers, username) => {
   useEffect(() => {
-    const unsubscribe = () => {
-      const colRef = collection(db, 'users');
-      const itemsQuery = query(colRef);
-      return onSnapshot(itemsQuery, (querySnapshot) => {
-        querySnapshot.docs.forEach((data) => {
-          if (data.data().username === username) {
-            setAnswers(data.data().currentAnswer);
-          }
-        });
-      }, (error) => console.log(error));
-    };
-    return unsubscribe;
+    const colRef = collection(db, 'users');
+    const itemsQuery = query(colRef);
+    onSnapshot(itemsQuery, (querySnapshot) => {
+      querySnapshot.docs.forEach((data) => {
+        console.log('matching username');
+        if (data.data().username === username) {
+          setAnswers(data.data().currentAnswer);
+          console.log('set answers  from stream');
+          console.log(data.data().currentAnswer);
+        }
+      });
+    });
   }, []);
 };
 const updateAnswers = async (answers, id, setError) => {
