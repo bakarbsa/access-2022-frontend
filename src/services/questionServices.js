@@ -30,10 +30,8 @@ const answersStream = (setAnswers, username) => {
     const itemsQuery = query(colRef);
     onSnapshot(itemsQuery, (querySnapshot) => {
       querySnapshot.docs.forEach((data) => {
-        console.log('matching username');
         if (data.data().username === username) {
           setAnswers(data.data().currentAnswer);
-          console.log('set answers  from stream');
           console.log(data.data().currentAnswer);
         }
       });
