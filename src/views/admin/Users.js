@@ -29,8 +29,8 @@ function Users() {
     <div className={index === 2 ? 'relative z-10' : 'hidden'} aria-labelledby="modal-title" role="dialog" aria-modal="true">
       {users.length >= 0
         ? (
-          <div className="h-full">
-            <div className="flex flex-col h-full px-16 py-4 ">
+          <div className="h-screen">
+            <div className="flex flex-col h-full px-16 py-4">
               <h1 className="text-2xl font-bold">Daftar Peserta</h1>
               <div className="flex flex-row justify-between items-center mt-2 mb-5">
                 <p>Anda dapat melihat daftar peserta, menambahkan, dan menghapusnya.</p>
@@ -43,9 +43,10 @@ function Users() {
                 </button>
               </div>
               <div className="h-full overflow-y-scroll">
-                <table className="table-fixed w-full">
+                <table className="table-auto w-full">
                   <thead>
                     <tr>
+                      <th>No</th>
                       <th>Nama</th>
                       <th>Universitas</th>
                       <th>Username</th>
@@ -53,8 +54,9 @@ function Users() {
                     </tr>
                   </thead>
                   <tbody>
-                    {users.map((user) => (
+                    {users.map((user, i) => (
                       <tr key={user.id} className="hover:bg-access-primary h-14">
+                        <th className="font-normal">{i + 1}</th>
                         <th className="font-normal">{user.name}</th>
                         <th className="font-normal">{user.university}</th>
                         <th className="font-normal">{user.username}</th>
