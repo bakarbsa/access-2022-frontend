@@ -32,7 +32,6 @@ const answersStream = (setAnswers, username) => {
       querySnapshot.docs.forEach((data) => {
         if (data.data().username === username) {
           setAnswers(data.data().currentAnswer);
-          console.log(data.data().currentAnswer);
         }
       });
     });
