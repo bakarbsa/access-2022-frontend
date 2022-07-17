@@ -35,7 +35,6 @@ const answersStream = (setAnswers, username) => {
         querySnapshot.docs.forEach((data) => {
           if (data.data().username === username) {
             setAnswers(data.data().currentAnswer);
-            // console.log('setfrom stream');
           }
         });
       }, (error) => console.log(error));
@@ -44,7 +43,6 @@ const answersStream = (setAnswers, username) => {
   }, []);
 };
 const updateAnswers = async (answers, id, setError) => {
-  // console.log('setfrom updateanswers');
   const docRef = doc(db, 'users', id);
   const timeValidation = await axios.get(`${API_URL}/users/answer/validation/${id}`);
   if (!timeValidation.data.success) {

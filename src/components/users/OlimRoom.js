@@ -23,10 +23,6 @@ function OlimRoom() {
   const getId = () => UserServices.getUserIDByUsername(setUserID, userName);
 
   useEffect(() => {
-    // console.log(answers);
-  }, [answers]);
-
-  useEffect(() => {
     if (!userID) {
       getId();
     }
@@ -60,11 +56,7 @@ function OlimRoom() {
   };
 
   const tileClickHandler = (number) => {
-    // console.log('tile');
     setCurrentQuestion(number + 1);
-    // console.log(answers);
-    // console.log(questionsOrder[number]);
-    // console.log(answers[questionsOrder[number]]);
   };
 
   const answerClickHandler = (i) => {
@@ -113,7 +105,7 @@ function OlimRoom() {
   };
 
   return (
-    questions.length <= 0 || answers.length <= 0
+    questions.length <= 0
       ? <Loading />
       : (
         <div className="pt-28 px-12 mb-16 flex flex-row gap-20 overflow-hidden">
