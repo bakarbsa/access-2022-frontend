@@ -3,21 +3,36 @@ import React, { useState, useEffect } from 'react';
 import useOverlay from '../../hooks/useOverlay';
 import UserServices from '../../services/userServices';
 import Loading from '../Loading';
+import RefreshButton from './RefreshButton';
 
 function UserDetailOverlay(props) {
   const { id } = props;
   const { overlay, setOverlay } = useOverlay();
+  const [isLoading, setLoading] = useState(true);
   const [user, setUser] = useState({});
   const arrayCounter = [1, 11, 21, 31, 41, 51, 61, 71, 81, 91];
 
-  const getUser = () => {
-    UserServices.getUser(id, setUser, 'admins/users');
-  };
+  const getUser = () => UserServices.getUser(id, setUser, 'admins/users');
+
   useEffect(() => {
-    if (!user.id && id) {
-      getUser();
-    }
-  }, [user.id]);
+    setLoading(true);
+    getUser();
+  }, [id]);
+
+  useEffect(() => {
+    setLoading(false);
+  }, [user]);
+
+  const refresh = () => {
+    getUser();
+    setLoading(true);
+  };
+
+  // useEffect(() => {
+  //   if (!user.id && id) {
+  //     getUser();
+  //   }
+  // }, [user.id]);
 
   const indexToAlfa = (index) => {
     if (index === 1) return 'A';
@@ -29,10 +44,13 @@ function UserDetailOverlay(props) {
   };
   return (
     <div className={overlay === 'detail' ? 'h-full w-full fixed z-10 inset-0 flex justify-center items-center bg-black bg-opacity-30' : 'hidden'}>
-      {user.id
+      {user.id && !isLoading
         ? (
           <div className="bg-white rounded-md px-10 py-7 flex flex-col z-50">
-            <p className="text-2xl font-bold">{user.name}</p>
+            <div className="flex justify-between items-center">
+              <p className="text-2xl font-bold">{user.name}</p>
+              <RefreshButton onClick={refresh} />
+            </div>
             <div className="flex flex-row gap-10 mt-5">
               {[...Array(10)].map((e1, i) => (
                 <ul key={i}>
@@ -48,7 +66,6 @@ function UserDetailOverlay(props) {
                 className="bg-access-red text-white text-sm px-8 py-2 rounded-md"
                 onClick={() => {
                   setOverlay('');
-                  window.location.reload();
                 }}
               >
                 Close

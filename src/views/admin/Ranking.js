@@ -6,29 +6,47 @@ import UserServices from '../../services/userServices';
 import OfflineStatus from '../../components/admin/OfflineStatus';
 import useOverlay from '../../hooks/useOverlay';
 import UserDetailOverlay from '../../components/admin/UserDetailOverlay';
+import RefreshButton from '../../components/admin/RefreshButton';
 
 function Ranking() {
   const { index } = useSideNav();
   const { overlay, setOverlay } = useOverlay();
   const [users, setUsers] = useState([]);
   const [selectedId, setSelectedId] = useState('');
+  const [isLoading, setLoading] = useState(true);
   const getUsers = () => UserServices.getUsers(setUsers);
 
   useEffect(() => {
-    if (users.length <= 0) {
-      UserServices.updateScore();
-      getUsers();
-    }
+    getUsers();
+  }, []);
+
+  useEffect(() => {
+    setLoading(false);
   }, [users]);
+
+  const refresh = () => {
+    getUsers();
+    setLoading(true);
+  };
+
+  // useEffect(() => {
+  //   if (users.length <= 0) {
+  //     UserServices.updateScore();
+  //     getUsers();
+  //   }
+  // }, [users]);
 
   return (
     <div className={index === 1 ? 'relative z-10' : 'hidden'}>
-      {users.length >= 0
+      {!isLoading
         ? (
           <div className="h-screen">
             <div className="flex flex-col h-full px-16 py-4">
               <h1 className="text-2xl font-bold mb-2">Ranking Peserta</h1>
-              <p className="mb-5">Anda dapat melihat melihat peringkat peserta berdasarkan score yang didapat.</p>
+              <div className="flex justify-between">
+                <p className="mb-5">Anda dapat melihat melihat peringkat peserta berdasarkan score yang didapat.</p>
+                <RefreshButton onClick={refresh} />
+              </div>
               <div className="h-full overflow-y-scroll">
                 <table className="table-auto w-full">
                   <thead>
@@ -43,7 +61,7 @@ function Ranking() {
                     </tr>
                   </thead>
                   <tbody>
-                    {users.map((user, i) => (
+                    {users.sort((a, b) => b.score - a.score).map((user, i) => (
                       <tr key={user.id} className="hover:bg-access-primary h-20">
                         <th className="font-normal">{i + 1}</th>
                         <th className="font-normal">{user.name}</th>
