@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import QuestionTile from './QuestionTile';
 import QuestionTileState from '../../models/questionTileState';
 import {
-  updateAnswers, answersStream, getQuestion, deleteAnswer,
+  updateAnswers, getQuestion, deleteAnswer, getAnswers,
 } from '../../services/questionServices';
 import UserServices from '../../services/userServices';
 import Time from './Time';
@@ -28,21 +28,22 @@ function OlimRoom() {
     }
     if (userID) {
       getQuestion(setQuestions, setQuestionsOrder, userID);
+      getAnswers(setAnswers, userID);
     }
   }, [userID]);
 
-  useEffect(() => {
-    if (!isBurstClick) {
-      if (!userID) {
-        getId();
-      }
-      if (userID) {
-        updateAnswers(answers, userID, setErrorUpdate);
-      }
-    }
-  }, [isBurstClick]);
+  // useEffect(() => {
+  //   if (!isBurstClick) {
+  //     if (!userID) {
+  //       getId();
+  //     }
+  //     if (userID) {
+  //       updateAnswers(answers, userID, setErrorUpdate);
+  //     }
+  //   }
+  // }, [isBurstClick]);
 
-  answersStream(setAnswers, userName);
+  // answersStream(setAnswers, userName);
 
   const handleSubmit = (event) => {
     // eslint-disable-next-line no-alert
@@ -56,6 +57,7 @@ function OlimRoom() {
   };
 
   const tileClickHandler = (number) => {
+    getAnswers(setAnswers, userID);
     setCurrentQuestion(number + 1);
   };
 
@@ -63,15 +65,17 @@ function OlimRoom() {
     const tempAnswers = { ...answers };
     tempAnswers[questionsOrder[currentQuestion - 1]] = i;
     setAnswers(tempAnswers);
-    if (!isBurstClick) {
-      setBurstClick(true);
-      setTimeout(() => {
-        setBurstClick(false);
-      }, 3000);
-    }
+    updateAnswers(tempAnswers, userID, setErrorUpdate);
+    // if (!isBurstClick) {
+    //   setBurstClick(true);
+    //   setTimeout(() => {
+    //     setBurstClick(false);
+    //   }, 1000);
+    // }
   };
 
   const handlePrev = () => {
+    getAnswers(setAnswers, userID);
     if (currentQuestion === 1) {
       setCurrentQuestion(1);
     } else {
@@ -80,6 +84,7 @@ function OlimRoom() {
   };
 
   const handleNext = () => {
+    getAnswers(setAnswers, userID);
     if (currentQuestion === questions.length) {
       setCurrentQuestion(questions.length);
     } else {

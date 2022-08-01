@@ -24,19 +24,36 @@ const getQuestion = async (setQuestions, setQuestionsOrder, id) => {
   }
 };
 
-const answersStream = (setAnswers, username) => {
-  useEffect(() => {
-    const colRef = collection(db, 'users');
-    const itemsQuery = query(colRef);
-    onSnapshot(itemsQuery, (querySnapshot) => {
-      querySnapshot.docs.forEach((data) => {
-        if (data.data().username === username) {
-          setAnswers(data.data().currentAnswer);
-        }
-      });
-    });
-  }, []);
+const getAnswers = async (setAnswers, id) => {
+  const docRef = doc(db, 'users', id);
+  const docSnap = await getDoc(docRef);
+  const timeValidation = await axios.get(`${API_URL}/users/answer/validation/${id}`);
+  if (!timeValidation.data.success) {
+    console.log('Time is up');
+    return;
+  }
+  if (docSnap.exists()) {
+    setAnswers(docSnap.data().currentAnswer);
+  } else {
+    console.log('No such document!');
+  }
 };
+
+// const answersStream = (setAnswers, username) => {
+//   useEffect(() => {
+//     const colRef = collection(db, 'users');
+//     const itemsQuery = query(colRef);
+//     onSnapshot(itemsQuery, (querySnapshot) => {
+//       querySnapshot.docs.forEach((data) => {
+//         if (data.data().username === username) {
+//           setAnswers(data.data().currentAnswer);
+//           const source = data.metadata.hasPendingWrites ? 'Local' : 'Server';
+//           console.log(source, ' data: ', data.data());
+//         }
+//       });
+//     }, { includeMetadataChanges: true });
+//   }, []);
+// };
 const updateAnswers = async (answers, id, setError) => {
   const docRef = doc(db, 'users', id);
   const timeValidation = await axios.get(`${API_URL}/users/answer/validation/${id}`);
@@ -64,6 +81,7 @@ const deleteAnswer = async (setAnswers, answers, questionId, id) => {
 export {
   getQuestion,
   updateAnswers,
-  answersStream,
+  // answersStream,
+  getAnswers,
   deleteAnswer,
 };
