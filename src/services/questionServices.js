@@ -34,6 +34,7 @@ const getAnswers = async (setAnswers, id) => {
   }
   if (docSnap.exists()) {
     setAnswers(docSnap.data().currentAnswer);
+    console.log('document set');
   } else {
     console.log('No such document!');
   }
@@ -54,7 +55,8 @@ const getAnswers = async (setAnswers, id) => {
 //     }, { includeMetadataChanges: true });
 //   }, []);
 // };
-const updateAnswers = async (answers, id, setError) => {
+const updateAnswers = async (answers, id, setError, setUpdateAnswerBuffer, updateAnswerBuffer) => {
+  setUpdateAnswerBuffer(updateAnswerBuffer + 1);
   const docRef = doc(db, 'users', id);
   const timeValidation = await axios.get(`${API_URL}/users/answer/validation/${id}`);
   if (!timeValidation.data.success) {
@@ -62,11 +64,13 @@ const updateAnswers = async (answers, id, setError) => {
     setError(timeValidation.data.message);
     return;
   }
-  setDoc(docRef, { currentAnswer: answers }, { merge: true });
+  await setDoc(docRef, { currentAnswer: answers }, { merge: true });
+  if (updateAnswerBuffer !== 0) setUpdateAnswerBuffer(updateAnswerBuffer - 1);
 };
 
-const deleteAnswer = async (setAnswers, answers, questionId, id) => {
+const deleteAnswer = async (setAnswers, answers, questionId, id, updateAnswerBuffer, setUpdateAnswerBuffer) => {
   setAnswers(answers);
+  setUpdateAnswerBuffer(updateAnswerBuffer + 1);
   const docRef = doc(db, 'users', id);
   const timeValidation = await axios.get(`${API_URL}/users/answer/validation/${id}`);
   if (!timeValidation.data.success) {
@@ -76,12 +80,12 @@ const deleteAnswer = async (setAnswers, answers, questionId, id) => {
   const updatedMap = {};
   updatedMap[`currentAnswer.${questionId}`] = deleteField();
   updateDoc(docRef, updatedMap);
+  if (updateAnswerBuffer !== 0) setUpdateAnswerBuffer(updateAnswerBuffer - 1);
 };
 
 export {
   getQuestion,
   updateAnswers,
-  // answersStream,
   getAnswers,
   deleteAnswer,
 };

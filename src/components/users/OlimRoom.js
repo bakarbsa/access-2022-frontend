@@ -17,6 +17,7 @@ function OlimRoom() {
   const [isBurstClick, setBurstClick] = useState(false);
   const [userID, setUserID] = useState('');
   const [errorUpdate, setErrorUpdate] = useState(null);
+  const [updateAnswerBuffer, setUpdateAnswerBuffer] = useState(0);
 
   const userName = localStorage.getItem('user');
 
@@ -32,19 +33,6 @@ function OlimRoom() {
     }
   }, [userID]);
 
-  // useEffect(() => {
-  //   if (!isBurstClick) {
-  //     if (!userID) {
-  //       getId();
-  //     }
-  //     if (userID) {
-  //       updateAnswers(answers, userID, setErrorUpdate);
-  //     }
-  //   }
-  // }, [isBurstClick]);
-
-  // answersStream(setAnswers, userName);
-
   const handleSubmit = (event) => {
     // eslint-disable-next-line no-alert
     alert('A name was submitted: ');
@@ -56,26 +44,24 @@ function OlimRoom() {
     window.location.reload();
   };
 
-  const tileClickHandler = (number) => {
-    getAnswers(setAnswers, userID);
-    setCurrentQuestion(number + 1);
-  };
-
   const answerClickHandler = (i) => {
     const tempAnswers = { ...answers };
     tempAnswers[questionsOrder[currentQuestion - 1]] = i;
     setAnswers(tempAnswers);
-    updateAnswers(tempAnswers, userID, setErrorUpdate);
-    // if (!isBurstClick) {
-    //   setBurstClick(true);
-    //   setTimeout(() => {
-    //     setBurstClick(false);
-    //   }, 1000);
-    // }
+    updateAnswers(tempAnswers, userID, setErrorUpdate, setUpdateAnswerBuffer, updateAnswerBuffer);
+  };
+
+  const tileClickHandler = (number) => {
+    if (updateAnswerBuffer === 0) {
+      getAnswers(setAnswers, userID);
+    }
+    setCurrentQuestion(number + 1);
   };
 
   const handlePrev = () => {
-    getAnswers(setAnswers, userID);
+    if (updateAnswerBuffer === 0) {
+      getAnswers(setAnswers, userID);
+    }
     if (currentQuestion === 1) {
       setCurrentQuestion(1);
     } else {
@@ -84,7 +70,9 @@ function OlimRoom() {
   };
 
   const handleNext = () => {
-    getAnswers(setAnswers, userID);
+    if (updateAnswerBuffer === 0) {
+      getAnswers(setAnswers, userID);
+    }
     if (currentQuestion === questions.length) {
       setCurrentQuestion(questions.length);
     } else {
@@ -95,7 +83,7 @@ function OlimRoom() {
   const clearChoice = () => {
     const tempAnswers = { ...answers };
     delete tempAnswers[questionsOrder[currentQuestion - 1]];
-    deleteAnswer(setAnswers, tempAnswers, questionsOrder[currentQuestion - 1], userID);
+    deleteAnswer(setAnswers, tempAnswers, questionsOrder[currentQuestion - 1], userID, updateAnswerBuffer, setUpdateAnswerBuffer);
   };
 
   const indexToAlfa = (index) => {
