@@ -28,11 +28,6 @@ const getAnswers = async (setAnswers, id, loadingAnswers, setLoadingAnswers) => 
   setLoadingAnswers(true);
   const docRef = doc(db, 'users', id);
   const docSnap = await getDoc(docRef);
-  const timeValidation = await axios.get(`${API_URL}/users/answer/validation/${id}`);
-  if (!timeValidation.data.success) {
-    console.log('Time is up');
-    return;
-  }
   if (docSnap.exists()) {
     await setAnswers(docSnap.data().currentAnswer);
   } else {
