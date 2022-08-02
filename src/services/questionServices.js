@@ -61,8 +61,9 @@ const updateAnswers = async (answers, id, setError, setUpdateAnswerBuffer, updat
         setError(timeValidation.data.message);
         return;
       }
-      await setDoc(docRef, { currentAnswer: answers }, { merge: true }).then(() => {
+      await setDoc(docRef, { currentAnswer: answers }, { merge: true }).then((msg) => {
         if (updateAnswerBuffer !== 0) setUpdateAnswerBuffer(updateAnswerBuffer - 1);
+        console.log('answers updated');
       });
     });
   } catch (err) {
@@ -74,15 +75,20 @@ const deleteAnswer = async (setAnswers, answers, questionId, id, updateAnswerBuf
   setAnswers(answers);
   setUpdateAnswerBuffer(updateAnswerBuffer + 1);
   const docRef = doc(db, 'users', id);
-  const timeValidation = await axios.get(`${API_URL}/users/answer/validation/${id}`);
-  if (!timeValidation.data.success) {
-    console.log('Time is up');
-    return;
+  try {
+    await axios.get(`${API_URL}/users/answer/validation/${id}`).then(async (timeValidation) => {
+      if (!timeValidation.data.success) {
+        console.log(timeValidation.data.message);
+        return;
+      }
+      const updatedMap = {};
+      updatedMap[`currentAnswer.${questionId}`] = deleteField();
+      await updateDoc(docRef, updatedMap);
+      if (updateAnswerBuffer !== 0) setUpdateAnswerBuffer(updateAnswerBuffer - 1);
+    });
+  } catch (err) {
+    console.log(err);
   }
-  const updatedMap = {};
-  updatedMap[`currentAnswer.${questionId}`] = deleteField();
-  await updateDoc(docRef, updatedMap);
-  if (updateAnswerBuffer !== 0) setUpdateAnswerBuffer(updateAnswerBuffer - 1);
 };
 
 export {
