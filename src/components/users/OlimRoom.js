@@ -18,8 +18,10 @@ function OlimRoom() {
   const [userID, setUserID] = useState('');
   const [errorUpdate, setErrorUpdate] = useState(null);
   const [updateAnswerBuffer, setUpdateAnswerBuffer] = useState(0);
+  const [loadingAnswers, setLoadingAnswers] = useState(false);
 
   const userName = localStorage.getItem('user');
+  const circleCommonClasses = 'h-2.5 w-2.5 bg-current rounded-full';
 
   const getId = () => UserServices.getUserIDByUsername(setUserID, userName);
 
@@ -29,7 +31,7 @@ function OlimRoom() {
     }
     if (userID) {
       getQuestion(setQuestions, setQuestionsOrder, userID);
-      getAnswers(setAnswers, userID);
+      getAnswers(setAnswers, userID, loadingAnswers, setLoadingAnswers);
     }
   }, [userID]);
 
@@ -53,14 +55,14 @@ function OlimRoom() {
 
   const tileClickHandler = (number) => {
     if (updateAnswerBuffer === 0) {
-      getAnswers(setAnswers, userID);
+      getAnswers(setAnswers, userID, loadingAnswers, setLoadingAnswers);
     }
     setCurrentQuestion(number + 1);
   };
 
   const handlePrev = () => {
     if (updateAnswerBuffer === 0) {
-      getAnswers(setAnswers, userID);
+      getAnswers(setAnswers, userID, loadingAnswers, setLoadingAnswers);
     }
     if (currentQuestion === 1) {
       setCurrentQuestion(1);
@@ -71,7 +73,7 @@ function OlimRoom() {
 
   const handleNext = () => {
     if (updateAnswerBuffer === 0) {
-      getAnswers(setAnswers, userID);
+      getAnswers(setAnswers, userID, loadingAnswers, setLoadingAnswers);
     }
     if (currentQuestion === questions.length) {
       setCurrentQuestion(questions.length);
@@ -95,6 +97,33 @@ function OlimRoom() {
     return '';
   };
 
+  const renderAnswers = () => {
+    if (loadingAnswers) {
+      return (
+        <div className="flex">
+          <div className={`${circleCommonClasses} mr-1 animate-bounce`} />
+          <div
+            className={`${circleCommonClasses} mr-1 animate-bounce200`}
+          />
+          <div className={`${circleCommonClasses} animate-bounce400`} />
+        </div>
+      );
+    }
+    return (
+      <div>
+        <p className="font-bold pb-2">Jawaban</p>
+        <div className="flex flex-col">
+          {questions[currentQuestion - 1]?.answerList.map((answer, i) => (
+            <button key={answer} type="button" onClick={() => { answerClickHandler(i + 1); }} className={`${answers[questionsOrder[currentQuestion - 1]] === i + 1 ? 'bg-access-primary' : 'bg-[#F4F7FE] hover:bg-gray-300'} flex justify-start p-4 mb-2 rounded-lg`}>{`${indexToAlfa(i)} ${answer}`}</button>
+          ))}
+        </div>
+        <div className="flex justify-end">
+          <button type="button" onClick={clearChoice} className="text-red-400 pt-2">Hapus Pilihan</button>
+        </div>
+      </div>
+    );
+  };
+
   return (
     questions.length <= 0
       ? <Loading />
@@ -110,15 +139,7 @@ function OlimRoom() {
               {questions[currentQuestion - 1]?.question}
             </div>
             <form onSubmit={handleSubmit}>
-              <p className="font-bold pb-2">Jawaban</p>
-              <div className="flex flex-col">
-                {questions[currentQuestion - 1]?.answerList.map((answer, i) => (
-                  <button key={answer} type="button" onClick={() => { answerClickHandler(i + 1); }} className={`${answers[questionsOrder[currentQuestion - 1]] === i + 1 ? 'bg-access-primary' : 'bg-[#F4F7FE] hover:bg-gray-300'} flex justify-start p-4 mb-2 rounded-lg`}>{`${indexToAlfa(i)} ${answer}`}</button>
-                ))}
-              </div>
-              <div className="flex justify-end">
-                <button type="button" onClick={clearChoice} className="text-red-400 pt-2">Hapus Pilihan</button>
-              </div>
+              {renderAnswers()}
             </form>
             <div className="flex justify-between">
               {currentQuestion === 1 ? <button type="button" className="bg-transparent" onClick={handlePrev} disabled><p className="hidden">Sebelumnya</p></button> : <button type="button" className="bg-[#68BC87] w-36 rounded-lg py-2" onClick={handlePrev}><p className="text-white">Sebelumnya</p></button>}

@@ -24,7 +24,8 @@ const getQuestion = async (setQuestions, setQuestionsOrder, id) => {
   }
 };
 
-const getAnswers = async (setAnswers, id) => {
+const getAnswers = async (setAnswers, id, loadingAnswers, setLoadingAnswers) => {
+  setLoadingAnswers(true);
   const docRef = doc(db, 'users', id);
   const docSnap = await getDoc(docRef);
   const timeValidation = await axios.get(`${API_URL}/users/answer/validation/${id}`);
@@ -33,11 +34,11 @@ const getAnswers = async (setAnswers, id) => {
     return;
   }
   if (docSnap.exists()) {
-    setAnswers(docSnap.data().currentAnswer);
-    console.log('document set');
+    await setAnswers(docSnap.data().currentAnswer);
   } else {
     console.log('No such document!');
   }
+  setLoadingAnswers(false);
 };
 
 // const answersStream = (setAnswers, username) => {
