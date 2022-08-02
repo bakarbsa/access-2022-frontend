@@ -26,6 +26,10 @@ function OlimRoom() {
   const getId = () => UserServices.getUserIDByUsername(setUserID, userName);
 
   useEffect(() => {
+    console.log(loadingAnswers);
+  }, [loadingAnswers]);
+
+  useEffect(() => {
     if (!userID) {
       getId();
     }
@@ -54,16 +58,12 @@ function OlimRoom() {
   };
 
   const tileClickHandler = (number) => {
-    if (updateAnswerBuffer === 0) {
-      getAnswers(setAnswers, userID, loadingAnswers, setLoadingAnswers);
-    }
+    getAnswers(setAnswers, userID, loadingAnswers, setLoadingAnswers);
     setCurrentQuestion(number + 1);
   };
 
   const handlePrev = () => {
-    if (updateAnswerBuffer === 0) {
-      getAnswers(setAnswers, userID, loadingAnswers, setLoadingAnswers);
-    }
+    getAnswers(setAnswers, userID, loadingAnswers, setLoadingAnswers);
     if (currentQuestion === 1) {
       setCurrentQuestion(1);
     } else {
@@ -72,9 +72,7 @@ function OlimRoom() {
   };
 
   const handleNext = () => {
-    if (updateAnswerBuffer === 0) {
-      getAnswers(setAnswers, userID, loadingAnswers, setLoadingAnswers);
-    }
+    getAnswers(setAnswers, userID, loadingAnswers, setLoadingAnswers);
     if (currentQuestion === questions.length) {
       setCurrentQuestion(questions.length);
     } else {
