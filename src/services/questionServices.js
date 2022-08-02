@@ -75,7 +75,7 @@ const deleteAnswer = async (setAnswers, answers, questionId, id, updateAnswerBuf
   }
   const updatedMap = {};
   updatedMap[`currentAnswer.${questionId}`] = deleteField();
-  updateDoc(docRef, updatedMap);
+  await updateDoc(docRef, updatedMap);
   if (updateAnswerBuffer !== 0) setUpdateAnswerBuffer(updateAnswerBuffer - 1);
 };
 
