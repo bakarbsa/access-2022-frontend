@@ -54,14 +54,20 @@ const getAnswers = async (setAnswers, id, loadingAnswers, setLoadingAnswers) => 
 const updateAnswers = async (answers, id, setError, setUpdateAnswerBuffer, updateAnswerBuffer) => {
   setUpdateAnswerBuffer(updateAnswerBuffer + 1);
   const docRef = doc(db, 'users', id);
-  const timeValidation = await axios.get(`${API_URL}/users/answer/validation/${id}`);
-  if (!timeValidation.data.success) {
-    console.log(timeValidation.data.message);
-    setError(timeValidation.data.message);
-    return;
+  try {
+    await axios.get(`${API_URL}/users/answer/validation/${id}`).then(async (timeValidation) => {
+      if (!timeValidation.data.success) {
+        console.log(timeValidation.data.message);
+        setError(timeValidation.data.message);
+        return;
+      }
+      await setDoc(docRef, { currentAnswer: answers }, { merge: true }).then(() => {
+        if (updateAnswerBuffer !== 0) setUpdateAnswerBuffer(updateAnswerBuffer - 1);
+      });
+    });
+  } catch (err) {
+    console.log(err);
   }
-  await setDoc(docRef, { currentAnswer: answers }, { merge: true });
-  if (updateAnswerBuffer !== 0) setUpdateAnswerBuffer(updateAnswerBuffer - 1);
 };
 
 const deleteAnswer = async (setAnswers, answers, questionId, id, updateAnswerBuffer, setUpdateAnswerBuffer) => {
