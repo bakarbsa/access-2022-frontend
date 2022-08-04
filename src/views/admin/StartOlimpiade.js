@@ -95,7 +95,7 @@ function StartOlimpiade() {
         </div>
       </button>
       <div className="relative z-10">
-        <EditTimeOverlay />
+        {time.startTime && time.endTime ? <EditTimeOverlay defaultStartTime={time.startTime} defaultEndTime={time.endTime} /> : <div />}
       </div>
     </div>
   );

@@ -5,11 +5,12 @@ import RedButton from './RedButton';
 import BlueButton from './BlueButton';
 import OlimServices from '../../services/olimServices';
 
-function EditTimeOverlay() {
+function EditTimeOverlay(props) {
+  const { defaultStartTime, defaultEndTime } = props;
   const { overlay, setOverlay } = useOverlay();
   const [time, setTime] = useState({
-    startTime: '0',
-    endTime: '0',
+    startTime: String(defaultStartTime),
+    endTime: String(defaultEndTime),
   });
   return (
     <div className={overlay === 'time' ? 'h-full w-full fixed z-10 inset-0 flex justify-center items-center bg-black bg-opacity-30' : 'hidden'}>
@@ -65,10 +66,7 @@ function EditTimeOverlay() {
               console.log(time.startTime, time.endTime);
               OlimServices.updateTime(Number(time.startTime), Number(time.endTime));
               setOverlay('false');
-              setTime({
-                startTime: '0',
-                endTime: '0',
-              });
+              window.location.reload();
             }}
           />
           <RedButton
@@ -80,10 +78,6 @@ function EditTimeOverlay() {
                 )}
             onClick={() => {
               setOverlay('false');
-              setTime({
-                startTime: '0',
-                endTime: '0',
-              });
             }}
           />
         </div>

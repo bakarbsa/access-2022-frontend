@@ -58,7 +58,7 @@ function UserDashboard() {
       ? (currentTime >= olimTime.startTime && currentTime <= olimTime.endTime && user.isDone === false)
         ? (
           <div>
-            <NavBar userName={auth.user} />
+            <NavBar />
             <OlimRoom />
           </div>
         )
@@ -69,9 +69,9 @@ function UserDashboard() {
               <div className="text-start">
                 <div className="mt-24" />
                 <p className="text-2xl font-bold mb-5">
-                  Selamat datang,
+                  {user.isDone || currentTime > olimTime.endTime ? 'Olimpiade telah berakhir' : 'Selamat datang,'}
                   {' '}
-                  {auth.name || localStorage.getItem('name')}
+                  {user.isDone || currentTime > olimTime.endTime ? '' : auth.name || localStorage.getItem('name')}
                 </p>
                 <p className="mb-1">
                   Tahapan Preliminary Round akan dilaksanakan pada
