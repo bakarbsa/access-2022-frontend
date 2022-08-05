@@ -101,7 +101,7 @@ function Login() {
                     value={formData.password}
                     name={formData.password}
                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                    className="w-full pb-1 bg-access-white border-b-2 border-none focus:outline-none"
+                    className="w-full pb-1 pr-2 bg-access-white border-b-2 border-none focus:outline-none"
                   />
                   <button
                     type="button"
