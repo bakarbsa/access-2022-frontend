@@ -1,7 +1,12 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import { useNavigate, useLocation, Navigate } from 'react-router-dom';
-import { LockClosedIcon, UserCircleIcon } from '@heroicons/react/outline';
+import {
+  LockClosedIcon,
+  UserCircleIcon,
+  EyeIcon,
+  EyeOffIcon,
+} from '@heroicons/react/outline';
 import axios from 'axios';
 import useAuth from '../hooks/useAuth';
 import Button from '../components/Button';
@@ -14,7 +19,12 @@ function Login() {
     username: '',
     password: '',
   });
+  const [obscure, setObscure] = useState(true);
   const { auth, setAuth } = useAuth();
+
+  const handleObscure = () => {
+    setObscure(!obscure);
+  };
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -84,14 +94,22 @@ function Login() {
               </div>
               <div className="flex gap-4">
                 <LockClosedIcon className="w-10 text-access-dark" />
-                <input
-                  type="password"
-                  placeholder="Password"
-                  value={formData.password}
-                  name={formData.password}
-                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                  className="w-full pb-1 bg-access-white border-b-2 border-access-dark focus:outline-none"
-                />
+                <div className="flex justify-between w-full items-center border-b-[2px] pb-1 border-black">
+                  <input
+                    type={obscure ? 'password' : 'text'}
+                    placeholder="Password"
+                    value={formData.password}
+                    name={formData.password}
+                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                    className="w-full pb-1 bg-access-white border-b-2 border-none focus:outline-none"
+                  />
+                  <button
+                    type="button"
+                    onClick={handleObscure}
+                  >
+                    {obscure ? <EyeIcon className="w-5" /> : <EyeOffIcon className="w-5" />}
+                  </button>
+                </div>
               </div>
             </form>
             <Button onClick={handleSubmit} content="Masuk" />
