@@ -81,7 +81,7 @@ function Login() {
           <div className="w-full flex flex-col gap-6 mt-2 items-center">
             <h2 className="text-xl text-access-dark font-bold">Silahkan masuk</h2>
             <div className={error !== '404' ? 'hidden' : 'bg-access-red w-full py-2 px-5 text-center'}>
-              <p className="text-sm text-white">Email atau password salah</p>
+              <p className="text-sm text-white">Username atau password salah</p>
             </div>
             <form method="post" onSubmit={handleSubmit} className="w-full flex flex-col gap-10 mb-5">
               <div className="flex gap-4">
