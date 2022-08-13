@@ -1,0 +1,554 @@
+{
+  "questions": [
+    {
+      "question": "<p>Access Company produces a single product, a knitted sweater. Each sweater sells $33, and the company sells 500,000 sweaters each year. Unit cost data are presented below:</p> <p style=\"margin-top:10px;\"> </p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Variable&nbsp; <span>&nbsp;&nbsp;&nbsp; </span>&nbsp;Fixed</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Direct Material&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;.&hellip;&hellip;&hellip;&hellip;$9,00</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Direct Labor&hellip;&hellip;&hellip;&hellip;&hellip;..&hellip;&hellip;&hellip;&hellip;&hellip;..&hellip;..$8,00</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Manufacturing Overhead&hellip;&hellip;&hellip;$5,00<span>&nbsp; &nbsp; &nbsp; &nbsp;</span>$12,00</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Selling &amp; administrative&hellip;&hellip;&hellip;. $7,00<span>&nbsp; &nbsp; &nbsp; &nbsp; </span>$8,00</p> <p style=\"margin-top:10px;\"> </p> <p>The unit product cost of knitted sweater under variable costing is</p>",
+      "answerKey": 1,
+      "answerList": [
+        "$22",
+        "$29",
+        "$17",
+        "$20",
+        "$18"
+      ]
+    },
+    {
+      "question": "<p>The type of costing that provides the best information for breakeven analysis is</p>",
+      "answerKey": 4,
+      "answerList": [
+        "job-order costing",
+        "process costing",
+        "absorption costing",
+        "variable costing",
+        "operasional costing"
+      ]
+    },
+    {
+      "question": "<p>Access Manufacturing uses a predetermined overhead rate of $18.50 per direct labor-hour. This predetermined rate was based on 12,000 estimated direct labor-hours and $218,600 of estimated total manufacturing overhead. The company incurred actual total manufacturing overhead costs of $215,000 and 11,500 total direct labor-hours during the period. What the amount of underapplied or overapplied manufacturing overhead for the period?</p>",
+      "answerKey": 1,
+      "answerList": [
+        "$2,250",
+        "$2,500",
+      	"$2,750",
+      	"$3,000",
+      	"$3,350"
+      ]
+    },
+    {
+      "question": "<p>In carrying out the audit process for each audit segment, the auditor creates a working paper to record all the misstatements. Misstatements can be divided into</p>",
+      "answerKey": 1,
+      "answerList": [
+        "Known misstatement & likely misstatement",
+        "Unknown misstatement & discovered misstatement",
+        "Discovered misstatement & likely misstatement",
+        "Unknown misstatement & planned misstatement",
+        "Known misstatement & unknown misstatement"
+      ]
+    },
+    {
+      "question": "<p>Pernyataan berikut merupakan penyebab risiko informasi, kecuali</p>",
+      "answerKey": 5,
+      "answerList": [
+        "Tidak terjangkaunya informasi", 
+        "Bias dan motif dari penyedia",
+        "Data yang digunakan banyak",
+        "Pertukaran transaksi yang sulit",
+        "Adanya rahasia informasi"
+      ]
+    },
+    {
+      "question": "<p>Unsur-unsur Skeptisme Profesional Auditor salah satunya adalah Questioning Mind, artinya adalah</p>",
+      "answerKey": 4,
+      "answerList": [
+        "Menunda dalam membuat kesimpulan audit sampai mendapatkan bukti yang tepat dan cukup",
+        "Tindakan berupa mencari informasi yang terkini guna lebih meyakinkan akan keputusan yang diambil",
+        "Upaya untuk memahami mengenai tujuan, dorongan, dan pandangan penyedia informasi.",
+        "Selalu mempertanyakan sesuatu yang dianggap meragukan",
+        "Percaya atas kemampuan diri sendiri dalam menyikapi dan mengelola bukti-bukti yang sudah ada secara profesional"
+      ]
+    },
+    {
+      "question": "<p>In conducting an audit of the possibility of collection of an accounts payable, audit procedures will be directed at proving management's assertions about</p>",
+      "answerKey": 5,
+      "answerList": [
+        "Valuation and allocation",
+        "Classification and understandability",
+        "Existence",
+        "Occurrence",
+        "Completeness"
+      ]
+    },
+    {
+      "question": "<p>Dibawah ini, manakah yang menyatakan hubungan materialitas dengan jenis opini auditor yang benar</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Immaterial - Disclaimer, Material - Qualified, Highly Material - Adverse", 
+        "Immaterial - Unmodified, Material - Qualified, Highly Material - Adverse", 
+        "Immaterial - Unmodified, Material - Adverse, Highly Material - Qualified", 
+        "Immaterial - Unmodified, Material - Adverse, Highly Material - Disclaimer", 
+        "Immaterial - Disclaimer, Material - Adverse, Highly Material - Qualified"
+      ]
+    },
+    {
+      "question": "<p>Ketika auditor menyadari ketidakpatuhan terhadap hukum atau regulasi yang dilakukan oleh klien, alasan utama auditor harus memahami alasan dari tindakan klien tersebut adalah</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Merekomendasi tindakan remedial kepada komite audit",
+        "Mengevaluasi efek dari ketidakpatuhan tersebut terhadap laporan keuangan",
+        "Mempertimbangkan apakah perlu menghubungi penegak hukum",
+        "Mempertimbangkan apakah ada tindakan mirip yang terjadi juga",
+        "Merekomendasi tindakan remedial kepada manajer"
+      ]
+    },
+    {
+      "question": "<p>Hal paling penting dalam fundamental komponen internal control suatu bisnis, yaitu</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Efektivitas dan efisiensi operasi",
+        "Orang yang menjalankan operasi",
+        "Tingkat reliabel pelaporan keuangan",
+        "Kepatuhan terhadap hukum dan regulasi yang ada",
+        "Penyajian laporan"
+      ]
+    },
+    {
+      "question": "<p>Di bawah ini adalah pernyataan yang benar mengenai perpajakan untuk persewaan harta adalah</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Transaksi sewa harta dikenakan PPh Pasal 4 ayat 2",
+        "Sewa untuk harga tak bergerak dikenakan PPh Final, Sedangkan sewa harta bergerak dikenakan PPh 23",
+        "Sewa untuk harga bergerak dikenakan PPh Pasal 4 ayat 2, Sedangkan sewa harta tak bergerak dikenakan PPh 23",
+        "Transaksi sewa harta dikenakan PPh Pasal 23",
+        "Sewa untuk harta tidak lancar dikenakan PPh 25, Sedangkan sewa untuk harta lancer dikenakan PPh Final"
+      ]
+    },
+    {
+      "question": "<p>PT Zaya membayar honor konsultan kesehatan kepada Ny. Indira sebesar Rp. 240.000.000. Berapa PPh 21 yang terutang?</p>",
+      "answerKey": 1,
+      "answerList": [
+        "Rp13.000.000",
+        "Rp31.000.000",
+        "Rp6.000.000",
+        "Rp16.000.000",
+        "Rp12.000.000"
+      ]
+    },
+    {
+      "question": "<p>Dari wajib pajak di bawah ini yang wajib melakukan pembukuan adalah</p>",
+      "answerKey": 2,
+      "answerList": [
+        "PNS golongan IV/a",
+        "Pemilik restoran padang berkah dengan peredaran usaha Rp 6 miliar setahun",
+        "Karyawan bengkel otomotif",
+        "Karyawan restoran padang berkah dengan peredaran usaha Rp 6 miliar setahun",
+        "Wirausahawan dengan penghasilan Rp 5 juta setahun"
+      ]
+    },
+    {
+      "question": "<p>Tata cara pengkreditan pajak atas penghasilan yang diperoleh dari luar negeri PPH pasal 24, kecuali</p>",
+      "answerKey": 5,
+      "answerList": [
+        "Pengkreditan pajak yang dibayar di Luar Negeri dilakukan dalam tahun pajak digabungkannya penghasilan dari luar negeri tersebut dengan penghasilan di Indonesia",
+        "Jumlah yang dibayar di Luar Negeri yang dapat dikreditkan adalah paling tinggi sama dengan jumlah pajak yang dibayar atau terutang di luar negeri tetapi tidak boleh melebihi jumlah tertentu.",
+        "Jumlah tertentu tersebut dihitung menurut perbandingan antara penghasilan dari luar negeri terhadap Penghasilan Kena Pajak dikalikan dengan pajak yang terutang atas Penghasilan Kena Pajak, paling tinggi sama dengan pajak yang terutang atas",
+        "Penghasilan Kena Pajak dalam hal Penghasilan Kena Pajak lebih kecil dari penghasilan luar negeri.",
+        "Pengkreditan PPh yang dibayar di luar negeri dilakukan dalam tahun pajak digabungkannya penghasilan dari luar negeri tersebut dengan penghasilan di Indonesia"
+      ]
+    },
+    {
+      "question": "<p>PT Hercules membagikan dividen kepada pemegang saham di perusahaannya, di antaranya kepada Handi yang memiliki saham sebanyak 100.000 lembar saham dari total saham beredar sebanyak 400.000 lembar. Dividen tunai yang dibagi adalah Rp1.000/lembar saham. PPh yang dipotong oleh PT Hercules adalah</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Rp100.000.000",
+        "Rp10.000.000",
+        "Rp110.000.000",
+        "Rp40.000.000",
+        "Rp10.000"
+      ]
+    },
+    {
+      "question": "<p>Bank Nusa Indah melakukan undian untuk para nasabahnya. Hadiahnya berupa mobil yang jika diuangkan senilai Rp210.000.000 dan 1 unit motor yang senilai dengan Rp15.000.000. Setelah dilakukan pengundian, pemenang mobil jatuh kepada CV Sukses Berkah (memiliki NPWP) dan pemenang motor jatuh kepada Didik Ananda (tidak memiliki NPWP). PPh final atas undian yang dipotong oleh Bank Nusa Indah adalah</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Rp52.500.000",
+        "Rp56.250.000",
+        "Rp3.750.000",
+        "Rp48.750.000",
+        "Rp195.000.000"
+      ]
+    },
+    {
+      "question": "<p>Seorang pegawai pada PT. ACCESS memperoleh gaji mingguan sebesar Rp1.500.000,00. Ia telah menikah dan belum mempunyai seorang anak. PT. ACCESS membayar premi Jaminan Kecelakaan Kerja, dan premi Jaminan Kematian yang dibayar oleh pemberi kerja dengan jumlah masing masing setiap bulan sebesar 1 % dan 0,5 % dari gaji. Pegawai tersebut membayar uang pensiun sebesar Rp30.000,00 dan Jaminan Hari Tua sebesar 2 % dari gaji setiap bulan. Berapa PPh Pasal 21 pekerja tersebut pada minggu pertama bulan Agustus?</p>",
+      "answerKey": 3,
+      "answerList": [
+        "9.505,25",
+        "9.505,50",
+        "9.506,25",
+        "9.506,50",
+        "9.507,25"
+      ]
+    },
+    {
+      "question": "<p>Tindak pidana yang berkaitan dengan perpajakan dimuat dalam Undang-Undang Nomor 31 Tahun 1999 yang telah diubah dengan Undang-Undang Nomor 20 Tahun 2001, kecuali</p>",
+      "answerKey": 4,
+      "answerList": [
+        "Tindak pidana suap kepada penyelenggara negara atau pegawai negeri ",
+        "Tindak pidana menggelapkan uang atau surat berharga yang disimpan karena jabatannya",
+        "Tindak pidana menghilangkan, menghancurkan, merusakkan, atau membuat tidak dapat dipakai barang, akta, surat, atau daftar yang digunakan sebagai barang bukti",
+        "Tindak pidana menerima atau menggunakan Harta Kekayaan yang diketahuinya atau patut diduganya merupakan hasil tindak pidana di bidang perpajakan",
+        "Tindak pidana secara melawan hukum melakukan perbuatan memperkaya diri sendiri"
+      ]
+    },
+    {
+      "question": "<p>Wajib pajak telah diberi persetujuan melakukan penundaan pembayaran utang pajak yang tercantum dalam SKPKB. Namun Wajib Pajak tersebut tidak menunaikan kewajiban pembayaran sesuai dengan jadwal yang ditetapkan. Berdasarkan hal tersebut, pernyataan yang benar berkaitan dengan penagihan aktif adalah</p>",
+      "answerKey": 3,
+      "answerList": [
+        "Surat paksa dapat langsung diterbitkan tanpa surat teguran",
+        "Dilakukan penagihan seketika dan sekaligus",
+        "Dapat dilakukan penyitaan bersamaan dengan penerbitan surat paksa",
+        "Dapat dilakukan penyitaan tanpa diterbitkan surat paksa",
+        "Dilakukan penagihan bersamaan dengan penerbitan surat paksa"
+      ]
+    },
+    {
+      "question": "<p>PT Access Indonesia memperoleh penghasilan neto dalam tahun 2022 adalah sebagai berikut:</p><ul style=\"list-style-type: circle; margin-left:25px;\"><li>Di negara A, memperoleh penghasilan (laba) Rp 2.000.000.000,00 dengan tarif pajak sebesar 35% (Rp. 700.000.000,00)</li><li>Di negara B, memperoleh penghasilan (laba) Rp. 1.000.000.000,00 dengan tarif pajak sebesar 20% (Rp. 200.000.000,00)</li><li>Di negara C, menderita kerugian sebesar Rp. 2.000.000.000,00</li><li>Penghasilan usaha di Indonesia Rp. 5.000.000.000,00</li></ul><p>Besar kredit pajak luar negeri yang diperkenankan adalah</p>",
+      "answerKey": 5,
+      "answerList": [
+        "Rp650.000.000",
+        "Rp675.000.000",
+        "Rp700.000.000",
+        "Rp725.000.000",
+        "Rp 750.000.000"
+      ]
+    },
+    {
+      "question": "<p>Berikut merupakan ciri-ciri standar akuntansi</p> <ul style=\"list-style-type: circle; margin-left:25px;\"></ul> <li>tidak mengatur pajak tangguhan</li> <li>hanya menggunakan metode tidak langsung untuk laporan arus kas</li> <li>menggunakan cost model untuk investasi ke asosiasi dan menggunakan metode ekuitas untuk anak perusahaan</li> </ul> <p>Pernyataan di atas merupakan ciri-ciri dari</p>",
+      "answerKey": 2,
+      "answerList": [
+        "SAK-EMKM",
+        "SAK-ETAP",
+        "PSAK Syariah",
+        "PSAK IFRS",
+        "SAP"
+      ]
+    },
+    {
+      "question": "<p>PSAK yang mengatur tentang kontrak asuransi adalah</p>",
+      "answerKey": 5,
+      "answerList": [
+        "PSAK 65",
+        "PSAK 16",
+        "PSAK 69",
+        "PSAK 63",
+        "PSAK 62"
+      ]
+    },
+    {
+      "question": "<p>Siklus perusahaan berikut merupakan siklus yang menunjukkan hubungan antara perusahaan dengan <em>supplier</em></p>",
+      "answerKey": 4,
+      "answerList": [
+        "Siklus pendapatan",
+        "Siklus penggajian",
+        "Siklus pembiayaan",
+        "Siklus pengeluaran",
+        "Siklus sumber daya manusia"
+      ]
+    },
+    {
+      "question": "<p>Tipe transaksi yang paling cocok dalam proses real-time, yaitu</p>",
+      "answerKey": 4,
+      "answerList": [
+        "Pencatatan pembelian aset tetap",
+        "Pencatatan pendapatan bunga dari obligasi jangka panjang",
+        "Penyesuain asuransi dibayar dimuka",
+        "Pencatatan penjualan secara kredit",
+        "Depresiasi aset tetap"
+      ]
+    },
+    {
+      "question": "<p>Masalah yang sering terjadi dan memiliki dampak yang paling besar ketika perusahaan mengembangkan sistem yang dimilikinya disebabkan oleh</p>",
+      "answerKey": 3,
+      "answerList": [
+        "Manajemen",
+        "Tim pengarah informasi",
+        "Pengguna",
+        "Teknologi",
+        "Pihak eksternal"
+      ]
+    },
+    {
+      "question": "<p>i.&nbsp; Penilaian risiko</p> <p>ii.&nbsp; Kebijakan pengendalian internal</p> <p>iii. Informasi dan koneksi</p> <p>iv. Lingkungan pengendalian</p> <p>v.&nbsp; Pengawasan</p> <p>vi. Evaluasi</p> <p>Berdasarkan pernyataan di atas yang termasuk di dalam komponen pengendalian internal COSO adalah</p>",
+      "answerKey": 1,
+      "answerList": [
+        "i, ii, v",
+        "i, ii, iii",
+        "iii, iv, v",
+        "ii, iv, vi",
+        "i, iii, v"
+      ]
+    },
+    {
+      "question": "<p>Banyak perusahaan saat ini beralih dari sistem penyimpanan persediaan JIT (<em>Just in time)</em> ke VMI <em>(Vendor Managed Inventory).</em> Keuntungan sistem VMI yang diperoleh oleh vendor pemasok adalah</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Tidak perlu mengurus persediaan",
+        "Dapat meningkatkan loyalitas pelanggan jangka panjang",
+        "Mengurangi pajak ",
+        "Menambah jumlah laba",
+        "Jaminan ketersediaan barang pasokan"
+      ]
+    },
+    {
+      "question": "<p>Manakah dari komponen berikut yang dapat menyediakan peta untuk mencapai tujuan jangka panjang?</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Model fisik",
+        "Rencana strategis TI",
+        "Walk-through",
+        "Tata letak catatan",
+        "Konversi langsung"
+      ]
+    },
+    {
+      "question": "<p>Berikut ini yang benar mengenai piggybacking, kecuali</p>",
+      "answerKey": 1,
+      "answerList": [
+        "Berpura-pura menjadi pengguna yang sah untuk mengakses sebuah sistem.",
+        "Penggunaan secara diam-diam mengakses jaringan Wifi tetangga.",
+        "Menyadap ke dalam sebuah jalur komunikasi dan mengunci secara elektronik pengguna yang sah sebelum pengguna tersebut memasuki sistem yang aman.",
+        "Menerobos pengendalian fisik seperti keypad, kartu identitas, atau pemindai identifikasi biometrik.",
+        "pengguna sah tanpa sadar membawa pelaku ke dalam sistem."
+      ]
+    },
+    {
+      "question": "<p>Perusahaan PT Jaya membeli dan memproduksi barang persediaan hanya sebagai respon dari penjualan aktual. Jadi PT Jaya Jaya ini hanya memproses sesuai yang diperlukan. Sistem persediaan apakah yang digunakan oleh PT Jaya?</p>",
+      "answerKey": 3,
+      "answerList": [
+        "Reorder point",
+        "Economic order quantity",
+        "Just in time",
+        "Material requirements planning",
+        "Purchase requisition"
+      ]
+    },
+    {
+      "question": "<p>Pada aktivitas siklus penggajian, yaitu aktivitas validasi data waktu dan kehadiran pegawai memunculkan ancaman berupa ketidakakuratan sebuah data. Berikut ini pengendalian yang tidak benar terhadap ancaman tersebut adalah</p>",
+      "answerKey": 4,
+      "answerList": [
+        "Autentikasi biometrik",
+        "Otomatisasi sumber data",
+        "Pengawasan supervisor",
+        "Pemeriksaan pegawai penggajian",
+        "Rekonsiliasi kartu jam kerja terhadap kartu waktu"
+      ]
+    },
+    {
+      "question": "<p>Cassie ingin mengirimkan sebuah file kepada Lesia melalui internet dan melindungi file tersebut sehingga hanya Lesia yang dapat membacanya serta hanya dia pula yang dapat memverifikasi bahwa file tersebut berasal dari Cassie. Apa yang harus dilakukan Cassie?</p>",
+      "answerKey": 3,
+      "answerList": [
+        "Mengenkripsi file menggunakan kunci publik milik Cassie dan kemudian mengenkripsinya lagi menggunakan kunci privat milik Lesia.",
+        "Mengenkripsi file menggunakan kunci privat milik Cassie dan kemudian mengenkripsinya lagi menggunakan kunci privat milik Lesia.",
+        "Mengenkripsi file menggunakan kunci privat milik Cassie dan kemudian mengenkripsinya lagi enggunakan kunci public Lesia.",
+        "Mengenkripsi file menggunakan kunci publik milik Cassie dan kemudian mengenkripsi lagi menggunakan kunci publik milik Lesia.",
+        "Semua salah"
+      ]
+    },
+    {
+      "question": "<p>Pernyataan yang benar mengenai akuntansi basis akrual adalah</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Merupakan pilihan dalam GAAP",
+        "Membuat perusahaan mencatat transaksi yang mengubah laporan keuangan perusahaan dalam perIode terjadinya peristiwa",
+        "Telah dihapuskan karena adanya proyek bersama IASB/FASB atas pengakuan pendapatan",
+        "Tidak konsisten dengan kerangka kerja konseptual GAAP",
+        "Tidak ada yang benar"
+      ]
+    },
+    {
+      "question": "<p>Bengkel makmur abadi melakukan pencatatan jumlah aset dalam satu periode sebesar Rp42.000.000 dan liabilitas sebesar Rp15.500.000. Nilai ekuitas selama periode tersebut adalah</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Rp14.500.000",
+        "Rp26.500.000",
+        "Rp35.500.000",
+        "Rp15.500.000",
+        "Rp12.500.000"
+      ]
+    },
+    {
+      "question": "<p>PT Tirta Abadi menerima cek sebesar Rp 78.000.000 pada tanggal 1 Juli yang merupakan pembayaran uang muka sewa 3 bulan di sebuah bangunan yang disewakan kepada klien. Pendapatan Sewa yang belum diterima dikreditkan sebesar Rp 78.000.000. Laporan keuangan akan disusun pada 31 Juli. PT Tirta Abadi harus membuat entri penyesuaian sebagai berikut pada 31 Juli</p>",
+      "answerKey": 1,
+      "answerList": [
+        "Debit Unearned Rent Revenue, $26,000; Credit Rent Revenue, $26,000",
+        "Debit Rent Revenue, $26,000; Credit Unearned Rent Revenue, $26,000.",
+        "Debit Unearned Rent Revenue, $52,000; Credit Rent Revenue, $52,000.",
+        "Debit Unearned Rent Revenue, $78,000; Credit Rent Revenue, $78,000",
+        "Debit Rent Revenue, $78,000; Credit Unearned Rent Revenue, $78,000"
+      ]
+    },
+    {
+      "question": "<p>The value of an equipment obtained in 2019 is worth Rp16.725.000 and the useful life is determined to be 5 years, with a residual value of Rp 1459.000. How much depreciation was in 2019 by the straight-line method?</p>",
+      "answerKey": 1,
+      "answerList": [
+        "Rp3.053.200",
+        "Rp3.305.202",
+        "Rp4.053.200",
+        "Rp2.200.053",
+        "Rp5.200.503"
+      ]
+    },
+    {
+      "question": "<p>Galaxy Company purchased office supplies costing $ 6,000 and debited Supplies for the full amount. At the end of the accounting period, a physical count of supplies revealed $ 2,700 still on hand. The appropriate adjusting journal entry to be made at the end of the period would be</p>",
+      "answerKey": 4,
+      "answerList": [
+        "Debit Supplies Expense, $ 2,700; Credit Supplies, $ 2,700.",
+        "Debit Supplies, $ 2,700; Credit Supplies Expense, $ 2,700.",
+        "Debit Supplies, $ 3,300; Credit Supplies Expense, $ 3,300.",
+        "Debit Supplies Expense, $ 3,300; Credit Supplies, $ 3,300.",
+        "Debit Supplies Expense, $ 3,330; Credit Supplies, $3,330."
+      ]
+    },
+    {
+      "question": "<p>A credit sale of $8,000 is made on August 4, terms 3/10, n/30, on which a return of $300 is granted on August 9. What amount is received as payment in full on August 13?</p>",
+      "answerKey": 2,
+      "answerList": [
+        "7,760",
+        "7,469",
+        "8,051",
+        "7,546",
+        "8,000"
+      ]
+    },
+    {
+      "question": "<p>Penerapan Peraturan Pemerintah Nomor 24 Tahun 2005 masih bersifat sementara sebagaimana diamanatkan dalam Pasal 36 ayat (1) Undang-Undang Nomor 17 Tahun 2003 tentang Keuangan Negara yang menyatakan bahwa selama pengakuan dan pengukuran pendapatan dan belanja berbasis akrual belum dilaksanakan, digunakan pengakuan dan pengukuran berbasis kas karena</p>",
+      "answerKey": 1,
+      "answerList": [
+        "Pengakuan dan pengukuran pendapatan dan belanja berbasis akrual menurut Pasal 36 ayat (1) Undang-Undang Nomor 17 Tahun 2003 dilaksanakan paling lambat 5 (lima) tahun",
+        "Pengakuan dan pengukuran pendapatan dan belanja berbasis akrual menurut Pasal 36 ayat (1) Undang-Undang Nomor 17 Tahun 2003 dilaksanakan paling lambat 4 (lima) tahun",
+        "Pengakuan dan pengukuran pendapatan dan belanja berbasis akrual menurut Pasal 36 ayat (1) Undang-Undang Nomor 17 Tahun 2003 dilaksanakan paling lambat 3 (lima) tahun",
+        "Pengakuan dan pengukuran pendapatan dan belanja berbasis akrual menurut Pasal 36 ayat (1) Undang-Undang Nomor 17 Tahun 2003 dilaksanakan paling lambat 2 (lima) tahun",
+        "Pengakuan dan pengukuran pendapatan dan belanja berbasis akrual menurut Pasal 36 ayat (1) Undang-Undang Nomor 17 Tahun 2003 dilaksanakan paling lambat 1 (lima) tahun"
+      ]
+    },
+    {
+      "question": "<p>Menurut PP RI No. 71 Th 2010, SAP merupakan prinsip-prinsip akuntansi yang diterapkan dalam menyusun dan menyajikan Laporan Keuangan pemerintah. SAP yang digunakan saat ini adalah PP 24/2005 yang menggunakan basis kas dan harus segera diganti dengan basis akrual (PP71/2010) yang dianggap lebih akuntabel dan lebih mencerminkan prinsip</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Transparansi",
+        "Good Government Governance/ Good Public Governance.",
+        "probity and legality",
+        "responsibility",
+        "managerial accountability"
+      ]
+    },
+    {
+      "question": "<p>Pada 2021 pemerintah melalui dirjen bea cukai melakukan penyitaan ribuan barang illegal yang nilainya sebesar Rp 24 Triliun. Aset hasil sitaan barang illegal ini dikategorikan sebagai</p>",
+      "answerKey": 3,
+      "answerList": [
+        "Pendapatan negara bukan pajak",
+        "Pendapatan negara dari perpajakan",
+        "Pendapatan negara yang sah",
+        "Pendapatan dari barang sitaan",
+        "Pendapatan negara tidak sah"
+      ]
+    },
+    {
+      "question": "<p>Penyusutan atas aktiva tetap sudah diatur dengan tegas dalam PP 71 tahun 2010. Penyusutan akan diperlakukan sebagai</p>",
+      "answerKey": 4,
+      "answerList": [
+        "Pengurang nilai tercatat aset tetap dalam neraca",
+        "Beban penyusutan dalam laporan operasional.",
+        "Pengurang silpa dalam lra",
+        "Pengurang nilai tercatat aset tetap dalam neraca dan beban penyusutan dalam laporan operasional.",
+        "Pengurangan aset lancar pada neraca saldo"
+      ]
+    },
+    {
+      "question": "<p>Tanah di luar negeri dapat diakui sebagai aset tetap negara Indonesia apabila</p>",
+      "answerKey": 3,
+      "answerList": [
+        "Perjanjian penguasaan dan hukum serta perundang-undangan yang berlaku di negara tempat Perwakilan Republik Indonesia berada mengindikasikan adanya penguasaan yang bersifat sementara.",
+        "Perjanjian penguasaan dan hukum serta perundang-undangan yang berlaku di negara tempat Perwakilan Republik Indonesia berada tidak mengindikasikan adanya penguasaan.",
+        "Perjanjian penguasaan dan hokum serta perundang-undangan yang berlaku di negara tempat perwakilan Republik Indonesia berada mengindikasikan adanya penguasaan yang bersifat permanen",
+        "Hak atas penguasaan tanah merupakan hak yang kuat diantara hak-hak atas tanah yang ada di negara tersebut dengan batas waktu.",
+        "Pemerintah memiliki perjanjian atas penguasaan tanah."
+      ]
+    },
+    {
+      "question": "<p>Pada proses penentuan biaya organisasi sektor publik, setelah pemerintah berhasil mengakumulasi data mengenai biaya yang dibutuhkan untuk menghasilkan produk atau jasa layanan, maka akan dilakukan kegiatan pencatatan data ke dalam sistem akuntansi organisasi.</p><p>Pernyataan di atas mencerminkan proses penentuan biaya yang disebut dengan aktivitas</p>",
+      "answerKey": 3,
+      "answerList": [
+        "Cost benefit analysis",
+        "Cost finding",
+        "Cost recording",
+        "Cost analyzing",
+        "Cost reporting"
+      ]
+    },
+    {
+      "question": "<p>Apa yang tidak termasuk dalam proses penganggaran sektor publik?</p>",
+      "answerKey": 3,
+      "answerList": [
+        "Tahap persiapan",
+        "Tahap pelaporan dan evaluasi",
+        "Tahap penghapusan",
+        "Tahap ratifikasi",
+        "Tahap pelaksanaan"
+      ]
+    },
+    {
+      "question": "<p>Yang bukan masalah dari penggunaan ZBB dan PPBS adalah</p>",
+      "answerKey": 5,
+      "answerList": [
+        "Bounded rationally",
+        "Resistance to change",
+        "Conflict of interest",
+        "Tecnoratic",
+        "Semua benar"
+      ]
+    },
+    {
+      "question": "<p>Salah satu prinsip anggaran yang mewajibkan anggaran untuk menunjukkan semua pengeluaran dan penerimaan pemerintah adalah</p>",
+      "answerKey": 1,
+      "answerList": [
+        "Komprehensif",
+        "Keutuhan Anggaran",
+        "Otorisasi legislative",
+        "Jelas",
+        "Akurat"
+      ]
+    },
+    {
+      "question": "<p>Berikut ini yang tidak termasuk exposure draft yang dikeluarkan oleh dewan standar akuntansi sektor publik Ikatan Akuntan Indonesia yaitu</p>",
+      "answerKey": 3,
+      "answerList": [
+        "Laporan arus kas",
+        "Penyajian laporan keuangan",
+        "Perhitungan inflasi yang terjadi di Indonesia",
+        "Kos pinjaman",
+        "Dampak perubahan nilai tukar mata uang luar negeri"
+      ]
+    },
+    {
+      "question": "<p>Jenis akuntansi yang digunakan pada organisasi pemerintah untuk mencatat pendapatan, biaya, aktiva, utang dan modal untuk kegiatan atau aktivitas yang bertujuan mencari laba ialah</p>",
+      "answerKey": 4,
+      "answerList": [
+        "Governmental Funds",
+        "Disposable Fund",
+        "Expendable Fund",
+        "Non-expendable Fund",
+        "Proprietary Funds"
+      ]
+    },
+    {
+      "question": "<p>Untuk melakukan pengukuran kinerja, dikembangkan indikator kinerja untuk unit yang bersangkutan. Salah satu komponen penentuan indikator kinerja adalah indikator penggunaan (utilization), dalam menggunakan indikator penggunaan diperlukan perbandingan antara</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Market supply dengan market demand",
+        "Jumlah pelayanan yang ditawarkan dengan permintaan publik",
+        "Penawaran di masyarakat dengan penawaran yang diberikan pemerintah",
+        "Government supply dengan market demand",
+        "Metode jajak pendapat secara langsung"
+      ]
+    }
+  ]
+}

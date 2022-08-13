@@ -1,0 +1,554 @@
+{
+  "questions": [
+    {
+      "question": "<p>Manakah dari pernyataan berikut yang benar?</p> <ol style=\"list-style-type: lower-roman; margin-left: 20px;\"> <li><span> </span>Produk sampingan adalah produk yang dihasilkan bersamaan dengan produk lain yang volumenya relatif tinggi dibandingkan dengan produk lainnya</li> <li><span> </span>Karena produk sampingan adalah barang yang dapat dijual, maka harus dihitung biayanya secara terpisah dalam akun proses, dan harus menyerap sebagian dari biaya proses</li> <li>Biaya yang timbul sebelum titik pemisahan dikenal sebagai biaya bersama</li> </ol>",
+      "answerKey": 5,
+      "answerList": [
+        "(i) dan (ii)",
+        "(i) dan (iii)",
+        "(ii) dan (iii)",
+        "(i)",
+        "(iii)"
+      ]
+    },
+    {
+      "question": "<p>Sebuah perusahaan ingin meningkatkan jumlah produksinya dengan membeli sebuah mesin dengan pembelian kredit seharga Rp 150.000,00. Mesin itu dibeli perusahaan dengan uang tunai terlebih dahulu sebesar Rp 100.000,00. Perusahaan juga membayar biaya lain-lain sebesar Rp 5.000,00 dan pajak sebesar Rp 1.500,000. Berapakah biaya perolehan dari mesin tersebut?</p>",
+      "answerKey": 4,
+      "answerList": [
+        "Rp 150.000,00",
+        "Rp 156.500,00",
+        "Rp 105.000,00",
+        "Rp 106.500,00",
+        "Rp 101.500,00"
+      ]
+    },
+    {
+      "question": "<p>Penyusutan pada komputer pribadi yang digunakan di departemen pemasaran perusahaan manufaktur akan diklasifikasikan sebagai</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Biaya produk yang tetap sehubungan dengan output perusahaan",
+        "Biaya periode yang tetap sehubungan dengan output perusahaan",
+        "Biaya produk yang variabel sehubungan dengan output perusahaan",
+        "Biaya produk yang tidak ada hubungannya dengan output perusahaan",
+        "Biaya periode yang tetap sehubungan dengan output perusahaan"
+      ]
+    },
+    {
+      "question": "<p>Informasi biaya sebagai identifikasi masalah jika ada kegiatan yang tidak sesuai dengan ekspektasi biasanya digunakan oleh manajemen pada tingkat</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Tingkat produksi",
+        "Tingkat menengah",
+        "Tingkat Eksekutif",
+        "Jawaban a dan c benar",
+        "Jawaban a dan c benar"
+      ]
+    },
+    {
+      "question": "<p>Prosedur yang digunakan dalam akuntansi untuk bahan skrap ditentukan oleh nilai penjualan yang diharapkan dari skrap. Kapan perusahaan harus menjurnal ketika nilai sisa kecil?</p>",
+      "answerKey": 1,
+      "answerList": [
+        "Saat dijual",
+        "Scrap dipindahkan ke penyimpanan material",
+        "Scrap masih di departemen produksi",
+        "Scrap masih digudang",
+        "Tidak ada rekaman"
+      ]
+    },
+    {
+      "question": "<p>Sistem yang menyediakan identifikasi biaya memproduksi produk berkualitas rendah adalah</p>",
+      "answerKey": 5,
+      "answerList": [
+        "Stock-out system",
+        "Activity based costing",
+        "ERP",
+        "Lean accounting",
+        "Cost of quality"
+      ]
+    },
+    {
+      "question": "<p>Rasio biaya variabel adalah 55%, persentase margin kontribusi adalah 30%, dan harga jual $9,000. Berapa margin kontribusi per unit? </p>",
+      "answerKey": 3,
+      "answerList": [
+        "$1,500",
+        "$3,000",
+        "$2,700",
+        "$1,7500",
+        "$9,000"
+      ]
+    },
+    {
+      "question": "<p>Jika perusahaan menerapkan overhead ke produksi berdasarkan tingkat yang telah ditentukan, saldo debit di akun Overhead Manufaktur pada akhir periode berarti</p>",
+      "answerKey": 5,
+      "answerList": [
+        "Biaya overhead aktual lebih besar dari jumlah yang dibebankan untuk produksi",
+        "Biaya overhead aktual kurang dari jumlah biaya tenaga kerja langsung",
+        "Lebih banyak biaya overhead telah dibebankan untuk produksi daripada yang telah dibebankan pada barang jadi selama periode tersebut",
+        "Biaya overhead aktual kurang dari jumlah yang dibebankan untuk produksi.",
+        "Biaya overhead aktual lebih dari jumlah biaya tenaga kerja langsung"
+      ]
+    },
+    {
+      "question": "<p>Data kegiatan PT ACCESS selama November 2022 adalah sebagai berikut:</p> <p>Persediaan pada awal Bulan November 2022</p> <p>Harga Pokok persediaan bahan baku Rp20.000</p> <p>Jumlah persediaan produk dalam proses sebanyak 2.750 kg dengan tingkat penyelesaian sebagai berikut:</p> <ul style=\"margin-left:25%; list-style-type: circle;\"> <li>Biaya bahan baku 100%</li> <li>Biaya konversi 2/3</li> <li>Persediaan produk jadi berjumlah 500 kg</li> </ul> <p>Perusahaan menggunakan sistem biaya taksiran dengan biaya taksiran per kilogram produk adalah sebagai berikut:</p> <ul style=\"margin-left:25%; list-style-type: circle;\"> <li>Biaya bahan baku (1 Kg) Rp24</li> <li>Biaya tenaga kerja (1 jam) Rp39</li> <li>BOP (1 Jam) Rp29</li> </ul> <p>Berapa harga pokok taksiran persediaan produk dalam proses pada awal Bulan November 2022!</p>",
+      "answerKey": 4,
+      "answerList": [
+        "Rp182.000,00",
+        "Rp202.000,00",
+        "Rp207.000,00",
+        "Rp187.000,00",
+        "Rp192.000,00"
+      ]
+    },
+    {
+      "question": "<p>Emma Corp. mempunyai biaya tetap sebesar $2,000, harga jual $200, dan biaya variabel per unit sebesar $120. Jika perusahaan menjual 40 unit, maka akan mendapatkan pendapatan kotor sebesar $8,000. BEP berada pada 25 unit atau $5,000 dari total pendapatan. Berapa persen margin of safety Emma Corp.?</p>",
+      "answerKey": 1,
+      "answerList": [
+        "37,5%",
+        "62,5%",
+        "25%",
+        "30%",
+        "27,5%"
+      ]
+    },
+    {
+      "question": "<p>Bellow that are not include in the basic elements of production cost are</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Direct material",
+        "Indirect labour",
+        "Direct labour",
+        "Factory overhead",
+        "All the answer is wrong"
+      ]
+    },
+    {
+      "question": "<p>There are components of the operational budgets </p>",
+      "answerKey": 3,
+      "answerList": [
+        "Sales budget, cost of goods sold budget, cash budget",
+        "Capital expenditure budget, budgeted income statement, budgeted cash flow statement",
+        "Sales budget, budgeted income statement, cost of goods sold budget",
+        "Selling and administrative expenses budget, sales budget, budgeted balance sheetd",
+        "Cash budget, sales budget, capital expenditure budget"
+      ]
+    },
+    {
+      "question": "<p>A company purchases a production machine on credit for $180,000. The machine was purchased with cash for $120,000. Other costs incurred by the company are $8,000 and tax costs are $2,000. Then the amount of costs that will be charged as expenses is</p>",
+      "answerKey": 2,
+      "answerList": [
+        "$60,000",
+        "$130,000",
+        "$180,000",
+        "$120,000",
+        "$110,000"
+      ]
+    },
+    {
+      "question": "<p>HMJA requires 15.000 fabric of material annually, the cost of placing an order is $25, and the annual carrying cost per fabric is $3. HMJA desires a safety stock of 600 fabric. Compute the total order cost.</p>",
+      "answerKey": 4,
+      "answerList": [
+        "500",
+        "1,875",
+        "192",
+        "1,500",
+        "2.5"
+      ]
+    },
+    {
+      "question": "<p>Saham yang dibeli ulang oleh perusahaan disebut </p>",
+      "answerKey": 3,
+      "answerList": [
+        "Share Capital",
+        "Share Premium",
+        "Treasury Shares",
+        "Share Discount",
+        "Preffered Stocks"
+      ]
+    },
+    {
+      "question": "<p>Penerapan kebijakan akuntansi baru untuk transaksi, peristiwa dan kondisi lain sejak tanggal perubahan kebijakan dan pengakuan dampak perubahan estimasi akuntansi yang dipengaruhi oleh perubahan tersebut merupakan </p>",
+      "answerKey": 2,
+      "answerList": [
+        "Penerapan Retrospektif",
+        "Penerapan Prospektif",
+        "Penerapan Campuran (Retrospektif dan Prospektif)",
+        "Penerapan Korektif",
+        "Tidak ada jawaban yang benar."
+      ]
+    },
+    {
+      "question": "<p>Apabila bunga obligasi dibayarkan pada awal periode, maka pada tanggal pembayaran bunga pemegang obligasi akan mencatat </p>",
+      "answerKey": 3,
+      "answerList": [
+        "Utang bunga (D) dan Kas (K)",
+        "Biaya bunga (D) dan Utang bunga (K)",
+        "Kas (D) dan Piutang bunga (K)",
+        "Piutang bunga (Dr) dan Pendapatan bunga (K)",
+        "Interest Income (Dr) dan Cash (Cr)"
+      ]
+    },
+    {
+      "question": "<p>Mesin dengan harga perolehan Rp25.000.000 yang telah didepresiasi sebesar Rp10.000.000 ditukar dengan mesin senilai Rp28.000.000 dengan nilai tukar pasar sebesar Rp20.000.000. Perusahaan juga harus membayar tambahan kas sebesar Rp5.000.000. Berapa laba(rugi) yang terjadi atas pertukaran aktiva di atas? </p>",
+      "answerKey": 1,
+      "answerList": [
+        "Rp8.000.000",
+        "(Rp8.000.000)",
+        "0",
+        "(Rp5.000.000)",
+        "Tidak ada jawaban benar"
+      ]
+    },
+    {
+      "question": "<p>Apabila saldo piutang awal Rp 65.000.000 dan saldo piutang akhir Rp 134.000.00. Berapakah saldo cadangan kerugian piutang sebelum penyesuaian, jika jumlah piutang tak tertagih 3% dari saldo rata – rata dan pada jurnal penyesuaian terdapat saldo cadangan kerugian piutang  Rp1.500.000 (Debit)?  </p>",
+      "answerKey": 4,
+      "answerList": [
+        "Rp 2.985.000",
+        "Rp 3.500.000",
+        "Rp 4.225.000",
+        "Rp 4.485.000",
+        "Rp 4.250.000"
+      ]
+    },
+    {
+      "question": "<p>PT Abadi menggunakan metode neto untuk mencatat setiap transaksi penjualan. Pada tanggal 12 Februari, PT Abadi mencatat transaksi sebesar Rp 220.000,00 dengan persyaratan 2/10, n/30. Tentukan jurnal yang dibutuhkan jika PT Abadi memperoleh pembayaran penuh pada tanggal 22 Februari</p>",
+      "answerKey": 2,
+      "answerList": [
+        "<div> <table border=\"0\" style=\"table-layout: auto; text-align: left; border-collapse: collapse; height: 105px;\"> <tbody> <tr> <td>12 Februari&nbsp;&nbsp;</td> <td>Piutang</td> <td>Rp 220.000,00</td> </tr> <tr> <td></td> <td>Penjualan</td> <td>220.000,00</td> </tr> <tr> <td>22 Februari</td> <td>Kas</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Diskon Penjualan&nbsp; &nbsp;&nbsp;</td> <td>4.400,00</td> </tr> <tr> <td></td> <td>Piutang</td> <td>220.000,00</td> </tr> </tbody> </table> </div>",
+        "<div> <table border=\"0\" style=\"table-layout: auto; text-align: left; border-collapse: collapse; height: 105px;\"> <tbody> <tr> <td>12 Februari&nbsp;&nbsp;</td> <td>Piutang&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Penjualan</td> <td>215.600,00</td> </tr> <tr> <td>22 Februari</td> <td>Kas</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Piutang&nbsp; &nbsp;&nbsp;</td> <td>215.600,00</td> </tr> </tbody> </table> </div>",
+        "<div> <table border=\"0\" style=\"table-layout: auto; text-align: left; border-collapse: collapse; height: 105px;\"> <tbody> <tr> <td>12 Februari&nbsp;&nbsp;</td> <td>Penjualan&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Piutang</td> <td>215.600,00</td> </tr> <tr> <td>22 Februari</td> <td>Kas</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Piutang&nbsp; &nbsp;&nbsp;</td> <td>215.600,00</td> </tr> </tbody> </table> </div>",
+        "<div> <table border=\"0\" style=\"table-layout: auto; text-align: left; border-collapse: collapse; height: 105px;\"> <tbody> <tr> <td>12 Februari&nbsp;&nbsp;</td> <td>Piutang</td> <td>Rp 220.000,00</td> </tr> <tr> <td></td> <td>Penjualan</td> <td>220.000,00</td> </tr> <tr> <td>22 Februari</td> <td>Kas</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Diskon Penjualan&nbsp; &nbsp;&nbsp;</td> <td>4.400,00</td> </tr> <tr> <td></td> <td>Piutang</td> <td>220.000,00</td> </tr> </tbody> </table> </div>",
+        "<div> <table border=\"0\" style=\"table-layout: auto; text-align: left; border-collapse: collapse; height: 105px;\"> <tbody> <tr> <td>12 Februari&nbsp;&nbsp;</td> <td>Piutang&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Penjualan</td> <td>215.600,00</td> </tr> <tr> <td>22 Februari</td> <td>Piutang</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Kas&nbsp; &nbsp;&nbsp;</td> <td>215.600,00</td> </tr> </tbody> </table> </div>"
+      ]
+    },
+    {
+      "question": "<p>Cassie akan menginvestasikan uang sebesar $10.000 hari ini dalam dana yang menghasilkan bunga tahunan 5%. Berapa lama waktu yang dibutuhkan untuk menghasilkan dana menjadi $17.100?</p>",
+      "answerKey": 2,
+      "answerList": [
+        "12 tahun",
+        "11 tahun",
+        "13 tahun",
+        "10 tahun",
+        "9 tahun"
+      ]
+    },
+    {
+      "question": "<p>Jika sebuah perusahaan melakukan penjualan asetnya karena segera membutuhkan kas, maka hasil penjualan tersebut dimasukan kedalam laporan laba rugi pada kelompok</p>",
+      "answerKey": 4,
+      "answerList": [
+        "Revenue",
+        "Other comprehensive income",
+        "Income from operation",
+        "Other income and expense",
+        "Expense"
+      ]
+    },
+    {
+      "question": "<p>Berdasarkan praktik buku masa lalu, kebijakan yang telah dipublikasi atau pernyataan baru yang cukup spesifik, entitas telah memberi indikasi kepada pihak lain bahwa entitas akan menerima tanggung jawab tertentu dan akibatnya, maka entitas telah menimbulkan ekspektasi valid kepada pihak lain bahwa entitas akan melaksanakan tanggung jawab yang disebut </p>",
+      "answerKey": 2,
+      "answerList": [
+        "Kewajiban Kontrak",
+        "Kewajiban Konstruktif",
+        "Kewajiban Hukum dan Konstruktif",
+        "Kewajiban Hukum",
+        "Kewajiban Destruktif"
+      ]
+    },
+    {
+      "question": "<p>PT. Jaya Sempurna Tbk. Menerbitkan convertible bond dengan premi sebesar Rp2.500.000 dengan nilai Rp50.000.000, dapat dikonversi menjadi 2.000 saham biasa (nilai nominal Rp20.000). Pada saat konversi, premi yang belum diamortisasi adalah Rp1.000.000, nilai pasar obligasi adalah Rp55.000.000 dan saham di pasar sebesar Rp30.000 per saham. Jika obligasi dikonversi ke saham biasa, berapa agio saham (share premium) yang akan dicatat pada konvesi obligasi tersebut? </p>",
+      "answerKey": 1,
+      "answerList": [
+        "Rp11.000.000",
+        "Rp12.500.000",
+        "Rp16.000.000",
+        "Rp20.000.000",
+        "Rp21.000.000"
+      ]
+    },
+    {
+      "question": "<p>PT Media menyewa mesin dari PT Virya berdasarkan perjanjian yang memenuhi kriteria untuk menjadi sewa pembiayaan untuk Media. Enam tahun sewa memerlukan pembayaran $102.000 pada awal setiap tahun, termasuk $15.000 per tahun untuk pemeliharaan, asuransi, dan pajak. Tingkat bunga pinjaman inkremental lessee adalah 10%, tingkat implisit lessor adalah 8% dan dikenal oleh lessee. Nilai sekarang dari anuitas jatuh tempo dari 1 selama enam tahun sebesar 10% adalah 4,79079. Nilai sekarang dari anuitas jatuh tempo dari 1 selama enam tahun sebesar 8% adalah 4,99271. PT Media harus mencatat aset sewaan sebesar </p>",
+      "answerKey": 1,
+      "answerList": [
+        "$ 434.366,77",
+        "$ 435.366,77",
+        "$ 534.266,77",
+        "$ 534.366,77",
+        "$ 535.366,77"
+      ]
+    },
+    {
+      "question": "<p>PT AC Tbk. issued a convertible bond with a premium of Rp. 2,500,000 with a value  of Rp50,000,000, can be converted into 2,000 ordinary shares (nominal value Rp20,000). At the time of conversion, the premium that has not been amortized is Rp1,000,000, the market value of bonds is Rp55,000,000 and shares in the market are Rp30,000 per share. If the bonds are converted into ordinary shares, how much agio shares (share premium) will be recorded at the bond’s investment? </p>",
+      "answerKey": 2,
+      "answerList": [
+        "Rp12.500.000",
+        "Rp11.000.000",
+        "Rp16.000.000",
+        "Rp20.000.000",
+        "Rp13.500.000"
+      ]
+    },
+    {
+      "question": "<p>Terdapat informasi berikut:</p> <p>Arus kas bersih dari aktifitas operasi&nbsp;Rp125.750.000</p> <p>Capital expenditures Rp50.526.000</p> <p>Dividen Rp5.850.000</p> <p>Hitunglah free cash flow dari informasi tersebut.</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Rp 170.426000",
+        "Rp 69.374.000",
+        "Rp 121.074.000",
+        "Rp 125.750.000",
+        "Tidak ada jawaban benar"
+      ]
+    },
+    {
+      "question": "<p>Active company pay Rp.100,000,000.00 to purchase assets belonging to Access companiy. It is assumed that Access’s liabilities are Rp. 12,000,000.00 and Access’s assets have a fair value of Rp. 50,000,000.00. So how much goodwill will the Active company record? </p>",
+      "answerKey": 2,
+      "answerList": [
+        "Rp 12.000.000,00",
+        "Rp 62.000.000,00",
+        "Rp 38.000.000,00",
+        "Rp 50.000.000,00",
+        "Rp 52.000.000,00"
+      ]
+    },
+    {
+      "question": "<p>Yuyun is investing Rp 300.000.000,00 in a fund that can earn 8% interest compounded annually. What equal amounts can yuyun withdraw at the end of each of the next 20 years?</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Rp 6.600.000,00",
+        "Rp 6.555.663,00",
+        "Rp 7.990.630,00",
+        "Rp 6.300.000,00",
+        "Rp 7.000.000,00"
+      ]
+    },
+    {
+      "question": "<p>Reddaway Corporation reports the following information:</p> <p>Net income $500,000</p> <p>Dividends on common stock 140,000</p> <p>Dividends on preferred stock 60,000</p> <p>Weighted average common shares outstanding 100,000</p> <p>Reddaway should report earnings per share of: </p>",
+      "answerKey": 3,
+      "answerList": [
+        "3.00",
+        "3.60",
+        "4.40",
+        "5.00",
+        "5.40"
+      ]
+    },
+    {
+      "question": "<p>Executive stock options are outstanding all year that permit executives to buy 12 million common shares at $50. The average market price of the common stock was $60. When calculating diluted earnings per share, the assumed exercise of these options will increase the weighted average number of shares outstanding by: </p>",
+      "answerKey": 2,
+      "answerList": [
+        "1 million shares",
+        "2 million shares",
+        "3 million shares",
+        "4 million shares",
+        "5 million shares"
+      ]
+    },
+    {
+      "question": "<p>On April 4, 2021, Mosco Co. enters into a contract to deliver a product to Grage Inc. on May 7, 2021. Grage agrees to pay the full contract price of $3,100 on June 10, 2021. The cost of goods is $2,300. Mosco delivers the product to Grage on May 7, 2021, and receives payment on June 10, 2021. Prepare the journal entries on April 4, 2021. </p>",
+      "answerKey": 1,
+      "answerList": [
+        "No journal entry",
+        "<div> <table border=\"0\" style=\"table-layout: auto;\"> <tbody> <tr> <td>Account receivable&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td> <td>3,100</td> </tr> <tr> <td>Sales revenue</td> <td>3,100</td> </tr> <tr> <td>Cost of goods sold</td> <td>2,300</td> </tr> <tr> <td>Inventory</td> <td>2,300</td> </tr> </tbody> </table> <p></p> </div>",
+        "<div> <table border=\"0\" style=\"table-layout: auto;\"> <tbody> <tr> <td>Cash&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td> <td>3,100</td> </tr> <tr> <td>Account receivable</td> <td>3,100</td> </tr> </tbody> </table> </div>",
+        "<div> <table border=\"0\" style=\"table-layout: auto;\"> <tbody> <tr> <td>Cash&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td> <td>3,100</td> </tr> <tr> <td>Unearned service revenue</td> <td>3,100</td> </tr> </tbody> </table> </div>",
+        "<div> <table border=\"0\" style=\"table-layout: auto;\"> <tbody> <tr> <td>Unearned service revenue&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td> <td>3,100</td> </tr> <tr> <td>Sales revenue</td> <td>3,100</td> </tr> <tr> <td>Cost of goods sold</td> <td>2,300</td> </tr> <tr> <td>Inventory</td> <td>2,300</td> </tr> </tbody> </table> <p></p> </div>"
+      ]
+    },
+    {
+      "question": "<p>Sauna construction has entered into a contract beginning March 1, 2023, to build a parking complex. It has been estimated that the complex will cost 750.000 and will take 3 years to construction period</p> <p style=\"margin-top:10px;\"></p> <table style=\"border-collapse: collapse; table-layout: auto; width: 100%; border: 1px solid;\"> <tbody> <tr> <td></td> <td>2023</td> <td>2024</td> <td>2025</td> </tr> <tr> <td>Cost to date</td> <td>420.000</td> <td>600.000</td> <td>760.000</td> </tr> <tr> <td>Estimated cost to complete</td> <td>480.000</td> <td>300.000</td> <td>0</td> </tr> <tr> <td>Progress billings to date</td> <td>420.000</td> <td>700.000</td> <td>1.050.000</td> </tr> <tr> <td>Cash collected to date</td> <td>390.000</td> <td>650.000</td> <td>1.050.000</td> </tr> </tbody> </table> <p style=\"margin-top:10px;\"></p> <p>Sauna construction has entered into a contract beginning March 1, 2023, to build a parking complex. It has been estimated that the complex will cost 750.000 and will take 3 years to construction period</p>",
+      "answerKey": 3,
+      "answerList": [
+        "84.000",
+        "120,000",
+        "290,000",
+        "760,000",
+        "1,050,000"
+      ]
+    },
+    {
+      "question": "<p>Jenny corporation shipped $32,000 of merchandise on consigment to Ranu Company on October 11, 2021. On 23 October, 2021, Jenny paid freight costs of $3,200. On November 2, 2021, Ranu Company paid $750 for local advertising, which is reimbursable from Jenny. By year-end, 65% of the merchandise had been sold for $25,000. Ranu notified Jenny, retained a 10% commision and remitted the cash due to Jenny. Prepare Jenny’s journal entry when the cash is received </p>",
+      "answerKey": 2,
+      "answerList": [
+        "<div> <table border=\"0\" style=\"table-layout: auto;\"> <tbody> <tr> <td>Cash&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td> <td>21,750</td> </tr> <tr> <td>Advertising Expense</td> <td>750</td> </tr> <tr> <td>Commision Expense</td> <td>2,500</td> </tr> <tr> <td>Revenue from consigment sales</td> <td>25,000</td> </tr> </tbody> </table> </div>",
+        "<div> <table border=\"0\" style=\"table-layout: auto;\"> <tbody> <tr> <td>Cash&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td> <td>21,750</td> </tr> <tr> <td>Advertising Expense</td> <td>750</td> </tr> <tr> <td>Commision Expense</td> <td>2,500</td> </tr> <tr> <td>Revenue from consigment sales</td> <td>25,000</td> </tr> <tr> <td>Cost of Googs sold</td> <td>22,880</td> </tr> <tr> <td>Inventory on consigment</td> <td>22,880</td> </tr> </tbody> </table> </div>",
+        "<div> <table border=\"0\" style=\"table-layout: auto;\"> <tbody> <tr> <td>Cash&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td> <td>21,750</td> </tr> <tr> <td>Advertising Expense</td> <td>750</td> </tr> <tr> <td>Commision Expense</td> <td>22,000</td> </tr> </tbody> </table> </div>",
+        "<div> <table border=\"0\" style=\"table-layout: auto;\"> <tbody> <tr> <td>Revenue from consigment sales&nbsp; &nbsp; &nbsp; &nbsp;</td> <td>25,000</td> </tr> <tr> <td>Cash</td> <td>21,750</td> </tr> <tr> <td>Advertising Expense</td> <td>750</td> </tr> <tr> <td>Commision Expense</td> <td>25,000</td> </tr> <tr> <td>Inventory on consigment</td> <td>22,880</td> </tr> <tr> <td>Cost of Googs sold</td> <td>22,880</td> </tr> </tbody> </table> <p></p> </div>",
+        "<div> <table border=\"0\" style=\"table-layout: auto;\"> <tbody> <tr> <td>Revenue from consigment sales&nbsp; &nbsp; &nbsp; &nbsp;</td> <td>25,000</td> </tr> <tr> <td>Cash</td> <td>21,750</td> </tr> <tr> <td>Advertising Expense</td> <td>750</td> </tr> <tr> <td>Commision Expense</td> <td>2,500</td> </tr> </tbody> </table> </div>"
+      ]
+    },
+    {
+      "question": "<p>Berikut ini yang merupakan prinsip pemilikan dan pengelolaan bersama adalah</p>",
+      "answerKey": 3,
+      "answerList": [
+        "Silent Partner tidak memperoleh laba",
+        "Laba yang diperoleh tidak dibagikan untuk semua pemilik",
+        "Pemilikan bersama dari persekutuan",
+        "Risiko ditanggung hanya pemberi modal",
+        "Tidak ada jawaban yang benar"
+      ]
+    },
+    {
+      "question": "<p>The difference accounting methods between fair value and equity costs when reporting stock investments on  financial statement  result is</p>",
+      "answerKey": 1,
+      "answerList": [
+        "The amount investment in the investor's balance sheet and the different income amounts in the statement of income",
+        "The amount investment in the investor’s balance sheets and the different amount in the statement of retained earningsk",
+        "The different income amounts in the statement of income and the different amount in the statement of retained earning",
+        "The different only in the amount of income statements",
+        "There aren’t difference between fair value and equity cost."
+      ]
+    },
+    {
+      "question": "<p>Asumsikan tarif pajak perusahaan sebesar 15 persen untuk $50.000 dari penghasilan kena pajak, 25 persen untuk penghasilan kena pajak antara $50.001 dan $75.000, 34 persen untuk penghasilan kena pajak antara $75.001 dan $100.000, dan 39 persen untuk penghasilan kena pajak antara $ 100.001 dan $ 335.000. Jika sebuah perusahaan memperkirakan pendapatan sebelum pajaknya sebesar $20.000 untuk kuartal pertama, $25.000 untuk kuartal kedua, $30.000 untuk kuartal ketiga, dan $35.000 untuk kuartal keempat, taksiran tarif pajak efektif tahunan adalah</p>",
+      "answerKey": 1,
+      "answerList": [
+        "23,77 persen",
+        "30 persen",
+        "25,67 persen",
+        "34,5 persen",
+        "33,3 persen"
+      ]
+    },
+    {
+      "question": "<p>Mengapa transaksi antar perusahaan antara induk dan anak perusahaan dieliminasi dalam penyusunan laporan keuangan konsolidasi</p>",
+      "answerKey": 1,
+      "answerList": [
+        "Laba rugi atas penjualan antar perusahaan antara afiliasi direalisasi untuk tujuan laporan konsolidasi pada saat afiliasi pembelian menjual kembali barang dagangan kepada pihak di luar entitas yang dikonsolidasi. Jika semua barang dagangan yang dijual kepada afiliasi dijual kembali kepada pihak luar pada periode yang sama, tidak akan ada laba yang belum direalisasi untuk dieliminasi dalam penyusunan laporan keuangan konsolidasian.",
+        "Untuk menghindari penghitungan ganda",
+        "Mengevaluasi kesehatan perusahaan induk",
+        "Memangkas tumpukan laporan ",
+        "Memotong semua transaksi yang terjadi antara anak perusahaan dan perusahaan induk"
+      ]
+    },
+    {
+      "question": "<p>In 2020 PT ELSA acquired 20% stake in PT INDO for Rp200.000.000. At that time PT INDO equity is Rp450.000.000. PT ELSA has a significant influence on PT ENGLISH. At the time of acquisition, there is no difference between the fair value and the carrying amount of all assets and liabilities of PT ENGLISH. What is the goodwill at the time of acquisition?</p>",
+      "answerKey": 3,
+      "answerList": [
+        "Rp100.000.000",
+        "Rp111.000.000",
+        "Rp110.000.000",
+        "Rp200.000.000",
+        "Rp250.000.000"
+      ]
+    },
+    {
+      "question": "<p>Lintang memperoleh 60 persen saham Dhea pada 1 Januari 2016, seharga $360,000, ketika aset bersih Dhea memiliki nilai buku dan nilai wajar $600,000. Selama 2016, Lintang menjual barang inventaris seharga $600,000 kepada Dhea seharga $800,000, dan persediaan Dhea pada tanggal 31 Desember 2016, termasuk seperempat dari barang dagangan ini. Lintang melaporkan pendapatan terpisah dari operasinya sendiri (tidak termasuk pendapatan investasi) sebesar $300,000, dan Dhea melaporkan kerugian bersih sebesar $150,000 untuk 2016. Bagian pengendali atas laba bersih konsolidasi Lintang Corporation dan Anak Perusahaan untuk tahun 2016 adalah</p>",
+      "answerKey": 2,
+      "answerList": [
+        "100,000",
+        "160,000",
+        "300,000",
+        "140,000",
+        "90,000"
+      ]
+    },
+    {
+      "question": "<p>Perusahaan Induk menjual tanahnya kepada anak perusahaan di tahun 2018 dan mengakui keuntungan sebesar $100.000.  Dalam Laporan laba  rugi terpisah, keuntungan tersebut dihapuskan oleh akun</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Debit terhadap Gain on sale",
+        "Debit terhadap Pendapatan dari Anak perusahaan",
+        "Debit  terhadap investasi dari anak perusahaan",
+        "Kredit terhadap tanah",
+        "Kerugian dari penjualan "
+      ]
+    },
+    {
+      "question": "<p>Berikut ini pernyataan yang benar mengenai cara mendirikan persekutuan dengan mengubah pemilikan perusahaan perseorangan yang sudah ada</p>",
+      "answerKey": 1,
+      "answerList": [
+        "Pengakuan Aktiva Bersih yang disetor",
+        "Pembukuan Hutang masing-masing sekutu",
+        "Penilaian Modal masing-masing sekutu",
+        "Penentuan modal masing-masing sekutu",
+        "Tidak ada jawaban yang benar"
+      ]
+    },
+    {
+      "question": "<p>On March 1, Andi Co. purchased a 30% interest in Edward Co. for $250.000. On this date, the book value of Edward’s identifiable net assets approximated fair values, except for land, whose fair value exceeded its carrying amount by $200.000. Edward reported net income of $100.000 and paid no dividends. In December 31 balance sheet, what should Andi report for this investment if Andi uses the equity method for this investment?</p>",
+      "answerKey": 3,
+      "answerList": [
+        "$210.000",
+        "$300.000",
+        "$280.000",
+        "$220.000",
+        "$270.000"
+      ]
+    },
+    {
+      "question": "<p>PT Access membayar Rp86.000.000 untuk mengakuisisi aset dan liabilitas PT Lancar. PT Lancar melaporkan aset dengan nilai tercatat Rp50.000.000 dan nilai wajar Rp88.000.000 serta liabilitas dengan nilai tercatat dan nilai wajar Rp13.000.000, pada saat akuisisi PT Acces juga membayar Rp4.000.000 untuk jasa mencari target perusahaan yang akan diakuisisi. Berapa goodwill yang diakui atas akuisisi tersebut?</p>",
+      "answerKey": 4,
+      "answerList": [
+        "Rp5.000.000",
+        "Rp7.000.000",
+        "Rp9.000.000",
+        "Rp11.000.000",
+        "Rp13.000.000"
+      ]
+    },
+    {
+      "question": "<p>Apa yang harus dilakukan apabila saldo overhead yang dibebankan terlalu rendah atau terlalu tinggi pada akun overhead pabrik pada akhir periode?</p>",
+      "answerKey": 1,
+      "answerList": [
+        "Ditutup ke Harga Pokok Penjualan dan dialokasikan ke akun lain dalam proporsi overhead yang dibebankan",
+        "Dialokasikan ke Harga Pokok Penjualan",
+        "Dialokasikan ke Harga Pokok Produksi",
+        "Ditutup ke akun lain dalam proporsi overhead yang dibebankan",
+        "Tidak dialokasikan atau ditutup ke akun manapun"
+      ]
+    },
+    {
+      "question": "<p>Apa pengaruh unit hilang dalam proses produksi?</p>",
+      "answerKey": 2,
+      "answerList": [
+        "Jumlah unit yang menanggung biaya bertambah sehingga mengakibatkan biaya per unitnya turun. Jika pada departemen pertama tidak adanya pengaruh unit hilang sedangkan pada departemen lanjutan produk hilang dipandang sebagai proses produksi normal dan tidak dihitung biayanya.",
+        "Jumlah unit yang menanggung biaya berkurang sehingga mengakibatkan biaya per unitnya naik. Jika pada departemen pertama tidak adanya pengaruh unit hilang sedangkan pada departemen lanjutan produk hilang dipandang sebagai proses produksi normal dan tidak dihitung biayanya.",
+        "Jumlah unit yang menanggung biaya berkurang sehingga mengakibatkan biaya per unitnya turun. Jika pada departemen pertama adanya pengaruh unit hilang sedangkan pada departemen lanjutan produk tidak ada yang hilang dipandang sebagai proses produksi normal dan tidak dihitung biayanya.",
+        "Jumlah unit yang menanggung biaya bertambah sehingga mengakibatkan biaya per unitnya naik. Jika pada departemen pertama tidak adanya pengaruh unit hilang sedangkan pada departemen lanjutan produk hilang dipandang sebagai proses produksi normal dan tidak dihitung biayanya.",
+        "Jumlah unit yang menanggung biaya bertambah sehingga mengakibatkan biaya per unitnya berkurang. Jika pada departemen pertama tidak adanya pengaruh unit hilang sedangkan pada departemen lanjutan produk hilang dipandang sebagai proses produksi tidak normal dan dihitung biayanya."
+      ]
+    },
+    {
+      "question": "<p>Rasio margin kontribusi perusahaan ACCESS adalah 40%. Jika pendapatan penjualannya adalah $100 lebih besar dari penjualan titik impasnya dalam, maka laba bersihnya</p>",
+      "answerKey": 2,
+      "answerList": [
+        "20%",
+        "40%",
+        "60%",
+        "80%",
+        "100%"
+      ]
+    },
+    {
+      "question": "<p><div> <p><em>Panzerwagen und Waffen company</em> mengeluarkan biaya-biaya berikut dalam kegiatan produksinya:</p> <ul style=\"list-style-type: circle; margin-left:25px\"> <li>Barang jadi pada tanggal 1 Januari &euro; 80.000</li> <li>Barang jadi pada tanggal 31 Desember &euro; 60.500</li> <li><em>Cost of goods manufactured</em> &euro; 330.000</li> </ul> <p>Berapa <em>cost of goods sold Panzerwagen und Waffen company</em></p> </div></p>",
+      "answerKey": 1,
+      "answerList": [
+        "<p>&euro; 349.500</p>",
+        "<p>&euro; 410.000</p>",
+        "<p>&euro; 390.500</p>",
+        "<p>&euro; 470.500</p>",
+        "<p>&euro; 250.000</p>"
+      ]
+    },
+    {
+      "question": "<p>HMJA menargetkan penjualan 25.000 unit dengan harga per unitnya Rp1.500. Biaya variabelnya Rp 900 per unit dan biaya tetapnya Rp 4.500.000. Berapa rasio margin kontribusinya? </p>",
+      "answerKey": 2,
+      "answerList": [
+        "3,33%",
+        "40%",
+        "48%",
+        "30%",
+        "13,33%"
+      ]
+    },
+    {
+      "question": "<p><p>Di pertengahan tahun, harga bahan baku utama <em>Access Corporation</em> naik 8%. Bagaimana kenaikan ini akan mempengaruhi <em>break-even point</em> dan <em>margin of safety</em>?</p> <p style=\"margin-left:25px\">break-even point &hellip;. margin of safety &hellip;.</p></p>",
+      "answerKey": 2,
+      "answerList": [
+        "Meningkat - meningkat",
+        "Meningkat - menurun",
+        "Menurun - menurun",
+        "Menurun - meningkat",
+        "Meningkat - tetap"
+      ]
+    }
+  ]
+}

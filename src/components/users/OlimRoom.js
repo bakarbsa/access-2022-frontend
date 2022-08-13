@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import QuestionTile from './QuestionTile';
@@ -118,7 +119,15 @@ function OlimRoom() {
         <p className="font-bold pb-2">Jawaban</p>
         <div className="flex flex-col">
           {questions[currentQuestion - 1]?.answerList.map((answer, i) => (
-            <button key={answer} type="button" onClick={() => { answerClickHandler(i + 1); }} className={`${answers[questionsOrder[currentQuestion - 1]] === i + 1 ? 'bg-access-primary' : 'bg-[#F4F7FE] hover:bg-gray-300'} flex justify-start p-4 mb-2 rounded-lg`}>{`${indexToAlfa(i)} ${answer}`}</button>
+            <button key={answer} type="button" onClick={() => { answerClickHandler(i + 1); }} className={`${answers[questionsOrder[currentQuestion - 1]] === i + 1 ? 'bg-access-primary' : 'bg-[#F4F7FE] hover:bg-gray-300'} p-4 mb-2 rounded-lg`}>
+              <div className="flex flex-row w-full">
+                <div className="flex w-fit">
+                  { indexToAlfa(i) }
+                  &nbsp;&nbsp;
+                </div>
+                <div className="text-left" dangerouslySetInnerHTML={{ __html: `${answer}`.replaceAll('\\', '') }} />
+              </div>
+            </button>
           ))}
         </div>
         <div className="flex justify-end">
@@ -139,9 +148,7 @@ function OlimRoom() {
                 <p className="font-bold">{`Pertanyaan ${currentQuestion}`}</p>
               </div>
             </div>
-            <div className="pb-5">
-              {questions[currentQuestion - 1]?.question}
-            </div>
+            <div dangerouslySetInnerHTML={{ __html: questions[currentQuestion - 1]?.question.replaceAll('\\', '') }} className="pb-5" />
             <form onSubmit={handleSubmit}>
               {renderAnswers()}
             </form>
@@ -158,8 +165,8 @@ function OlimRoom() {
                 .map((question, i) => (<button key={i} type="button" onClick={() => tileClickHandler(i)}><QuestionTile number={i} state={currentQuestion === i + 1 ? QuestionTileState.Selected : (answers[questionsOrder[i]] !== undefined) ? QuestionTileState.Answered : QuestionTileState.Nothing} /></button>))}
             </div>
           </div>
-          <div className="relative z-10">
-            <div className={errorUpdate ? 'h-full w-full fixed z-10 inset-0 flex justify-center items-center bg-black bg-opacity-30' : 'hidden'}>
+          <div className={errorUpdate ? 'relative z-10' : 'hidden'}>
+            <div className="h-full w-full fixed z-10 inset-0 flex justify-center items-center bg-black bg-opacity-30">
               <div className="bg-white rounded-md p-5 flex flex-col z-50">
                 {errorUpdate || ''}
                 <div className="flex justify-end mt-2">
