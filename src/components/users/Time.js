@@ -48,19 +48,19 @@ function Time() {
   };
   return (
     <div className="flex flex-col items-center mb-4 justify-center bg-gray-400 bg-opacity-70 rounded-md py-4">
-      <h1 className="text-lg font-bold leading-none mb-2">Waktu Tersisa</h1>
+      <h1 className="text-base font-bold leading-none mb-2">Waktu Tersisa</h1>
       <div className="flex flex-row gap-5 pt-3">
         <div className="flex flex-col items-center justify-center bg-access-white bg-opacity-40 w-16 rounded-md py-2">
-          <h1 className="text-lg font-semibold">{ olimTime.endTime ? getHours(currentTime, olimTime.endTime) : '00'}</h1>
-          <h1 className="text-lg font-semibold">Jam</h1>
+          <h1 className="text-base font-semibold">{ olimTime.endTime ? getHours(currentTime, olimTime.endTime) : '00'}</h1>
+          <h1 className="text-base font-semibold">Jam</h1>
         </div>
         <div className="flex flex-col items-center justify-center bg-access-white bg-opacity-40 w-16 rounded-md py-2">
-          <h1 className="text-lg font-semibold">{ olimTime.endTime ? getMinutes(currentTime, olimTime.endTime) : '00'}</h1>
-          <h1 className="text-lg font-semibold">Menit</h1>
+          <h1 className="text-base font-semibold">{ olimTime.endTime ? getMinutes(currentTime, olimTime.endTime) : '00'}</h1>
+          <h1 className="text-base font-semibold">Menit</h1>
         </div>
         <div className="flex flex-col items-center justify-center bg-access-white bg-opacity-40 w-16 rounded-md py-2">
-          <h1 className="text-lg font-semibold">{ olimTime.endTime ? getSeconds(currentTime, olimTime.endTime) : '00'}</h1>
-          <h1 className="text-lg font-semibold">Detik</h1>
+          <h1 className="text-md font-semibold">{ olimTime.endTime ? getSeconds(currentTime, olimTime.endTime) : '00'}</h1>
+          <h1 className="text-md font-semibold">Detik</h1>
         </div>
       </div>
     </div>
