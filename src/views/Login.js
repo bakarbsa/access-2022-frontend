@@ -83,6 +83,9 @@ function Login() {
             <div className={error !== '404' ? 'hidden' : 'bg-access-red w-full py-2 px-5 text-center'}>
               <p className="text-sm text-white">Username atau password salah</p>
             </div>
+            <div className={error !== '403' ? 'hidden' : 'bg-access-red w-full py-2 px-5 text-center'}>
+              <p className="text-sm text-white">Anda telah mencapai batas maksimal login</p>
+            </div>
             <form method="post" onSubmit={handleSubmit} className="w-full flex flex-col gap-10 mb-5">
               <div className="flex gap-4">
                 <UserCircleIcon className="w-10 text-access-dark" />
