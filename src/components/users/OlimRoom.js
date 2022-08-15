@@ -130,7 +130,7 @@ function OlimRoom() {
             </button>
           ))}
         </div>
-        <div className="flex justify-end">
+        <div className="flex justify-end mb-5">
           <button type="button" onClick={clearChoice} className="text-red-400 pt-2">Hapus Pilihan</button>
         </div>
       </div>
@@ -141,8 +141,8 @@ function OlimRoom() {
     questions.length <= 0
       ? <Loading />
       : (
-        <div className="pt-28 px-12 mb-16 flex flex-row gap-20 overflow-hidden">
-          <div className="flex flex-col justify-between w-full">
+        <div className="pt-32 px-12 mb-16 flex flex-row gap-20 overflow-hidden">
+          <div className="flex flex-col w-full">
             <div className="flex justify-between items-center">
               <div className="pb-2">
                 <p className="font-bold">{`Pertanyaan ${currentQuestion}`}</p>

@@ -47,20 +47,20 @@ function Time() {
     return seconds;
   };
   return (
-    <div className="flex flex-col items-center mb-4 justify-center ">
-      <h1 className="text-lg font-bold">Waktu Tersisa</h1>
+    <div className="flex flex-col items-center mb-4 justify-center bg-gray-400 bg-opacity-70 rounded-md py-4">
+      <h1 className="text-lg font-bold leading-none mb-2">Waktu Tersisa</h1>
       <div className="flex flex-row gap-5 pt-3">
-        <div className="flex flex-col items-center justify-center">
-          <h1 className="text-lg">{ olimTime.endTime ? getHours(currentTime, olimTime.endTime) : '00'}</h1>
-          <h1 className="text-lg">Jam</h1>
+        <div className="flex flex-col items-center justify-center bg-access-white bg-opacity-40 w-16 rounded-md py-2">
+          <h1 className="text-lg font-semibold">{ olimTime.endTime ? getHours(currentTime, olimTime.endTime) : '00'}</h1>
+          <h1 className="text-lg font-semibold">Jam</h1>
         </div>
-        <div className="flex flex-col items-center justify-center">
-          <h1 className="text-lg">{ olimTime.endTime ? getMinutes(currentTime, olimTime.endTime) : '00'}</h1>
-          <h1 className="text-lg">Menit</h1>
+        <div className="flex flex-col items-center justify-center bg-access-white bg-opacity-40 w-16 rounded-md py-2">
+          <h1 className="text-lg font-semibold">{ olimTime.endTime ? getMinutes(currentTime, olimTime.endTime) : '00'}</h1>
+          <h1 className="text-lg font-semibold">Menit</h1>
         </div>
-        <div className="flex flex-col items-center justify-center">
-          <h1 className="text-lg">{ olimTime.endTime ? getSeconds(currentTime, olimTime.endTime) : '00'}</h1>
-          <h1 className="text-lg">Detik</h1>
+        <div className="flex flex-col items-center justify-center bg-access-white bg-opacity-40 w-16 rounded-md py-2">
+          <h1 className="text-lg font-semibold">{ olimTime.endTime ? getSeconds(currentTime, olimTime.endTime) : '00'}</h1>
+          <h1 className="text-lg font-semibold">Detik</h1>
         </div>
       </div>
     </div>
