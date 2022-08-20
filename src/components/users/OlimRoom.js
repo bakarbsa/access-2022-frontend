@@ -102,6 +102,17 @@ function OlimRoom() {
     return '';
   };
 
+  function makeid(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
+
   const renderAnswers = () => {
     if (loadingAnswers) {
       return (
@@ -119,7 +130,7 @@ function OlimRoom() {
         <p className="font-bold pb-2">Jawaban</p>
         <div className="flex flex-col">
           {questions[currentQuestion - 1]?.answerList.map((answer, i) => (
-            <button key={answer} type="button" onClick={() => { answerClickHandler(i + 1); }} className={`${answers[questionsOrder[currentQuestion - 1]] === i + 1 ? 'bg-access-primary' : 'bg-[#F4F7FE] hover:bg-gray-300'} p-4 mb-2 rounded-lg`}>
+            <button key={makeid(8)} type="button" onClick={() => { answerClickHandler(i + 1); }} className={`${answers[questionsOrder[currentQuestion - 1]] === i + 1 ? 'bg-access-primary' : 'bg-[#F4F7FE] hover:bg-gray-300'} p-4 mb-2 rounded-lg`}>
               <div className="flex flex-row w-full">
                 <div className="flex w-fit">
                   { indexToAlfa(i) }
