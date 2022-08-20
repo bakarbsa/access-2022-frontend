@@ -12,8 +12,8 @@ function QuestionTile(props) {
   }
 
   return (
-    <div className={`w-16 h-16 rounded-xl flex justify-center items-center  ${color}`}>
-      <p className="text-md">{number + 1}</p>
+    <div className={`w-11 h-11 rounded-xl flex justify-center items-center  ${color}`}>
+      <p className="text-sm">{number + 1}</p>
     </div>
   );
 }

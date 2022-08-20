@@ -168,12 +168,14 @@ function OlimRoom() {
               {currentQuestion === questions.length ? <button type="button" className="w-36 rounded-lg py-2 bg-red-500" onClick={handleDone}><p className="text-white">Selesai</p></button> : <button className="bg-[#68BC87] w-36 rounded-lg py-2" type="button" onClick={handleNext}><p className="text-white">Selanjutnya</p></button>}
             </div>
           </div>
-          <div className="flex-none">
+          <div className="flex-none w-72">
             <Time />
-            <div className="h-[30rem] grid grid-cols-4 gap-2 overflow-y-scroll">
-              {questions
-                // eslint-disable-next-line react/no-array-index-key
-                .map((question, i) => (<button key={i} type="button" onClick={() => tileClickHandler(i)}><QuestionTile number={i} state={currentQuestion === i + 1 ? QuestionTileState.Selected : (answers[questionsOrder[i]] !== undefined) ? QuestionTileState.Answered : QuestionTileState.Nothing} /></button>))}
+            <div className="flex justify-center">
+              <div className="h-[30rem] w-60 grid grid-cols-4 gap-2 overflow-y-scroll">
+                {questions
+                  // eslint-disable-next-line react/no-array-index-key
+                  .map((question, i) => (<button key={i} type="button" onClick={() => tileClickHandler(i)}><QuestionTile number={i} state={currentQuestion === i + 1 ? QuestionTileState.Selected : (answers[questionsOrder[i]] !== undefined) ? QuestionTileState.Answered : QuestionTileState.Nothing} /></button>))}
+              </div>
             </div>
           </div>
           <div className={errorUpdate ? 'relative z-10' : 'hidden'}>

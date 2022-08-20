@@ -1,7 +1,7 @@
 {
   "questions": [
     {
-      "question": "<p>Access Company produces a single product, a knitted sweater. Each sweater sells $33, and the company sells 500,000 sweaters each year. Unit cost data are presented below:</p> <p style=\"margin-top:10px;\"> </p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Variable&nbsp; <span>&nbsp;&nbsp;&nbsp; </span>&nbsp;Fixed</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Direct Material&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;.&hellip;&hellip;&hellip;&hellip;$9,00</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Direct Labor&hellip;&hellip;&hellip;&hellip;&hellip;..&hellip;&hellip;&hellip;&hellip;&hellip;..&hellip;..$8,00</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Manufacturing Overhead&hellip;&hellip;&hellip;$5,00<span>&nbsp; &nbsp; &nbsp; &nbsp;</span>$12,00</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Selling &amp; administrative&hellip;&hellip;&hellip;. $7,00<span>&nbsp; &nbsp; &nbsp; &nbsp; </span>$8,00</p> <p style=\"margin-top:10px;\"> </p> <p>The unit product cost of knitted sweater under variable costing is</p>",
+      "question": "<p>Access Company produces a single product, a knitted sweater. Each sweater sells $33, and the company sells 500,000 sweaters each year. Unit cost data are presented below:</p> <p style=\"margin-top: 10px;\"></p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Variable&nbsp; <span>&nbsp;&nbsp;&nbsp; </span>&nbsp;Fixed</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Direct Material&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;.&hellip;&hellip;&hellip;&hellip;.....$9,00</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Direct Labor&hellip;&hellip;&hellip;&hellip;&hellip;..&hellip;&hellip;&hellip;&hellip;&hellip;..&hellip;......$8,00</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Manufacturing Overhead&hellip;&hellip;&hellip;$5,00<span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>$12,00</p> <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Selling &amp; administrative&hellip;&hellip;&hellip;. $7,00<span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span>$8,00</p> <p style=\"margin-top: 10px;\"></p> <p>The unit product cost of knitted sweater under variable costing is</p>",
       "answerKey": 1,
       "answerList": [
         "$22",
@@ -15,11 +15,11 @@
       "question": "<p>The type of costing that provides the best information for breakeven analysis is</p>",
       "answerKey": 4,
       "answerList": [
-        "job-order costing",
-        "process costing",
-        "absorption costing",
-        "variable costing",
-        "operasional costing"
+        "Job-order costing",
+        "Process costing",
+        "Absorption costing",
+        "Variable costing",
+        "Operational costing"
       ]
     },
     {
@@ -122,7 +122,7 @@
       ]
     },
     {
-      "question": "<p>PT Zaya membayar honor konsultan kesehatan kepada Ny. Indira sebesar Rp. 240.000.000. Berapa PPh 21 yang terutang?</p>",
+      "question": "<p>PT Zaya membayar honor konsultan kesehatan kepada Ny. Indira sebesar Rp240.000.000. Berapa PPh 21 yang terutang?</p>",
       "answerKey": 1,
       "answerList": [
         "Rp13.000.000",
@@ -180,11 +180,11 @@
       "question": "<p>Seorang pegawai pada PT. ACCESS memperoleh gaji mingguan sebesar Rp1.500.000,00. Ia telah menikah dan belum mempunyai seorang anak. PT. ACCESS membayar premi Jaminan Kecelakaan Kerja, dan premi Jaminan Kematian yang dibayar oleh pemberi kerja dengan jumlah masing masing setiap bulan sebesar 1 % dan 0,5 % dari gaji. Pegawai tersebut membayar uang pensiun sebesar Rp30.000,00 dan Jaminan Hari Tua sebesar 2 % dari gaji setiap bulan. Berapa PPh Pasal 21 pekerja tersebut pada minggu pertama bulan Agustus?</p>",
       "answerKey": 3,
       "answerList": [
-        "9.505,25",
-        "9.505,50",
-        "9.506,25",
-        "9.506,50",
-        "9.507,25"
+        "Rp9.505,25",
+        "Rp9.505,50",
+        "Rp9.506,25",
+        "Rp9.506,50",
+        "Rp9.507,25"
       ]
     },
     {
@@ -213,11 +213,11 @@
       "question": "<p>PT Access Indonesia memperoleh penghasilan neto dalam tahun 2022 adalah sebagai berikut:</p><ul style=\"list-style-type: circle; margin-left:25px;\"><li>Di negara A, memperoleh penghasilan (laba) Rp 2.000.000.000,00 dengan tarif pajak sebesar 35% (Rp. 700.000.000,00)</li><li>Di negara B, memperoleh penghasilan (laba) Rp. 1.000.000.000,00 dengan tarif pajak sebesar 20% (Rp. 200.000.000,00)</li><li>Di negara C, menderita kerugian sebesar Rp. 2.000.000.000,00</li><li>Penghasilan usaha di Indonesia Rp. 5.000.000.000,00</li></ul><p>Besar kredit pajak luar negeri yang diperkenankan adalah</p>",
       "answerKey": 5,
       "answerList": [
-        "Rp650.000.000",
-        "Rp675.000.000",
-        "Rp700.000.000",
-        "Rp725.000.000",
-        "Rp 750.000.000"
+        "Rp650.000.000,00",
+        "Rp675.000.000,00",
+        "Rp700.000.000,00",
+        "Rp725.000.000,00",
+        "Rp750.000.000,00"
       ]
     },
     {
@@ -259,7 +259,7 @@
       "answerList": [
         "Pencatatan pembelian aset tetap",
         "Pencatatan pendapatan bunga dari obligasi jangka panjang",
-        "Penyesuain asuransi dibayar dimuka",
+        "Penyesuaian asuransi dibayar dimuka",
         "Pencatatan penjualan secara kredit",
         "Depresiasi aset tetap"
       ]
@@ -316,11 +316,11 @@
         "Penggunaan secara diam-diam mengakses jaringan Wifi tetangga.",
         "Menyadap ke dalam sebuah jalur komunikasi dan mengunci secara elektronik pengguna yang sah sebelum pengguna tersebut memasuki sistem yang aman.",
         "Menerobos pengendalian fisik seperti keypad, kartu identitas, atau pemindai identifikasi biometrik.",
-        "pengguna sah tanpa sadar membawa pelaku ke dalam sistem."
+        "Pengguna sah tanpa sadar membawa pelaku ke dalam sistem."
       ]
     },
     {
-      "question": "<p>Perusahaan PT Jaya membeli dan memproduksi barang persediaan hanya sebagai respon dari penjualan aktual. Jadi PT Jaya Jaya ini hanya memproses sesuai yang diperlukan. Sistem persediaan apakah yang digunakan oleh PT Jaya?</p>",
+      "question": "<p>Perusahaan PT Jaya membeli dan memproduksi barang persediaan hanya sebagai respon dari penjualan aktual. Jadi PT Jaya ini hanya memproses sesuai yang diperlukan. Sistem persediaan apakah yang digunakan oleh PT Jaya?</p>",
       "answerKey": 3,
       "answerList": [
         "Reorder point",
@@ -386,7 +386,7 @@
       ]
     },
     {
-      "question": "<p>The value of an equipment obtained in 2019 is worth Rp16.725.000 and the useful life is determined to be 5 years, with a residual value of Rp 1459.000. How much depreciation was in 2019 by the straight-line method?</p>",
+      "question": "<p>The value of an equipment obtained in 2019 is worth Rp16.725.000 and the useful life is determined to be 5 years, with a residual value of Rp1.459.000. How much depreciation was in 2019 by the straight-line method?</p>",
       "answerKey": 1,
       "answerList": [
         "Rp3.053.200",
@@ -455,10 +455,10 @@
       "question": "<p>Penyusutan atas aktiva tetap sudah diatur dengan tegas dalam PP 71 tahun 2010. Penyusutan akan diperlakukan sebagai</p>",
       "answerKey": 4,
       "answerList": [
-        "Pengurang nilai tercatat aset tetap dalam neraca",
+        "Pengurangan nilai tercatat aset tetap dalam neraca",
         "Beban penyusutan dalam laporan operasional.",
-        "Pengurang silpa dalam lra",
-        "Pengurang nilai tercatat aset tetap dalam neraca dan beban penyusutan dalam laporan operasional.",
+        "Pengurang SILPA dalam LRA",
+        "Pengurangan nilai tercatat aset tetap dalam neraca dan beban penyusutan dalam laporan operasional.",
         "Pengurangan aset lancar pada neraca saldo"
       ]
     },

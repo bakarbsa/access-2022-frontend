@@ -41,7 +41,7 @@
         "Tingkat menengah",
         "Tingkat Eksekutif",
         "Jawaban a dan c benar",
-        "Jawaban a dan c benar"
+        "Tidak ada jawaban benar"
       ]
     },
     {
@@ -73,7 +73,7 @@
         "$1,500",
         "$3,000",
         "$2,700",
-        "$1,7500",
+        "$1,750",
         "$9,000"
       ]
     },
@@ -128,7 +128,7 @@
         "Sales budget, cost of goods sold budget, cash budget",
         "Capital expenditure budget, budgeted income statement, budgeted cash flow statement",
         "Sales budget, budgeted income statement, cost of goods sold budget",
-        "Selling and administrative expenses budget, sales budget, budgeted balance sheetd",
+        "Selling and administrative expenses budget, sales budget, budgeted balance sheet",
         "Cash budget, sales budget, capital expenditure budget"
       ]
     },
@@ -213,11 +213,11 @@
       "question": "<p>PT Abadi menggunakan metode neto untuk mencatat setiap transaksi penjualan. Pada tanggal 12 Februari, PT Abadi mencatat transaksi sebesar Rp 220.000,00 dengan persyaratan 2/10, n/30. Tentukan jurnal yang dibutuhkan jika PT Abadi memperoleh pembayaran penuh pada tanggal 22 Februari</p>",
       "answerKey": 2,
       "answerList": [
-        "<div> <table border=\"0\" style=\"table-layout: auto; text-align: left; border-collapse: collapse; height: 105px;\"> <tbody> <tr> <td>12 Februari&nbsp;&nbsp;</td> <td>Piutang</td> <td>Rp 220.000,00</td> </tr> <tr> <td></td> <td>Penjualan</td> <td>220.000,00</td> </tr> <tr> <td>22 Februari</td> <td>Kas</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Diskon Penjualan&nbsp; &nbsp;&nbsp;</td> <td>4.400,00</td> </tr> <tr> <td></td> <td>Piutang</td> <td>220.000,00</td> </tr> </tbody> </table> </div>",
-        "<div> <table border=\"0\" style=\"table-layout: auto; text-align: left; border-collapse: collapse; height: 105px;\"> <tbody> <tr> <td>12 Februari&nbsp;&nbsp;</td> <td>Piutang&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Penjualan</td> <td>215.600,00</td> </tr> <tr> <td>22 Februari</td> <td>Kas</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Piutang&nbsp; &nbsp;&nbsp;</td> <td>215.600,00</td> </tr> </tbody> </table> </div>",
-        "<div> <table border=\"0\" style=\"table-layout: auto; text-align: left; border-collapse: collapse; height: 105px;\"> <tbody> <tr> <td>12 Februari&nbsp;&nbsp;</td> <td>Penjualan&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Piutang</td> <td>215.600,00</td> </tr> <tr> <td>22 Februari</td> <td>Kas</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Piutang&nbsp; &nbsp;&nbsp;</td> <td>215.600,00</td> </tr> </tbody> </table> </div>",
-        "<div> <table border=\"0\" style=\"table-layout: auto; text-align: left; border-collapse: collapse; height: 105px;\"> <tbody> <tr> <td>12 Februari&nbsp;&nbsp;</td> <td>Piutang</td> <td>Rp 220.000,00</td> </tr> <tr> <td></td> <td>Penjualan</td> <td>220.000,00</td> </tr> <tr> <td>22 Februari</td> <td>Kas</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Diskon Penjualan&nbsp; &nbsp;&nbsp;</td> <td>4.400,00</td> </tr> <tr> <td></td> <td>Piutang</td> <td>220.000,00</td> </tr> </tbody> </table> </div>",
-        "<div> <table border=\"0\" style=\"table-layout: auto; text-align: left; border-collapse: collapse; height: 105px;\"> <tbody> <tr> <td>12 Februari&nbsp;&nbsp;</td> <td>Piutang&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Penjualan</td> <td>215.600,00</td> </tr> <tr> <td>22 Februari</td> <td>Piutang</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Kas&nbsp; &nbsp;&nbsp;</td> <td>215.600,00</td> </tr> </tbody> </table> </div>"
+        "<div> <table border=\"0\" style=\"table-layout: auto; text-align: left; border-collapse: collapse; height: 105px;\"> <tbody> <tr> <td>12 Februari&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td> <td>Piutang</td> <td>Rp 220.000,00</td> </tr> <tr> <td></td> <td>Penjualan</td> <td>Rp 220.000,00</td> </tr> <tr> <td>22 Februari</td> <td>Kas</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Diskon Penjualan&nbsp; &nbsp;&nbsp;</td> <td>Rp 4.400,00</td> </tr> <tr> <td></td> <td>Piutang</td> <td>Rp 220.000,00</td> </tr> </tbody> </table> </div>",
+        "<div> <table border=\"0\" style=\"table-layout: auto; text-align: left; border-collapse: collapse; height: 105px;\"> <tbody> <tr> <td>12 Februari&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td> <td>Piutang&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Penjualan</td> <td>Rp 215.600,00</td> </tr> <tr> <td>22 Februari</td> <td>Kas</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Piutang&nbsp; &nbsp;&nbsp;</td> <td>Rp 215.600,00</td> </tr> </tbody> </table> </div>",
+        "<div> <table border=\"0\" style=\"table-layout: auto; text-align: left; border-collapse: collapse; height: 105px;\"> <tbody> <tr> <td>12 Februari&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td> <td>Penjualan&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Piutang</td> <td>Rp 215.600,00</td> </tr> <tr> <td>22 Februari</td> <td>Kas</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Piutang&nbsp; &nbsp;&nbsp;</td> <td>Rp 215.600,00</td> </tr> </tbody> </table> </div>",
+        "<div> <table border=\"0\" style=\"table-layout: auto; text-align: left; border-collapse: collapse; height: 105px;\"> <tbody> <tr> <td>12 Februari&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td> <td>Piutang</td> <td>Rp 220.000,00</td> </tr> <tr> <td></td> <td>Penjualan</td> <td>Rp 220.000,00</td> </tr> <tr> <td>22 Februari</td> <td>Kas</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Diskon Penjualan&nbsp; &nbsp;&nbsp;</td> <td>Rp 4.400,00</td> </tr> <tr> <td></td> <td>Piutang</td> <td>Rp 220.000,00</td> </tr> </tbody> </table> </div>",
+        "<div> <table border=\"0\" style=\"table-layout: auto; text-align: left; border-collapse: collapse; height: 105px;\"> <tbody> <tr> <td>12 Februari&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td> <td>Piutang&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Penjualan</td> <td>Rp 215.600,00</td> </tr> <tr> <td>22 Februari</td> <td>Piutang</td> <td>Rp 215.600,00</td> </tr> <tr> <td></td> <td>Kas&nbsp; &nbsp;&nbsp;</td> <td>Rp 215.600,00</td> </tr> </tbody> </table> </div>"
       ]
     },
     {
@@ -254,7 +254,7 @@
       ]
     },
     {
-      "question": "<p>PT. Jaya Sempurna Tbk. Menerbitkan convertible bond dengan premi sebesar Rp2.500.000 dengan nilai Rp50.000.000, dapat dikonversi menjadi 2.000 saham biasa (nilai nominal Rp20.000). Pada saat konversi, premi yang belum diamortisasi adalah Rp1.000.000, nilai pasar obligasi adalah Rp55.000.000 dan saham di pasar sebesar Rp30.000 per saham. Jika obligasi dikonversi ke saham biasa, berapa agio saham (share premium) yang akan dicatat pada konvesi obligasi tersebut? </p>",
+      "question": "<p>PT. Jaya Sempurna Tbk. Menerbitkan convertible bond dengan premi sebesar Rp2.500.000 dengan nilai Rp50.000.000, dapat dikonversi menjadi 2.000 saham biasa (nilai nominal Rp20.000). Pada saat konversi, premi yang belum diamortisasi adalah Rp1.000.000, nilai pasar obligasi adalah Rp55.000.000 dan saham di pasar sebesar Rp30.000 per saham. Jika obligasi dikonversi ke saham biasa, berapa agio saham (share premium) yang akan dicatat pada konversi obligasi tersebut? </p>",
       "answerKey": 1,
       "answerList": [
         "Rp11.000.000",
@@ -290,10 +290,10 @@
       "question": "<p>Terdapat informasi berikut:</p> <p>Arus kas bersih dari aktifitas operasi&nbsp;Rp125.750.000</p> <p>Capital expenditures Rp50.526.000</p> <p>Dividen Rp5.850.000</p> <p>Hitunglah free cash flow dari informasi tersebut.</p>",
       "answerKey": 2,
       "answerList": [
-        "Rp 170.426000",
-        "Rp 69.374.000",
-        "Rp 121.074.000",
-        "Rp 125.750.000",
+        "Rp170.426.000",
+        "Rp69.374.000",
+        "Rp121.074.000",
+        "Rp125.750.000",
         "Tidak ada jawaban benar"
       ]
     },
@@ -301,22 +301,22 @@
       "question": "<p>Active company pay Rp.100,000,000.00 to purchase assets belonging to Access companiy. It is assumed that Access’s liabilities are Rp. 12,000,000.00 and Access’s assets have a fair value of Rp. 50,000,000.00. So how much goodwill will the Active company record? </p>",
       "answerKey": 2,
       "answerList": [
-        "Rp 12.000.000,00",
-        "Rp 62.000.000,00",
-        "Rp 38.000.000,00",
-        "Rp 50.000.000,00",
-        "Rp 52.000.000,00"
+        "Rp12.000.000,00",
+        "Rp62.000.000,00",
+        "Rp38.000.000,00",
+        "Rp50.000.000,00",
+        "Rp52.000.000,00"
       ]
     },
     {
       "question": "<p>Yuyun is investing Rp 300.000.000,00 in a fund that can earn 8% interest compounded annually. What equal amounts can yuyun withdraw at the end of each of the next 20 years?</p>",
       "answerKey": 2,
       "answerList": [
-        "Rp 6.600.000,00",
-        "Rp 6.555.663,00",
-        "Rp 7.990.630,00",
-        "Rp 6.300.000,00",
-        "Rp 7.000.000,00"
+        "Rp6.600.000,00",
+        "Rp6.555.663,00",
+        "Rp7.990.630,00",
+        "Rp6.300.000,00",
+        "Rp7.000.000,00"
       ]
     },
     {
@@ -346,10 +346,10 @@
       "answerKey": 1,
       "answerList": [
         "No journal entry",
-        "<div> <table border=\"0\" style=\"table-layout: auto;\"> <tbody> <tr> <td>Account receivable&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td> <td>3,100</td> </tr> <tr> <td>Sales revenue</td> <td>3,100</td> </tr> <tr> <td>Cost of goods sold</td> <td>2,300</td> </tr> <tr> <td>Inventory</td> <td>2,300</td> </tr> </tbody> </table> <p></p> </div>",
-        "<div> <table border=\"0\" style=\"table-layout: auto;\"> <tbody> <tr> <td>Cash&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td> <td>3,100</td> </tr> <tr> <td>Account receivable</td> <td>3,100</td> </tr> </tbody> </table> </div>",
-        "<div> <table border=\"0\" style=\"table-layout: auto;\"> <tbody> <tr> <td>Cash&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td> <td>3,100</td> </tr> <tr> <td>Unearned service revenue</td> <td>3,100</td> </tr> </tbody> </table> </div>",
-        "<div> <table border=\"0\" style=\"table-layout: auto;\"> <tbody> <tr> <td>Unearned service revenue&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td> <td>3,100</td> </tr> <tr> <td>Sales revenue</td> <td>3,100</td> </tr> <tr> <td>Cost of goods sold</td> <td>2,300</td> </tr> <tr> <td>Inventory</td> <td>2,300</td> </tr> </tbody> </table> <p></p> </div>"
+        "<div> <table border=\"0\" style=\"table-layout: auto;\"> <tbody> <tr> <td>Account receivable&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td> <td>$3,100</td> </tr> <tr> <td>Sales revenue</td> <td>$3,100</td> </tr> <tr> <td>Cost of goods sold</td> <td>$2,300</td> </tr> <tr> <td>Inventory</td> <td>$2,300</td> </tr> </tbody> </table> <p></p> </div>",
+        "<div> <table border=\"0\" style=\"table-layout: auto;\"> <tbody> <tr> <td>Cash&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td> <td>$3,100</td> </tr> <tr> <td>Account receivable</td> <td>$3,100</td> </tr> </tbody> </table> </div>",
+        "<div> <table border=\"0\" style=\"table-layout: auto;\"> <tbody> <tr> <td>Cash&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td> <td>$3,100</td> </tr> <tr> <td>Unearned service revenue</td> <td>$3,100</td> </tr> </tbody> </table> </div>",
+        "<div> <table border=\"0\" style=\"table-layout: auto;\"> <tbody> <tr> <td>Unearned service revenue&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td> <td>$3,100</td> </tr> <tr> <td>Sales revenue</td> <td>$3,100</td> </tr> <tr> <td>Cost of goods sold</td> <td>$2,300</td> </tr> <tr> <td>Inventory</td> <td>$2,300</td> </tr> </tbody> </table> <p></p> </div>"
       ]
     },
     {
@@ -390,7 +390,7 @@
       "answerKey": 1,
       "answerList": [
         "The amount investment in the investor's balance sheet and the different income amounts in the statement of income",
-        "The amount investment in the investor’s balance sheets and the different amount in the statement of retained earningsk",
+        "The amount investment in the investor’s balance sheets and the different amount in the statement of retained earning",
         "The different income amounts in the statement of income and the different amount in the statement of retained earning",
         "The different only in the amount of income statements",
         "There aren’t difference between fair value and equity cost."
@@ -433,11 +433,11 @@
       "question": "<p>Lintang memperoleh 60 persen saham Dhea pada 1 Januari 2016, seharga $360,000, ketika aset bersih Dhea memiliki nilai buku dan nilai wajar $600,000. Selama 2016, Lintang menjual barang inventaris seharga $600,000 kepada Dhea seharga $800,000, dan persediaan Dhea pada tanggal 31 Desember 2016, termasuk seperempat dari barang dagangan ini. Lintang melaporkan pendapatan terpisah dari operasinya sendiri (tidak termasuk pendapatan investasi) sebesar $300,000, dan Dhea melaporkan kerugian bersih sebesar $150,000 untuk 2016. Bagian pengendali atas laba bersih konsolidasi Lintang Corporation dan Anak Perusahaan untuk tahun 2016 adalah</p>",
       "answerKey": 2,
       "answerList": [
-        "100,000",
-        "160,000",
-        "300,000",
-        "140,000",
-        "90,000"
+        "$100,000",
+        "$160,000",
+        "$300,000",
+        "$140,000",
+        "$90,000"
       ]
     },
     {
@@ -445,10 +445,10 @@
       "answerKey": 2,
       "answerList": [
         "Debit terhadap Gain on sale",
-        "Debit terhadap Pendapatan dari Anak perusahaan",
-        "Debit  terhadap investasi dari anak perusahaan",
+        "Debit terhadap pendapatan dari anak perusahaan",
+        "Debit terhadap investasi dari anak perusahaan",
         "Kredit terhadap tanah",
-        "Kerugian dari penjualan "
+        "Kerugian dari penjualan"
       ]
     },
     {
