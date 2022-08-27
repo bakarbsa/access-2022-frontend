@@ -62,7 +62,11 @@ const updateAnswers = async (answers, id, setError, setUpdateAnswerBuffer, updat
         return;
       }
       await setDoc(docRef, { currentAnswer: answers }, { merge: true }).then((msg) => {
-        if (updateAnswerBuffer !== 0) setUpdateAnswerBuffer(updateAnswerBuffer - 1);
+        if (updateAnswerBuffer - 1 < 0) {
+          setUpdateAnswerBuffer(0);
+        } else {
+          setUpdateAnswerBuffer(updateAnswerBuffer - 1);
+        }
         console.log('answers updated');
       });
     });
